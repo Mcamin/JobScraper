@@ -1,7 +1,6 @@
 from fastapi import FastAPI, Depends, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
-from typing import Optional
 from app.config import get_settings
 from app.db import get_db
 from app.schemas import JobOut, ScrapeRequest, JobsQuery
@@ -17,6 +16,7 @@ app = FastAPI(
     description="API to scrape and fetch job postings using jobspy and persist them to MySQL.",
 )
 
+# --- CORS ---------------------------------------------------------
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -26,44 +26,45 @@ app.add_middleware(
 )
 
 
+# --- Health Check -------------------------------------------------
 @app.get("/health")
 def health():
     return {"status": "ok"}
 
 
+# --- Scrape and Save ----------------------------------------------
 @app.post("/scrape", response_model=dict)
 def scrape_jobs_endpoint(payload: ScrapeRequest, db: Session = Depends(get_db)):
-    logger.bind(event="scrape.start").debug({"payload": payload.model_dump()})
+    logger.bind(event="scrape.start").info(f"Starting scrape for {payload.search_term}")
+
     try:
+        # Run scraper
         records = run_scrape(payload.model_dump())
+
+        # Persist to DB
         inserted = upsert_jobs(db, records)
-        logger.bind(event="scrape.done").debug({"inserted": inserted, "returned": len(records)})
-        return {"inserted": inserted, "returned": len(records)}
+
+        # Query back the newly inserted jobs (optional)
+        total, items = list_jobs(db, JobsQuery(limit=inserted))
+
+        logger.bind(event="scrape.done").info(
+            f"Scrape complete. Inserted: {inserted}, Returned: {len(items)}"
+        )
+
+        return {
+            "inserted": inserted,
+            "returned": len(records),
+            "items": [JobOut.model_validate(i).model_dump() for i in items],
+        }
+
     except Exception as e:
         logger.exception("Scrape failed")
         raise HTTPException(status_code=500, detail=str(e))
 
 
+# --- List Jobs ----------------------------------------------------
 @app.get("/jobs", response_model=dict)
-def get_jobs(
-    site_name: Optional[str] = None,
-    search_term: Optional[str] = None,
-    location: Optional[str] = None,
-    company: Optional[str] = None,
-    q: Optional[str] = None,
-    limit: int = Query(20, ge=1, le=200),
-    offset: int = Query(0, ge=0),
-    db: Session = Depends(get_db),
-):
-    params = JobsQuery(
-        site_name=site_name,
-        search_term=search_term,
-        location=location,
-        company=company,
-        q=q,
-        limit=limit,
-        offset=offset,
-    )
+def get_jobs(params: JobsQuery = Depends(), db: Session = Depends(get_db)):
     total, items = list_jobs(db, params)
     return {
         "total": total,
@@ -72,6 +73,7 @@ def get_jobs(
     }
 
 
+# --- Get Job by ID ------------------------------------------------
 @app.get("/jobs/{job_id}", response_model=JobOut)
 def get_job_by_id(job_id: int, db: Session = Depends(get_db)):
     job = get_job(db, job_id)

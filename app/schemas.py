@@ -11,18 +11,21 @@ class JobBase(BaseModel):
     location: str
     job_url: str
 
-    # NEW fields from scraper
+    # New fields from scraper
     job_type: Optional[str] = None
     job_level: Optional[str] = None
-    emails: Optional[List[str]] = None           # e.g., ["hr@example.com", "jobs@example.com"]
+    emails: Optional[str] = None  # stored as string, e.g. "hr@example.com, jobs@example.com"
     company_industry: Optional[str] = None
     company_url: Optional[str] = None
-    job_id: Optional[str] = None                 # keep as str to support non-numeric IDs
+    job_id: Optional[str] = None  # external job ID
 
     description: Optional[str] = None
     date_posted: Optional[datetime] = None
     salary: Optional[str] = None
-    remote: Optional[str] = None
+
+    # New boolean flags
+    is_remote: bool = False
+    applied: bool = False
 
 
 class JobOut(JobBase):
@@ -55,5 +58,12 @@ class JobsQuery(BaseModel):
     location: Optional[str] = None
     company: Optional[str] = None
     q: Optional[str] = None
+
+    created_after: Optional[datetime] = Field(
+        default=datetime(2025, 11, 6, 0, 0, 0),
+        description="Return only jobs created after this timestamp (ISO 8601). Defaults to today at midnight.",
+        example="2025-11-06T00:00:00Z"
+    )
+
     limit: int = 20
     offset: int = 0

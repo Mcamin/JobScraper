@@ -1,59 +1,14 @@
-openapi: 3.0.3
-info:
-  title: JobScraper API
-  version: 1.1.0
-  description: API for scraping and retrieving job postings, including extended attributes such as job type, level, and company info.
-servers:
-  - url: http://localhost:8000
-paths:
-  /health:
-    get:
-      summary: Health check
-      responses:
-        '200':
-          description: OK
-  /scrape:
-    post:
-      summary: Scrape jobs and persist them
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ScrapeRequest'
-            examples:
-              DefaultSearch:
-                summary: Example scrape request
-                value:
-                  site_name: ["indeed", "linkedin", "google"]
-                  search_term: "software engineer"
-                  google_search_term: "software engineer jobs near Berlin Germany since yesterday"
-                  location: "Berlin"
-                  results_wanted: 20
-                  hours_old: 72
-                  country_indeed: "Germany"
-                  linkedin_fetch_description: true
-      responses:
-        '200':
-          description: Scrape result
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  inserted:
-                    type: integer
-                    example: 20
-                  returned:
-                    type: integer
-                    example: 20
   /jobs:
     get:
-      summary: List jobs from DB
+      summary: List jobs from database
+      description: >
+        Retrieve job postings with optional filtering by platform, company, or search term.
+        You can also filter jobs created after a specific timestamp.
       parameters:
         - in: query
           name: site_name
           schema: { type: string }
+          description: Filter by source platform name (e.g. LinkedIn, Indeed)
         - in: query
           name: search_term
           schema: { type: string }
@@ -66,6 +21,16 @@ paths:
         - in: query
           name: q
           schema: { type: string }
+          description: Full-text search across title, description, and company
+        - in: query
+          name: created_after
+          schema:
+            type: string
+            format: date-time
+            example: "2025-11-06T00:00:00Z"
+          description: >
+            Only return jobs created after this date/time (ISO 8601 format).
+            Defaults to the current date/time if not provided.
         - in: query
           name: limit
           schema: { type: integer, minimum: 1, maximum: 200, default: 20 }
@@ -74,7 +39,7 @@ paths:
           schema: { type: integer, minimum: 0, default: 0 }
       responses:
         '200':
-          description: Jobs list
+          description: Paginated list of jobs
           content:
             application/json:
               schema:
@@ -90,63 +55,3 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/Job'
-  /jobs/{job_id}:
-    get:
-      summary: Get job by id
-      parameters:
-        - in: path
-          name: job_id
-          required: true
-          schema: { type: integer }
-      responses:
-        '200':
-          description: Job
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Job'
-
-components:
-  schemas:
-    ScrapeRequest:
-      type: object
-      properties:
-        site_name:
-          type: array
-          items:
-            type: string
-            example: "linkedin"
-          example: ["indeed", "linkedin", "google"]
-        search_term: { type: string, example: "software engineer" }
-        google_search_term: { type: string, nullable: true, example: "software engineer jobs near Berlin Germany since yesterday" }
-        location: { type: string, example: "Berlin" }
-        results_wanted: { type: integer, default: 20 }
-        hours_old: { type: integer, default: 72 }
-        country_indeed: { type: string, nullable: true, example: "Germany" }
-        linkedin_fetch_description: { type: boolean, default: true }
-
-    Job:
-      type: object
-      properties:
-        id: { type: integer, example: 101 }
-        site_name: { type: string, example: "LinkedIn" }
-        search_term: { type: string, example: "Software Engineer" }
-        job_title: { type: string, example: "Senior Software Engineer" }
-        company: { type: string, example: "ExampleTech GmbH" }
-        location: { type: string, example: "Berlin, Germany" }
-        job_url: { type: string, example: "https://www.linkedin.com/jobs/view/1234567890" }
-        job_type: { type: string, example: "Full-time" }
-        job_level: { type: string, example: "Mid-Senior level" }
-        emails:
-          type: array
-          items:
-            type: string
-            example: "hr@exampletech.de"
-        company_industry: { type: string, example: "Information Technology" }
-        company_url: { type: string, example: "https://www.exampletech.de" }
-        job_id: { type: string, example: "linkedin-1234567890" }
-        description: { type: string, example: "We are looking for a passionate software engineer to join our team..." }
-        date_posted: { type: string, format: date-time, example: "2025-11-06T10:00:00Z" }
-        salary: { type: string, example: "€70,000 - €90,000 per year" }
-        remote: { type: string, example: "Hybrid" }
-        created_at: { type: string, format: date-time, example: "2025-11-06T11:15:30Z" }

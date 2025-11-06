@@ -1,5 +1,5 @@
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
-from sqlalchemy import String, Text, DateTime, func, Integer
+from sqlalchemy import String, Text, DateTime, func, Integer, Boolean
 
 
 class Base(DeclarativeBase):
@@ -23,7 +23,7 @@ class Job(Base):
     # New scraper attributes
     job_type: Mapped[str | None] = mapped_column(String(128), nullable=True)
     job_level: Mapped[str | None] = mapped_column(String(128), nullable=True)
-    emails: Mapped[str | None] = mapped_column(Text, nullable=True)               # store as comma-separated list
+    emails: Mapped[str | None] = mapped_column(Text, nullable=True)  # comma-separated list
     company_industry: Mapped[str | None] = mapped_column(String(255), nullable=True)
     company_url: Mapped[str | None] = mapped_column(String(512), nullable=True)
     job_id: Mapped[str | None] = mapped_column(String(255), nullable=True, index=True)  # external job ref (not PK)
@@ -32,7 +32,10 @@ class Job(Base):
     description: Mapped[str | None] = mapped_column(Text, nullable=True)
     date_posted: Mapped[DateTime | None] = mapped_column(DateTime, nullable=True)
     salary: Mapped[str | None] = mapped_column(String(255), nullable=True)
-    remote: Mapped[str | None] = mapped_column(String(64), nullable=True)
+
+    # Boolean flags
+    is_remote: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+    applied: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
 
     # Metadata
     created_at: Mapped[DateTime] = mapped_column(DateTime, server_default=func.now())

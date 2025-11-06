@@ -43,11 +43,3 @@ jobs:
       - name: Inspect image
         run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/jobscraper-api:latest
 
-      # Update Docker Hub Overview
-      - name: Update Docker Hub description
-        uses: peter-evans/dockerhub-description@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: madtomy/jobscraper-api
-          readme-filepath: ./docs/dockerhub-readme.md

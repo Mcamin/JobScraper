@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from sqlalchemy import select, or_, func
+from sqlalchemy import select, func, or_
 from app.models import Job
 from app.schemas import JobsQuery
 from typing import Iterable
@@ -21,8 +21,11 @@ def upsert_jobs(db: Session, records: Iterable[dict]) -> int:
     return inserted
 
 
+
 def list_jobs(db: Session, params: JobsQuery):
     stmt = select(Job)
+
+    # --- Filters -----------------------------------------------------
     if params.site_name:
         stmt = stmt.where(Job.site_name == params.site_name)
     if params.search_term:
@@ -41,10 +44,19 @@ def list_jobs(db: Session, params: JobsQuery):
             )
         )
 
-    total = db.scalar(select(func.count()).select_from(stmt.subquery()))
+    # --- Optional: filter by created_at if params has it ------------
+    if getattr(params, "created_after", None):
+        stmt = stmt.where(Job.created_at >= params.created_after)
+
+    # --- Order and pagination ----------------------------------------
     stmt = stmt.order_by(Job.created_at.desc()).limit(params.limit).offset(params.offset)
+
+    # --- Count total -------------------------------------------------
+    total = db.scalar(select(func.count()).select_from(stmt.subquery()))
     items = db.scalars(stmt).all()
+
     return total, items
+
 
 
 def get_job(db: Session, job_id: int):

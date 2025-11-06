@@ -24,7 +24,7 @@ COLMAP = {
     "description": "description",
     "date_posted": "date_posted",
     "salary_source": "salary",
-    "is_remote": "remote",
+    "is_remote": "is_remote",
 }
 
 
@@ -84,7 +84,7 @@ def run_scrape(payload: dict) -> List[Dict]:
             "description",
             "date_posted",
             "salary",
-            "remote",
+            "is_remote",
             "job_id"
         ]
 
