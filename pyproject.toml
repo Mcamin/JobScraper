@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "jobscraper-api"
+version = "0.1.0"
+description = ""
+authors = ["amc <info@madev.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.121.0"
+sqlalchemy = "^2.0.44"
+pydantic-settings = "^2.11.0"
+loguru = "^0.7.3"
+mysqlclient = "^2.2.7"
+pandas = "^2.3.3"
+python-jobspy = "==1.1.82"
+uvicorn = "==0.38.0"
+httpx = "==0.28.1"
+python-dotenv = "==1.2.1"
+alembic = "==1.17.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,2853 @@
+"job_id","site_name","job_url","job_url_direct","job_title","company","location","date_posted","job_type","salary","interval","min_amount","max_amount","currency","remote","job_level","job_function","listing_type","emails","description","company_industry","company_url","company_logo","company_url_direct","company_addresses","company_num_employees","company_revenue","company_description","skills","experience_range","company_rating","company_reviews_count","vacancy_count","work_from_home_type","search_term"
+"in-978384abf305dd4e","indeed","https://de.indeed.com/viewjob?jk=978384abf305dd4e","https://it.schwarz/jobsearch/hr/software-engineer-sap-integration-engineering-m-w-d-GT838","Software Engineer SAP Integration Engineering (m/w/d)","SchwarzIT","Berlin, BE, DE","2025-11-06","","","","","","",False,"","","","recruiting@mail.schwarz","**Standort**
+------------
+
+
+Karl\\-Liebknecht\\-Straße 32  
+
+10178 Berlin
+**Abteilung**
+-------------
+
+
+IT \\- Development
+**Einstieg**
+------------
+
+
+Berufseinsteiger
+**Stellen\\-ID**
+---------------
+
+
+838
+Die Schwarz IT KG ist als zentraler IT\\-Dienstleister für Auswahl, Bereitstellung und Betrieb sowie Weiterentwicklung von IT\\-Infrastrukturen, IT\\-Plattformen und Business\\-Anwendungen zuständig. Damit erbringt die Schwarz IT sowohl für Kaufland und Lidl als auch für die Schwarz Dienstleistung KG und die Schwarz Zentrale Dienste KG IT\\-Dienstleistungen. Um die Fachbereiche durch IT\\-Lösungen optimal bei deren Geschäftsprozessen zu unterstützen, nimmt die Schwarz IT Anforderungen der Fachbereiche in Beratungsgesprächen auf und erarbeitet gemeinsam mit diesen professionelle und leistungsfähige IT\\-Lösungen
+Deine Aufgaben* Du bist verantwortlich für die Beratung, das Design und die Implementierung von SAP Integrations\\-Lösungen für eine der größten SAP Landschaften weltweit
+* In Zusammenarbeit mit Business Consultants entwickelst du Anwendungen, die den Anforderungen des Unternehmens entsprechen
+* Dabei ist auch das Koordinieren, Analysieren und Lösen von Incidents Teil deiner Aufgaben
+* Zudem dokumentierst du neue Prozesse, Lösungsarchitekturen und Anforderungen
+
+Dein Profil* Du hast ein erfolgreich abgeschlossenes Studium der Informatik, Wirtschaftsinformatik oder eine vergleichbare Berufsausbildung
+* Du hast gute Erfahrung mit der SAP Integration Suite und anderen SAP Integrations\\-Technologien
+* Du hast Kenntnisse und Erfahrungen mit OData und REST
+* Du bringst fortgeschrittene Kenntnisse in Groovy Script und JavaScript sowie Core Data Services (CDS) mit
+* Wir arbeiten international, daher bringst du Kenntnisse der deutschen sowie englischen Sprache mit
+
+Unsere Benefits
+
+
+Dein Ansprechpartner
+
+### **Lara Schlimgen**
+
+
+Recruiterin* E\\-Mail:
+recruiting@mail.schwarz","","https://de.indeed.com/cmp/Schwarzit","","","","Decline to state","Decline to state","","","","","","","","software engineer"
+"in-d5f09fca8e365ba6","indeed","https://de.indeed.com/viewjob?jk=d5f09fca8e365ba6","https://it.schwarz/jobsearch/hr/cyber-offensive-security-engineer-red-team-engineer-m-w-d-GT964","Cyber Offensive Security Engineer / Red Team Engineer (m/w/d)","SchwarzIT","Berlin, BE, DE","2025-11-06","","","","","","",False,"","","","recruiting@mail.schwarz","**Standort**
+------------
+
+
+Karl\\-Liebknecht\\-Straße 32  
+
+10178 Berlin
+**Abteilung**
+-------------
+
+
+IT \\- Security
+**Einstieg**
+------------
+
+
+Berufserfahrene
+**Stellen\\-ID**
+---------------
+
+
+964
+Die Schwarz IT KG ist als zentraler IT\\-Dienstleister für Auswahl, Bereitstellung und Betrieb sowie Weiterentwicklung von IT\\-Infrastrukturen, IT\\-Plattformen und Business\\-Anwendungen zuständig. Damit erbringt die Schwarz IT sowohl für Kaufland und Lidl als auch für die Schwarz Dienstleistung KG und die Schwarz Zentrale Dienste KG IT\\-Dienstleistungen. Um die Fachbereiche durch IT\\-Lösungen optimal bei deren Geschäftsprozessen zu unterstützen, nimmt die Schwarz IT Anforderungen der Fachbereiche in Beratungsgesprächen auf und erarbeitet gemeinsam mit diesen professionelle und leistungsfähige IT\\-Lösungen
+Deine Aufgaben* Du planst und führst Red Team\\- und Purple Team\\-Einsätze innerhalb der gesamten Schwarz Gruppe aus und genießt dabei viele Freiheiten in der Umsetzung und Auswahl der Angriffsziele
+* Du kennst aktuelle Bedrohungen, Schwachstellen und Exploits und kannst diese in Bezug auf ihr Risiko und Auswirkungen bewerten
+* Du deckst Schwachstellen beispielsweise in Programmen, Konfigurationen, Prozessen oder menschlichem Verhalten auf und entwickelst Techniken zu deren Ausnutzung
+* Du planst und führst physische Angriffe aus, die von Lockpicking und verdecktem Zutritt über das Kopieren von Ausweisen bis hin zu Social Engineering reichen
+* Du erarbeitest dir Wissen über Advanced Threat Actors, deren Taktiken, Techniken und Verfahren (TTPs) und kannst diese in eigenen Angriffsszenarien einsetzen
+* Du entwickelst und betreibst eigene Tools, inklusive eigener Schadsoftware, die gängige Sicherheits\\- und Überwachungssysteme umgehen kann
+* Du arbeitest eng mit dem Blue Team zusammen und unterstützt es in der kontinuierlichen Verbesserung seiner Schutzmechanismen und Prozesse
+* Du planst und führst Tabletop\\-Exercises sowie Capture\\-The\\-Flag Events durch
+
+Dein Profil* Du hast Erfahrung in Cyber Security und im Speziellen in Offensive Security (Pentesting, Red Teaming, Ethical Hacking)
+* Du hast eine schnelle Auffassungsgabe und Verständnis von neuen Situationen, Tools und Technologien und kannst dieses schnell einsetzen
+* Dein Wissen umfasst ein weites Spektrum von Angriffsmethoden und \\-techniken, inklusive post\\-Exploitation und lateral Movement
+* Du hast bereits als Penetrationstester, Red\\-Team Operator oder als Security Researcher gearbeitet
+* Du kennst einschlägige Angriffs\\-Tools und bist mit Netzwerkprotokollen und Cloud Security vertraut
+* Du hast Erfahrung in der Entwicklung neuer Angriffstechniken und in dem Umgehen von typischen Sicherheitssystemen
+* Du beherrscht Skript\\- und Programmiersprachen wie Python, Powershell, Go, C\\#, C\\+\\+ oder Rust, um eigene Tools zu entwickeln
+* Du hast den Drang, Schwachstellen zu finden und mit den Kollegen in den Austausch zu gehen, um diese zu schließen
+* Du zeichnest dich durch hohe analytische, kommunikative und kreative Fähigkeiten aus, arbeitest gerne eigenverantwortlich, im Team und denkst wie ein Angreifer
+* Du bist im Bereich der Offensive Security zertifiziert (OSCP, OSEP, OSED/E, CRTO, CRTE,..)
+* Du trittst überzeugend und sicher auf und kommunizierst dabei in Deutsch und Englisch
+
+Unsere Benefits
+
+
+Dein Ansprechpartner
+
+### **Jana Scherer**
+
+
+Recruiterin* E\\-Mail:
+recruiting@mail.schwarz","","https://de.indeed.com/cmp/Schwarzit","","","","Decline to state","Decline to state","","","","","","","","software engineer"
+"in-f1d2f906f47b554e","indeed","https://de.indeed.com/viewjob?jk=f1d2f906f47b554e","https://it.schwarz/jobsearch/hr/cyber-offensive-security-engineer-red-team-engineer-m-w-d-GT964","Cyber Offensive Security Engineer / Red Team Engineer (m/w/d)","Schwarz Corporate Solutions","Berlin, BE, DE","2025-11-06","","","","","","",False,"","","","recruiting@mail.schwarz","**Standort**
+------------
+
+
+Karl\\-Liebknecht\\-Straße 32  
+
+10178 Berlin
+**Abteilung**
+-------------
+
+
+IT \\- Security
+**Einstieg**
+------------
+
+
+Berufserfahrene
+**Stellen\\-ID**
+---------------
+
+
+964
+Die Schwarz IT KG ist als zentraler IT\\-Dienstleister für Auswahl, Bereitstellung und Betrieb sowie Weiterentwicklung von IT\\-Infrastrukturen, IT\\-Plattformen und Business\\-Anwendungen zuständig. Damit erbringt die Schwarz IT sowohl für Kaufland und Lidl als auch für die Schwarz Dienstleistung KG und die Schwarz Zentrale Dienste KG IT\\-Dienstleistungen. Um die Fachbereiche durch IT\\-Lösungen optimal bei deren Geschäftsprozessen zu unterstützen, nimmt die Schwarz IT Anforderungen der Fachbereiche in Beratungsgesprächen auf und erarbeitet gemeinsam mit diesen professionelle und leistungsfähige IT\\-Lösungen
+Deine Aufgaben* Du planst und führst Red Team\\- und Purple Team\\-Einsätze innerhalb der gesamten Schwarz Gruppe aus und genießt dabei viele Freiheiten in der Umsetzung und Auswahl der Angriffsziele
+* Du kennst aktuelle Bedrohungen, Schwachstellen und Exploits und kannst diese in Bezug auf ihr Risiko und Auswirkungen bewerten
+* Du deckst Schwachstellen beispielsweise in Programmen, Konfigurationen, Prozessen oder menschlichem Verhalten auf und entwickelst Techniken zu deren Ausnutzung
+* Du planst und führst physische Angriffe aus, die von Lockpicking und verdecktem Zutritt über das Kopieren von Ausweisen bis hin zu Social Engineering reichen
+* Du erarbeitest dir Wissen über Advanced Threat Actors, deren Taktiken, Techniken und Verfahren (TTPs) und kannst diese in eigenen Angriffsszenarien einsetzen
+* Du entwickelst und betreibst eigene Tools, inklusive eigener Schadsoftware, die gängige Sicherheits\\- und Überwachungssysteme umgehen kann
+* Du arbeitest eng mit dem Blue Team zusammen und unterstützt es in der kontinuierlichen Verbesserung seiner Schutzmechanismen und Prozesse
+* Du planst und führst Tabletop\\-Exercises sowie Capture\\-The\\-Flag Events durch
+
+Dein Profil* Du hast Erfahrung in Cyber Security und im Speziellen in Offensive Security (Pentesting, Red Teaming, Ethical Hacking)
+* Du hast eine schnelle Auffassungsgabe und Verständnis von neuen Situationen, Tools und Technologien und kannst dieses schnell einsetzen
+* Dein Wissen umfasst ein weites Spektrum von Angriffsmethoden und \\-techniken, inklusive post\\-Exploitation und lateral Movement
+* Du hast bereits als Penetrationstester, Red\\-Team Operator oder als Security Researcher gearbeitet
+* Du kennst einschlägige Angriffs\\-Tools und bist mit Netzwerkprotokollen und Cloud Security vertraut
+* Du hast Erfahrung in der Entwicklung neuer Angriffstechniken und in dem Umgehen von typischen Sicherheitssystemen
+* Du beherrscht Skript\\- und Programmiersprachen wie Python, Powershell, Go, C\\#, C\\+\\+ oder Rust, um eigene Tools zu entwickeln
+* Du hast den Drang, Schwachstellen zu finden und mit den Kollegen in den Austausch zu gehen, um diese zu schließen
+* Du zeichnest dich durch hohe analytische, kommunikative und kreative Fähigkeiten aus, arbeitest gerne eigenverantwortlich, im Team und denkst wie ein Angreifer
+* Du bist im Bereich der Offensive Security zertifiziert (OSCP, OSEP, OSED/E, CRTO, CRTE,..)
+* Du trittst überzeugend und sicher auf und kommunizierst dabei in Deutsch und Englisch
+
+Unsere Benefits
+
+
+Dein Ansprechpartner
+
+### **Jana Scherer**
+
+
+Recruiterin* E\\-Mail:
+recruiting@mail.schwarz","","https://de.indeed.com/cmp/Schwarz-Corporate-Solutions-1","https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/55613fc6918ef50cad946b25072b2104","https://jobs.schwarz","Neckarsulm","Decline to state","Decline to state","Wir – die Schwarz Dienstleistungen - sind Dienstleister für die Sparten der Schwarz Gruppe.","","","","","","","software engineer"
+"in-7e4c07f89f025df4","indeed","https://de.indeed.com/viewjob?jk=7e4c07f89f025df4","https://it.schwarz/jobsearch/hr/software-engineer-sap-integration-engineering-m-w-d-GT838","Software Engineer SAP Integration Engineering (m/w/d)","Schwarz Corporate Solutions","Berlin, BE, DE","2025-11-06","","","","","","",False,"","","","recruiting@mail.schwarz","**Standort**
+------------
+
+
+Karl\\-Liebknecht\\-Straße 32  
+
+10178 Berlin
+**Abteilung**
+-------------
+
+
+IT \\- Development
+**Einstieg**
+------------
+
+
+Berufseinsteiger
+**Stellen\\-ID**
+---------------
+
+
+838
+Die Schwarz IT KG ist als zentraler IT\\-Dienstleister für Auswahl, Bereitstellung und Betrieb sowie Weiterentwicklung von IT\\-Infrastrukturen, IT\\-Plattformen und Business\\-Anwendungen zuständig. Damit erbringt die Schwarz IT sowohl für Kaufland und Lidl als auch für die Schwarz Dienstleistung KG und die Schwarz Zentrale Dienste KG IT\\-Dienstleistungen. Um die Fachbereiche durch IT\\-Lösungen optimal bei deren Geschäftsprozessen zu unterstützen, nimmt die Schwarz IT Anforderungen der Fachbereiche in Beratungsgesprächen auf und erarbeitet gemeinsam mit diesen professionelle und leistungsfähige IT\\-Lösungen
+Deine Aufgaben* Du bist verantwortlich für die Beratung, das Design und die Implementierung von SAP Integrations\\-Lösungen für eine der größten SAP Landschaften weltweit
+* In Zusammenarbeit mit Business Consultants entwickelst du Anwendungen, die den Anforderungen des Unternehmens entsprechen
+* Dabei ist auch das Koordinieren, Analysieren und Lösen von Incidents Teil deiner Aufgaben
+* Zudem dokumentierst du neue Prozesse, Lösungsarchitekturen und Anforderungen
+
+Dein Profil* Du hast ein erfolgreich abgeschlossenes Studium der Informatik, Wirtschaftsinformatik oder eine vergleichbare Berufsausbildung
+* Du hast gute Erfahrung mit der SAP Integration Suite und anderen SAP Integrations\\-Technologien
+* Du hast Kenntnisse und Erfahrungen mit OData und REST
+* Du bringst fortgeschrittene Kenntnisse in Groovy Script und JavaScript sowie Core Data Services (CDS) mit
+* Wir arbeiten international, daher bringst du Kenntnisse der deutschen sowie englischen Sprache mit
+
+Unsere Benefits
+
+
+Dein Ansprechpartner
+
+### **Lara Schlimgen**
+
+
+Recruiterin* E\\-Mail:
+recruiting@mail.schwarz","","https://de.indeed.com/cmp/Schwarz-Corporate-Solutions-1","https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/55613fc6918ef50cad946b25072b2104","https://jobs.schwarz","Neckarsulm","Decline to state","Decline to state","Wir – die Schwarz Dienstleistungen - sind Dienstleister für die Sparten der Schwarz Gruppe.","","","","","","","software engineer"
+"in-3dd86b62660446bc","indeed","https://de.indeed.com/viewjob?jk=3dd86b62660446bc","https://super-urlaub-gmbh.jobs.personio.de/job/2151523?language=de","Fullstack Software Engineer (m/w/d) – You Build It, You Own It","GetAway Group","Berlin, BE, DE","2025-11-06","fulltime","","","","","",False,"","","","","##### **Deine Aufgaben**
+
+
+Du wirst Teil eines Engineering\\-Teams, das auf Qualität, pragmatische Architektur und echte Produktverantwortung setzt. Gemeinsam entwickeln wir skalierbare, wartbare und durchdachte Software – mit Fokus auf Impact und Exzellenz.
+
+**Was du bei uns machst:**
+
+* **Du entwickelst** Features und Services im **Frontend (Vue)** und **Backend (PHP, Go)** – robust, getestet und verständlich.
+* **Du gestaltest** APIs, Datenflüsse und Domain\\-Logik – und triffst Architekturentscheidungen mit.
+* **Du arbeitest** mit **CI/CD**, **Docker** und automatisierten Pipelines – effizient und sauber deployt.
+* **Du bringst dich ein** – bei Code Reviews, Pairing und technischen Diskussionen auf Augenhöhe.
+* **Du denkst mit** – über Code hinaus, mit Gespür für Nutzerbedürfnisse, Business\\-Ziele und Produktqualität.
+
+
+##### **Dein Profil**
+
+
+Wir suchen Menschen mit **echtem Talent**, **technischem Feingefühl** und dem Wunsch, im Team richtig gute Software zu bauen.  
+
+Wenn du für **Exzellenz**, **klare Kommunikation** und **produktnahes Denken** brennst – und gern mit anderen gemeinsam auf ein Ziel hinarbeitest – dann passt du perfekt zu uns.
+
+
+Damit du in der Rolle wirklich aufblühen kannst, bringst du idealerweise folgendes mit:* Du hast **2–5 Jahre Erfahrung** als Software Engineer – idealerweise mit **Fullstack\\-Fokus**.
+* Du bist fit im **modernen Frontend\\-Stack**: **Vue, Vite, Storybook, Playwright** sind für dich keine Fremdwörter.
+* Im Backend bewegst du dich sicher mit **Go**, **Symfony** und **Doctrine**.
+* Du hast Erfahrung mit **skalierbaren Architekturen** – von **REST/GraphQL APIs** über **Microservices** bis **Caching** und **Message Queues**.
+* **Clean Code, Testing, CI/CD und Refactoring** sind für dich gelebter Alltag – kein Buzzword\\-Bingo.
+* Du hast ein gutes **technisches Urteilsvermögen**: Du weißt, wann ein MVP reicht und wann es auf Robustheit ankommt.
+* Du kommunizierst klar, gibst und nimmst Feedback offen an – und bringst dich aktiv ins Team ein.
+* Hybrides Arbeiten ist bei uns selbstverständlich – wichtig ist nur, dass du bei Workshops oder Teamveranstaltungen flexibel bist und gern an einem unserer Standorte dabei bist. Diese sind: Berlin, Schwerin, Leipzig und Frankfurt am Main.
+
+**Bonus\\-Punkte**, wenn du Erfahrung mit **GCP, Domain\\-Driven Design** oder **Event\\-basierten Architekturen** hast – aber kein Muss.
+
+
+##### **Warum wir \\- Unsere Benefits**
+
+* **500 € Reiseguthaben pro Jahr** für Buchungen über unsere Plattformen – damit du selbst erlebst, woran du mitarbeitest.
+* **20 % Family \\& Friends Rabatt** auf unsere Reiseangebote – teile deine Leidenschaft fürs Reisen mit den Menschen, die dir wichtig sind.
+* **JobRad** \\- Bewegung, frische Luft und Steuervorteile inklusive: Mit JobRad fährst du clever und gesund – wann und wo du willst.
+* **Team\\-Events an unseren Standorten und darüber hinaus** – wir feiern Erfolge und stärken unsere Zusammenarbeit auch abseits des Bildschirms.
+* **Hybride und flexible Arbeitsmodelle**, die sich deinem Leben anpassen – für echte Work\\-Life\\-Balance.
+* Ein **motiviertes Team**, das Reisen liebt und gemeinsam etwas aufbauen will – in einem Umfeld, das Eigeninitiative und Mitgestaltung fördert.
+
+
+Auf diese Stelle bewerben
+##### **Über uns**
+
+
+Wir sind die **GetAway Group** – seit Januar 2024 vereinen wir die führenden Buchungsplattformen **Kurz\\-mal\\-weg.de** und **Kurzurlaub.de** und sind damit der zentrale Akteur im Kurzreisen\\-Markt der DACH\\-Region.
+
+
+Als Teil der **HomeToGo\\-Gruppe** (www.hometogo.com) profitieren wir von der Infrastruktur und Innovationskraft des weltweit führenden Anbieters für Ferienunterkünfte – und gestalten gleichzeitig unsere eigene, fokussierte Erfolgsgeschichte im Bereich **Hotelarrangements für Kurztrips**.
+
+
+Über unsere Plattformen
+
+* www.kurzurlaub.de
+* www.kurzurlaub.at
+* www.kurzreisen.de
+* www.kurz\\-mal\\-weg.de
+* www.beauty24\\.de
+
+
+…bieten wir unseren Kund:innen exklusive Angebote für Hotels, Wellness, Erlebnisse und mehr – von spontanen Wochenendtrips bis hin zu thematischen Kurzurlauben.
+
+
+Unsere rund 120 Mitarbeiter:innen an den Standorten **Wien, Leipzig, Frankfurt am Main, Schwerin und Berlin** vereint eine gemeinsame Vision:
+
+**Die führende europäische Plattform für Kurzreisen zu werden – und das Reiseverhalten von morgen mitzugestalten.**
+
+
+Wenn du Lust hast, Teil dieser Reise zu werden, Innovationen voranzutreiben und gemeinsam mit uns zu wachsen, dann **bewirb dich jetzt – und bring deine Leidenschaft für Daten, Technologie und Reisen bei uns ein.**","","https://de.indeed.com/cmp/Getaway-Group","https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/845fc9ffba9af1182c169842c03ad330","http://www.getaway.group","Berlin","51 to 200","","Wir bei der GetAway Group freuen uns über Dich, wenn Dir Respekt, Diversität und eigenmotiviertes Arbeiten bei flachen Hierarchien genauso wichtig ist wie uns.","","","","","","","software engineer"
+"in-88fadd38d491fcb9","indeed","https://de.indeed.com/viewjob?jk=88fadd38d491fcb9","https://jobs.ashbyhq.com/galvany/52d7ee3d-3c34-478a-8f1e-dc5faa36d013?utm_source=ng1ypxZpjY","(Senior) Backend Engineer","Galvany","Berlin, BE, DE","2025-11-06","fulltime","","","","","",False,"","","","","**Who we are**
+--------------
+
+
+At GALVANY, we drive the energy transition through software. We’re building an AI\\-based Operating System for sales, planning, installation and operation of heat pumps and integrated energy systems – from single\\-family homes to multi\\-unit buildings, and across our Energy Community as a Virtual Power Plant. GALVANY is a profitable, fast\\-growing company backed by leading investors.
+
+**The role**
+------------
+
+
+As a Backend Engineer at GALVANY, you'll design, build, and optimize scalable backend systems that power our AI\\-based Operating System for heat pumps and energy management, ensuring seamless performance from sales to operations in single\\-family homes, multi\\-unit buildings, and our Virtual Power Plant.
+
+* Develop robust APIs, data integrations, and services to handle complex energy workflows, with a focus on stability, observability, and scalability to directly support end\\-users.
+* Collaborate with cross\\-functional teams to implement features that drive the energy transition.
+* Leverage AI and LLMs to enhance backend solutions and stay ahead in the Gen AI landscape.
+
+**Tech Stack**: Backend with GoLang; ML with Python, PyTorch, and LLMs; Frontend with React, Tailwind, and Shadcn; Mobile with Flutter; General tools including Azure, GitHub, Linear, Notion, Kafka, Benthos (data pipeline), Kestra (workflow engine), and low\\-code process automation platforms.
+
+**What we value**
+-----------------
+
+* **Ownership.** Take end\\-to\\-end responsibility. Fix systemic issues, not just symptoms; champion long\\-term health over short\\-term wins.
+* **Product Thinking.** Outcome over output. Build with user empathy, business context, and data – not just code. Validate assumptions early and measure whether features create real value.
+* **Curiosity.** Ask “why?” relentlessly. Seek new perspectives, challenge assumptions, and share learnings openly – both inside and outside the team.
+* **Pragmatism.** Choose the simplest effective path. Make smart trade\\-offs, consider low\\-code and AI tools, and prioritize reuse of libraries, services, and patterns over reinventing the wheel.
+* **Team First.** Team over ego: win and learn together. Elevate collective goals, communicate transparently and share successes and failures openly.
+
+**What we require**
+-------------------
+
+* **Experience.** 4\\+ years of experience in high\\-performance environments (e.g., top\\-tier consulting, fast\\-scaling startups, or similar).
+* **Track Record.** Proven end\\-to\\-end responsibility in software engineering. From ideation to release.
+* **Background.** Strong background in relevant fields, e.g., Computer Science, Software Engineering, or similar.
+* **Technical Skills.** Strong coding skills with proficiency in relevant languages such as Go, Python, or similar.
+* **Mindset.** Self\\-driven problem\\-solving mindset – no need for micromanagement or specific tickets.
+* **Technical Aptitude.** Technical mindset with a passion for understanding systems, data flows, and integrations, coupled with enthusiasm for continuous learning and problem solving.
+* **Language.** Fluent in English; German is a plus.
+
+**What we offer**
+-----------------
+
+* **Real\\-World Impact.** Your work drives decarbonization – measurable in CO₂ savings, energy efficiency (kWh), and cost reductions (€).
+* **Perks.** Prime office location in Berlin Charlottenburg, high\\-quality subsidized lunch, regular company events and all\\-hands.
+* **Compensation.** Attractive package with VSOP opportunity.
+* **Strong Growth \\& High Impact.** A unique opportunity to join during a hypergrowth phase and actively contribute to company success.
+* **Open Culture.** Flat hierarchies, short decision\\-making paths, and a collaborative, dynamic environment.","","https://de.indeed.com/cmp/Galvany","","","","","","","","","","","","","software engineer"
+"in-f55914779b6ed9b5","indeed","https://de.indeed.com/viewjob?jk=f55914779b6ed9b5","https://ats.rippling.com/prisma-careers/jobs/9e84c754-3f20-4712-be1e-e27775dbdfdd?jobSite=Indeed","Senior Backend Engineer (TypeScript) [Prisma Postgres]","Prisma Data","Berlin, BE, DE","2025-11-06","fulltime","","","","","",True,"","","","","At Prisma, we’re redefining how developers work with databases. If you’re fascinated by the cutting\\-edge data infrastructure powering companies like Twitter, Airbnb, and Facebook, but want the agility, ownership, and impact of a fast\\-moving startup, Prisma is the place for you.
+
+  
+
+Backed by top\\-tier Silicon Valley investors like Amplify Partners, Kleiner Perkins, and IVP, our small, distributed team is making advanced database technology accessible to developers everywhere. Our open\\-source tools are trusted by over 400,000 developers each month, with a thriving community on Discord and GitHub, where we’ve earned 43,000\\+ GitHub Stars.
+
+  
+
+At the heart of our commercial offerings is Prisma Postgres, our flagship product designed to supercharge PostgreSQL with modern developer workflows, performance optimizations, and seamless scaling. Alongside it, Prisma Accelerate, and Studio, provide a world\\-class tookit for building with data.
+
+  
+
+By combining the power of open\\-source with cutting\\-edge commercial solutions, we’re shaping the future of databases, one developer at a time.
+
+### **What would you do at Prisma?**
+
+
+You’ll be part of our Prisma Data Platform team which is responsible for Accelerate, Prisma Postgres and the bare metal cloud that those products are build on. You'll be contributing across the stack to the projects of the team.
+
+
+To give you a clear idea of what the job could entail, here are some examples of the work we’ve done lately or will start soon:
+
+* Design, implement and deploy a websocket server that will allow customers to connect to Prisma Postgres from WASM environments where TCP connections are unavailable.
+* Work closely with the ORM team to define the protocol of that server so they can implement the client adapter.
+* Choose and deploy a globally distributed configuration store (like etcd, rqlite) for encrypted authentication secrets to enable global routing for Prisma Postgres.
+* Work together with an infra engineer to improve automation of our bare metal servers with the goal to reduce the provisioning time of new servers.
+* Troubleshoot and fix a bug where a customer experiences sporadic connectivity issues.
+
+### **An Ideal Candidate Profile**
+
+
+We believe the right candidate for this position should meet a majority of the criteria listed below.
+
+* **8\\+ Years experience** in agile software engineering teams, delivering robust web applications, using TypeScript, NodeJS and golang.
+* **Experience in building and scaling distributed systems.** Experience with bare metal servers is a plus.
+* **Experience in database and backend technologies** like SQL/NoSQL databases and familiarity with cloud services, APIs (GraphQL/REST).
+* **High standards for quality**, ensuring excellence while balancing **pragmatism, purpose, and a strong sense of agency**—taking ownership, making thoughtful trade\\-offs, and driving meaningful impact.
+* **Strong communication skills in English**, both written and verbal—able to articulate complex ideas clearly, adapt messaging to different audiences, **give and receive constructive feedback effectively**, and foster collaboration across teams.
+* **You have a structured thought process**, approaching problems methodically and making well\\-reasoned decisions. **You plan effectively**, setting clear goals, anticipating challenges, and ensuring smooth execution while keeping stakeholders aligned.
+
+### **What's it like to work at Prisma?**
+
+
+You're likely to be a great fit for the team if you ...
+
+* **... have an ownership mindset.** As a member of the team, you'll have an outsized impact on decisions and the way things are executed.
+* **... stay nimble.** It's a startup, things change and you are ok with that. Be ready to re\\-calibrate often and stay flexible.
+* **... be kind and collaborative.** Come in ready to share your ideas and listen to feedback.
+
+### **What's in it for you?**
+
+
+We put our people first\\*\\*.\\*\\* Strong pay, full flexibility, and benefits that make a difference. Take the time off that you need, grow your career, and do work that matters.
+
+* An opportunity to **lead the team shaping Prisma’s cutting\\-edge cloud products**, driving innovation in modern database tooling and redefining how developers build and scale applications — see what we’re building.
+* **A Fun and Supportive Team** that values collaboration, growth, and continuous learning.
+* **Competitive Base Salary and Stock Options**, including extended post\\-termination exercise windows.
+* **Fully Remote Work** with flexibility to work from anywhere within our required time zones. If you prefer an office environment, we provide access to a local co\\-working space for up to ten days per month.
+* **Generous Time Off**, including twenty\\-four days of paid vacation and paid sick leave.
+* **Parental Benefits**, including twenty weeks of fully paid parental leave and child sick leave.
+* **Sabbatical Leave**, with six weeks of fully paid time off after three years of continuous employment.
+* **Mental Health Support**, including four fully paid Mental Health Days per year and access to professional resources.
+* **Tech and Ergonomic Budget** to equip you with the tools you need, plus an ergonomic chair subsidy for your comfort and well\\-being.
+* **Annual Offsites**, bringing the team together twice a year with all expenses paid retreats at exciting locations.
+* **Relocation Support**, offering a relocation package for team members moving to Berlin after twelve months, if you choose to relocate.
+* **\\[US] Health and Pension Benefits**, including comprehensive health, dental, vision, and 401k matching.
+
+### **Remote Work**
+
+
+To ensure effective collaboration we can currently only accept candidates within the timezone **GMT \\-2 to GMT \\+3** for this position.
+
+### **What is our hiring process like?**
+
+* **Introductory Call** with our future manager.
+* **Take Home Assignment** followed by a debrief call
+* **System Design Interview** with one of your peer engineers
+* **Interview** with our Head of Engineering
+* **Final Interview** \\*\\*with our CEO / COO.
+* **Offer**
+
+
+The above serves as a basic outline, we might choose to add or remove steps based on the information that we gather during the process.
+
+
+If you believe that this is the right position for you then please send your resume along with any supporting documentation or information to us via the link provided on this page. We typically respond within 7 business days.
+
+
+In line with our *Fair Treatment and Equal Opportunity Policy*, as well as our *Disability Policy*, Prisma follows fair and merit\\-based hiring practices, ensuring all candidates are evaluated based on their skills, experience, and qualifications. We do not make hiring decisions based on *age*, *race*, *ethnicity, sex, gender identity, parental or caregiver status, trade union membership, disability, religious belief or lack of belief, life expectancy, sexual orientation, genetic information*, or *veteran or military status.*","","https://de.indeed.com/cmp/Prisma-Data","https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/66a9a0557d80a55aadf9ae826382b579","http://www.prisma.io","Worldwide, and;
+
+Prenzlauer Alle 193, Berlin, 10405, Germany","51 to 200","less than $1M (USD)","Prisma is a next generation ORM for Node.JS and TypeScript","","","","","","","software engineer"
+"in-ffc245c86c60e695","indeed","https://de.indeed.com/viewjob?jk=ffc245c86c60e695","https://jobs.smartrecruiters.com/DeliveryHero/744000091972960-software-engineer-react-quick-commerce","Software Engineer (React) - Quick Commerce","Delivery Hero","Berlin, BE, DE","2025-11-06","fulltime","","","","","",False,"","","","","**Company Description**  
+
+As the world’s pioneering local delivery platform, our mission is to deliver an amazing experience, fast, easy, and to your door. We operate in over 70\\+ countries worldwide, powered by tech, designed by people. As one of Europe’s largest tech platforms, headquartered in Berlin, Germany. Delivery Hero has been listed on the Frankfurt Stock Exchange since 2017 and is part of the MDAX stock market index. We enable creative minds to deliver solutions that create impact within our ecosystem. We move fast, take action and adapt. No matter where you're from or what you believe in, we build, we deliver, we lead. We are Delivery Hero.
+
+ **Job Description**  
+
+Be part of redefining how customers experience quick commerce. You’ll help build technology that scales our non\\-food offerings, reaching new market segments and driving revenue growth. By innovating within our Quick Commerce Team, you’ll make Delivery Hero the go\\-to platform for a broad range of products, helping us grow faster and deliver more value to customers around the world.
+
+  
+
+We are looking for a Software Engineer with React to join our ""Quick Commerce"" team. Contribute to the creation of our next\\-generation platform, which works on expanding our amazing delivery to new products such as groceries, pharmaceuticals, flowers, and more. If you're a creative problem solver who is eager to deliver solutions and hungry for a new adventure, an international workplace is waiting for you in the heart of Berlin!
+
+* Building our Global service platform for our global internal/external customers with bleeding edge technical stack (ES6, React \\+ Redux, Webpack).
+* Implement new features and improve the user experience of existing solutions.
+* Be data\\-driven, assess the impact of features, make hypotheses and implement new solutions.
+
+  
+
+**Qualifications**  
+
+* Working experience with JavaScript (ES6\\+), Typescript and/or React
+* 4\\+ years of professional web application development knowledge
+* Write lean, semantic markup and CSS based on modern standards
+* You write unit, behavior and integration tests for current and new scenarios with clean and well\\-documented code
+* A rock\\-solid foundation in Computer Science (data structures, algorithms, software design)
+* Full professional English proficiency
+
+**Nice to have:**
+
+* Mentorship: Capability to successfully transfer knowledge.
+* Experience with different API protocols JSON API, GraphQL, etc.
+* Experience implementing Design Systems.
+
+  
+
+**Additional Information**  
+
+Ensuring you and all our Heroes are looked after, happy, and healthy is always on the menu. Because if you’re in good shape, then we’re in good shape.
+
+* *Make the most of our hybrid working model and join the team for face\\-to\\-face connection and collaboration in our beautiful Berlin campus 2 days a week*
+* *We offer 27 days holiday with an extra day on 2nd and 3rd year of service*
+* *Ensuring you and all our Heroes are looked after, happy, and healthy is always on the menu. Because if you’re in good shape, then we’re in good shape*
+* *Get moving and release those wonderful, mind\\-boosting endorphins: Health Checkups, Meditation, Yoga, Gym \\& Bicycle Subsidy*
+* *Cash. Dough. Cheddar. Whatever you call it, we’ll help you with it: Employee Share Purchase Plan, Sabbatical Bank, Public Transportation Ticket Discount, Life \\& Accident Insurance, Corporate Pension Plan*
+* *Look up and go for it. We will support you in developing yourself and your career: 1\\.000 € Educational Budget, Language Courses, Parental Support*
+* *The power of getting together over some food is unrivaled. Here are a few ways to help you do that. All the yum: Digital Meal Vouchers, Food Vouchers, Online Canteen, Corporate Discounts*
+
+
+We believe diversity and inclusion are key to creating not only an exciting product, but also an amazing customer and employee experience. Fostering this starts with hiring \\- therefore we do not discriminate on the basis of racial identities, religious beliefs, color, national origin, gender identities or expressions, sexual orientations, age, marital or disability statuses, or any other aspect that makes you, you. We encourage you to let us know if you need any accommodations or specific accessibility support to ensure a smooth interview experience—just include it in your application. You're welcome to share your pronouns (he/she/they) right from the start so we can address you respectfully from our first contact.
+
+
+We believe diversity and inclusion are key to creating not only an exciting product, but also an amazing customer and employee experience. Fostering this starts with hiring \\- therefore we do not discriminate on the basis of racial identities, religious beliefs, color, national origin, gender identities or expressions, sexual orientations, age, marital or disability statuses, or any other aspect that makes you, you. We encourage you to let us know if you need any accommodations or specific accessibility support to ensure a smooth interview experience—just include it in your application. You're welcome to share your pronouns (he/she/they) right from the start so we can address you respectfully from our first contact.","Internet And Software","https://de.indeed.com/cmp/Delivery-Hero","https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/a9a3fbedef9fe973ac35741250add19d","https://bit.ly/3bYJHPP","Oranienburger Straße 70 
+10117 Berlin","10,000+","$500M to $1B (USD)","As the world’s leading local delivery platform, our mission is to deliver an amazing experience, fast, easy, and to your door.","","","","","","","software engineer"
+"in-c096991838202fea","indeed","https://de.indeed.com/viewjob?jk=c096991838202fea","https://vacancies.onhires.com/jobs/6717197-senior-technical-leader-regional-cto-ai-saas","Senior Technical Leader / Regional CTO (AI SaaS)","OnHires","Berlin, BE, DE","2025-11-05","fulltime","","","","","",True,"","","","","Full\\-time · Austria, Germany, Europe (Hybrid / Remote possible · DACH focus)
+
+### **About our client**
+
+
+Our client is a fast\\-growing European AI company on a mission to redefine how enterprises deliver customer support.  
+
+They are building a next\\-generation conversational agent platform that allows large organizations to deploy AI agents capable of truly understanding local language, culture, and context — across voice, chat, and email.
+
+
+Unlike generic chatbot solutions, their technology integrates seamlessly with complex enterprise systems and operates at the level of real customer service teams — combining speed, empathy, and precision.
+
+
+Already trusted by leading enterprises in telecom, financial services, and healthcare, and backed by top\\-tier investors, the company is scaling rapidly across Europe.  
+
+You’ll join a high\\-velocity, product\\-driven environment where every team member directly impacts how the world’s largest organizations engage with their customers.
+
+### **The role**
+
+
+We’re looking for an experienced **Technical Leader / Regional CTO** who can bridge architecture, engineering execution, and customer success.  
+
+This is a key role for an entrepreneurial, hands\\-on technologist ready to take ownership of both product delivery and regional technical growth.
+
+
+You’ll serve as the **technical face of the company in the DACH region** — guiding architecture discussions, leading integrations, and building a small but high\\-performing engineering group that can deliver complex AI solutions end\\-to\\-end.
+
+
+If you’ve ever wanted to combine the **impact of a CTO**, the **craft of an architect**, and the **drive of a startup builder**, this is that role.
+
+### **Key responsibilities**
+
+* Lead the technical side of enterprise integrations and AI deployments — from architecture design to production rollout.
+* Join early\\-stage sales and pre\\-sales discussions to assess feasibility, guide technical direction, and deliver solution demos.
+* Build and mentor a local engineering and integration team, setting clear standards for quality and delivery.
+* Drive customer implementations: define technical scope, ensure smooth deployment, and maintain production accuracy.
+* Collaborate closely with Product and AI teams to localize and optimize the platform for regional markets.
+* Represent the company as a technical expert in client meetings, industry events, and strategic partnerships.
+* Continuously improve infrastructure, automation, and performance of large\\-scale AI systems.
+
+### **Who you are**
+
+* **German native speaker (or equivalent proficiency)**, with excellent command of English.
+* 8\\+ years of hands\\-on software engineering experience (backend, integrations, cloud infrastructure).
+* Proven track record in roles such as **Engineering Lead, Solution Architect, Field CTO, or Head of Engineering**.
+* Solid background in **SaaS and enterprise integrations** (APIs, authentication, data flows, monitoring).
+* Experience leading **customer\\-facing technical discussions** and managing delivery for enterprise clients.
+* Fluency in **cloud environments (AWS / Azure / GCP)** and modern DevOps practices (CI/CD, IaC, observability).
+* Strong communicator able to bridge technical and business perspectives.
+* Entrepreneurial mindset: autonomous, structured, and execution\\-focused.
+* Bonus: experience with **AI, NLP, or LLM\\-based systems**, and working in a fast\\-paced startup.
+
+### **Why join**
+
+* Be part of a fast\\-growing AI scale\\-up shaping the future of enterprise automation.
+* Build something real: you’ll design, deploy, and lead — not just advise.
+* Work with an ambitious, collaborative, international team of AI experts, engineers, and entrepreneurs.
+* Competitive package with performance\\-based upside (salary \\+ stock options).
+* Hybrid / remote flexibility across Europe.","","https://de.indeed.com/cmp/Onhires","","","","","","","","","","","","","software engineer"
+"in-b892e29b3071dbd6","indeed","https://de.indeed.com/viewjob?jk=b892e29b3071dbd6","https://careers.rivian.com/jobs/27383/job?utm_source=indeed_integration&iis=Job%20Board&iisn=Indeed&indeed-apply-token=73a2d2b2a8d6d5c0a62696875eaebd669103652d3f0c2cd5445d3e66b1592b0f","Director Software Engineering - Infotainment & Connectivity","Rivian","Berlin-Friedrichshain, BE, DE","2025-11-05","fulltime","","","","","",False,"","","","candidateaccommodations@rivian.com","About Us:
+
+Rivian is on a mission to keep the world adventurous forever. This goes for the emissions\\-free Electric Adventure Vehicles we build, and the curious, courageous souls we seek to attract.  
+
+As a company, we constantly challenge what’s possible, never simply accepting what has always been done. We reframe old problems, seek new solutions and operate comfortably in areas that are unknown. Our backgrounds are diverse, but our team shares a love of the outdoors and a desire to protect it for future generations.
+Responsibilities:
+#### **Strategic Leadership \\& Site Management**
+
+* **Act as the Berlin Site Leader**, setting the overall vision, strategy, and operational roadmap for the site, aligning with global organizational goals and company values.
+* **Build, lead, and grow** a high\\-performing engineering team (platform engineers, software architects, etc.), providing strong technical guidance, career development, and mentorship.
+* **Foster a positive, inclusive, and high\\-performance office culture** that promotes shared innovation, accountability, and continuous improvement.
+* Present technical strategies, design concepts, and progress updates to **senior leadership and external stakeholders**, effectively communicating rationale and impact.
+
+#### **Technical Oversight \\& Delivery**
+
+* Provide **hands\\-on technical and architectural leadership** across the embedded software stack, including wireless, HAL, kernel, middleware, and integration layers.
+* Drive the **integration and delivery** of our platform features onto our partners’ vehicles by collaborating closely with global platform teams and the brands' engineering teams across Europe.
+* **Define and set engineering standards, best practices, and development processes** (e.g., code reviews, testing strategies, design documentation) for the vehicle software team globally, ensuring a culture of quality and stability.
+* Guide the team to solve complex, cross\\-cutting issues related to audio, display, graphics, and **system performance** to ensure platform stability and a cohesive user experience.
+
+#### **Cross\\-Functional Collaboration \\& Partner Relations**
+
+* **Partner closely with global teams** including Product Management, Design/UX, Hardware, Quality Assurance, and other Engineering Directors to ensure seamless integration and cohesive, on\\-time delivery.
+* Manage relationships and provide technical leadership when working with **external partners, design agencies, and contractors** as required.
+* Frequent travel to partner sites within Europe and periodic travel to the US will be required.
+
+
+Qualifications:
+* **Education:** Bachelor's or Master's degree in Computer Science, Electrical Engineering, or a related technical field, or equivalent practical experience.
+* **Experience:**
+* + **10\\+ years** of professional experience in embedded software development, preferably within the automotive or mobile industry.
+	+ **5\\+ years** of experience in a senior technical leadership or management role, with a proven track record of **building and leading high\\-performing software engineering teams** across multiple projects or locations.
+	+ **Demonstrated experience in a Site Leader, Director, or equivalent strategic management role** is highly valued.
+* **Technical Expertise:**
+* + Strong proficiency in **C/C\\+\\+**, with a deep understanding of the **Android** **or Linux** internals.
+	+ Solid experience debugging complex, cross\\-system software issues on **embedded systems**.
+	+ Production class experience working with IoT and connected systems.
+* **Leadership \\& Communication:**
+* + Proven ability to **articulate design/technical concepts**, influence stakeholders, and drive strategic thinking.
+	+ **Fluency in English** (written and verbal) is required.
+
+### **Preferred Qualifications**
+
+* Experience with **Android Automotive OS, Wireless protocols** are a significant pluses.
+
+
+Strong strategic thinking and problem\\-solving abilities within a **fast\\-paced, global organization**.
+Company Statements:
+#### **Equal Opportunity**
+
+
+Rivian is an equal opportunity employer and complies with all applicable federal, state, and local fair employment practices laws. All qualified applicants will receive consideration for employment without regard to race, color, religion, national origin, ancestry, sex, sexual orientation, gender, gender expression, gender identity, genetic information or characteristics, physical or mental disability, marital/domestic partner status, age, military/veteran status, medical condition, or any other characteristic protected by law.  
+
+Rivian is committed to ensuring that our hiring process is accessible for persons with disabilities. If you have a disability or limitation, such as those covered by the Americans with Disabilities Act, that requires accommodations to assist you in the search and application process, please email us at candidateaccommodations@rivian.com.#### **Candidate Data Privacy**
+
+
+Rivian may collect, use and disclose your personal information or personal data (within the meaning of the applicable data protection laws) when you apply for employment and/or participate in our recruitment processes (“Candidate Personal Data”). This data includes contact, demographic, communications, educational, professional, employment, social media/website, network/device, recruiting system usage/interaction, security and preference information. Rivian may use your Candidate Personal Data for the purposes of (i) tracking interactions with our recruiting system; (ii) carrying out, analyzing and improving our application and recruitment process, including assessing you and your application and conducting employment, background and reference checks; (iii) establishing an employment relationship or entering into an employment contract with you; (iv) complying with our legal, regulatory and corporate governance obligations; (v) recordkeeping; (vi) ensuring network and information security and preventing fraud; and (vii) as otherwise required or permitted by applicable law.  
+
+Rivian may share your Candidate Personal Data with (i) internal personnel who have a need to know such information in order to perform their duties, including individuals on our People Team, Finance, Legal, and the team(s) with the position(s) for which you are applying; (ii) Rivian affiliates; and (iii) Rivian’s service providers, including providers of background checks, staffing services, and cloud services.  
+
+Rivian may transfer or store internationally your Candidate Personal Data, including to or in the United States, Canada, the United Kingdom, and the European Union and in the cloud, and this data may be subject to the laws and accessible to the courts, law enforcement and national security authorities of such jurisdictions. **Please note that we are currently not accepting applications from third party application services.**","","https://de.indeed.com/cmp/Rivian-3","https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/14c0120b4004bec06139ec888b8f5cd6","https://careers.rivian.com/careers-home/","Irvine, CA","10,000+","Decline to state","","","","","","","","software engineer"
+"in-80c3009fca7a199b","indeed","https://de.indeed.com/viewjob?jk=80c3009fca7a199b","https://jobs.sap.com/job/Berlin-Senior-Technical-Product-Owner-%28mfd%29-Database-Infra-Team-in-CloudOS-Group-in-P&E-SAP-Signavio-10557/1265144601/?feedId=118200&utm_source=Indeed&utm_campaign=SAP_Indeed","Senior Technical Product Owner (m/f/d)- Database Infra Team in CloudOS Group in P&E SAP Signavio","SAP","Berlin, BE, DE","2025-11-05","fulltime","","","","","",False,"","","","Careers@sap.com","**We help the world run better**
+
+  
+
+At SAP, we enable you to bring out your best. Our company culture is focused on collaboration and a shared passion to help the world run better. How? We focus every day on building the foundation for tomorrow and creating a workplace that embraces differences, values flexibility, and is aligned to our purpose\\-driven and future\\-focused work. We offer a highly collaborative, caring team environment with a strong focus on learning and development, recognition for your individual contributions, and a variety of benefit options for you to choose from.
+
+ **Summary**
+
+
+We are looking for an experienced Product Owner with a technical background to strengthen our Database team in the CloudOS Group. The team's mission is to drive improvements to the database landscape of SAP Signavio and enabling transition to HANA Cloud technology.
+
+
+You will be working closely with the Tech Lead and will be responsible for building a roadmap, stakeholder communication and the day\\-to\\-day backlog management for your team. Key responsibilities also include understanding the bigger picture, prioritizing the needs of dev teams, implementing our tech strategy, creating focus and building understanding and excitement within the team.
+
+ **What You'll Do**
+
+
+Your job is to make sure that the team works on what’s most important and valuable at any given time. To do that, you:
+
+* Distill business context, requirements, our objectives, as well expectations of internal and external customers into a clear picture.
+* Work with the team, Tech Lead, Principal Tech Lead and Head of CloudOS to create a roadmap based on our cloud strategy.
+* Align priorities and maintain a prioritized backlog across all sources of work (for example other teams’ dependencies, tech strategy…).
+* Facilitate concepts for problems that are not well defined yet.
+* Own the team’s backlog, define and write epics, stories in collaboration with engineers.
+* Translate needs and manage expectations across the team and stakeholders.
+* Create transparency on progress, risks and scope changes through our established channels and artifacts.
+* Manage for progress, help remove impediments to ensure delivery.
+* Serve as the spokesperson and ambassador of the team, and celebrate their achievements across the organization.
+* Improve disaster recovery strategies and participate in security audits.
+* Translate business requirements into tasks that focus on improving dev experience and automation.
+
+ **What You'll Bring**
+
+* Hands\\-on experience in working as a Product Owner or Manager in an agile environment.
+* Technical background and good understanding of database or infrastructure domain (ideally AWS and/or HANA), or a technical background in related field plus the willingness to immerse yourself in a new domain.
+* Ability to lead through, connect and create progress when things aren’t clear or the way forward is not yet well\\-defined.
+* Communication skills that allow you to translate between different domains, adjust to different audiences and build relationships within and beyond the team.
+* A solid toolkit and methods that help you along the path from problem to a solution delivered and adopted (prioritization, concepting, slicing and aligning scope, planning and estimation etc.).
+* An eye on non\\-functional requirements such as security, performance, scalability, availability, cost and operations.
+* A strong user focus, with methods for discovering user needs, introducing KPIs, metrics, etc.
+* A willingness to contribute on our journey from our startup heritage to our SAP Signavio future.
+
+ **Meet Your Team**
+
+
+Building on the intelligent enterprise strategy, SAP Signavio set out to support and accompany SAP customers in navigating through their digital transformation by helping them understand and improve their business processes.
+
+
+The CloudOS group is one of five engineering groups in the P\\&E department of SAP Signavio, focusing on cloud infrastructure. Our mission is to make the foundation for our application developers to focus on creating value \\- profiting from the scale of SAP without being too dragged down by overhead, with low cognitive load, and with security \\& compliance built\\-in. We pride ourselves in following a Platform Engineering approach, being infrastructure\\-as\\-code only, and we continuously push to adopt new technologies that solve our most significant issues once proven.
+
+ **We are SAP**
+
+
+SAP innovations help more than 400,000 customers worldwide work together more efficiently and use business insight more effectively. Originally known for leadership in enterprise resource planning (ERP) software, SAP has evolved to become a market leader in end\\-to\\-end busines
+
+  
+
+\\#SAPBPICareers \\#businessprocessintelligence \\#signavio \\#bpi \\#LI\\-Hybrid \\#MultiSalesDE
+
+ **Bring out your best**
+
+
+SAP innovations help more than four hundred thousand customers worldwide work together more efficiently and use business insight more effectively. Originally known for leadership in enterprise resource planning (ERP) software, SAP has evolved to become a market leader in end\\-to\\-end business application software and related services for database, analytics, intelligent technologies, and experience management. As a cloud company with two hundred million users and more than one hundred thousand employees worldwide, we are purpose\\-driven and future\\-focused, with a highly collaborative team ethic and commitment to personal development. Whether connecting global industries, people, or platforms, we help ensure every challenge gets the solution it deserves. At SAP, you can bring out your best.
+
+ **We win with inclusion**
+
+
+SAP’s culture of inclusion, focus on health and well\\-being, and flexible working models help ensure that everyone – regardless of background – feels included and can run at their best. At SAP, we believe we are made stronger by the unique capabilities and qualities that each person brings to our company, and we invest in our employees to inspire confidence and help everyone realize their full potential. We ultimately believe in unleashing all talent and creating a better and more equitable world.  
+
+SAP is proud to be an equal opportunity workplace and is an affirmative action employer. We are committed to the values of Equal Employment Opportunity and provide accessibility accommodations to applicants with physical and/or mental disabilities. If you are interested in applying for employment with SAP and are in need of accommodation or special assistance to navigate our website or to complete your application, please send an e\\-mail with your request to Recruiting Operations Team: Careers@sap.com.  
+
+For SAP employees: Only permanent roles are eligible for the SAP Employee Referral Program, according to the eligibility rules set in the SAP Referral Policy. Specific conditions may apply for roles in Vocational Training.
+
+  
+
+Requisition ID: 411000 \\| Work Area: Solution und Produkt Management \\| Expected Travel: 0 \\- 10% \\| Career Status: Berufserfahren \\| Employment Type: Vollzeit, unbefristet \\| Additional Locations: \\#LI\\-Hybrid","Internet And Software","https://de.indeed.com/cmp/SAP","https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/d17f7c102a43b1dce3ba341c8dbad2b0","http://jobs.sap.com","Dietmar-Hopp-Allee 16
+Walldorf, 69190
+Germany","10,000+","more than $10B (USD)","SAP's purpose is to help the world run better and improve people's lives with sustainability at the core.","","","","","","","software engineer"
+"in-a2ca399f6ee2e9eb","indeed","https://de.indeed.com/viewjob?jk=a2ca399f6ee2e9eb","https://jobs.ashbyhq.com/galvany/398b3896-4ac1-44c3-b8de-1da6bc3959a1?utm_source=ng1ypxZpjY","(Senior) Mobile App Engineer","Galvany","Berlin, BE, DE","2025-11-05","fulltime","","","","","",False,"","","","","**Who we are**
+--------------
+
+
+At GALVANY, we drive the energy transition through software. We’re building an AI\\-based Operating System for sales, planning, installation and operation of heat pumps and integrated energy systems – from single\\-family homes to multi\\-unit buildings, and across our Energy Community as a Virtual Power Plant. GALVANY is a profitable, fast\\-growing company backed by leading investors.
+
+**The role**
+------------
+
+
+As a Mobile App Engineer at GALVANY, you'll build and maintain mobile applications for our AI\\-based Operating System, providing on\\-the\\-go access for managing heat pumps and energy systems with a strong emphasis on design and user experience to bring the product vision to users in sales, installation, operations, and our Virtual Power Plant.
+
+* Develop cross\\-platform apps with intuitive features for energy users and installers, using Flutter for efficient mobile development.
+* Integrate with backend APIs and ensure app performance and security.
+* Apply AI and LLMs to enhance app capabilities and explore the Gen AI landscape.
+
+**Tech Stack**: Backend with GoLang; ML with Python, PyTorch, and LLMs; Frontend with React, Tailwind, and Shadcn; Mobile with Flutter; General tools including Azure, GitHub, Linear, Notion, Kafka, Benthos (data pipeline), n8n / Kestra (workflow engine), and low\\-code process automation platforms.
+
+**What we value**
+-----------------
+
+* **Ownership.** Take end\\-to\\-end responsibility. Fix systemic issues, not just symptoms; champion long\\-term health over short\\-term wins.
+* **Product Thinking.** Outcome over output. Build with user empathy, business context, and data – not just code. Validate assumptions early and measure whether features create real value.
+* **Curiosity.** Ask “why?” relentlessly. Seek new perspectives, challenge assumptions, and share learnings openly – both inside and outside the team.
+* **Pragmatism.** Choose the simplest effective path. Make smart trade\\-offs, consider low\\-code and AI tools, and prioritize reuse of libraries, services, and patterns over reinventing the wheel.
+* **Team First.** Team over ego: win and learn together. Elevate collective goals, communicate transparently and share successes and failures openly.
+
+**What we require**
+-------------------
+
+* **Experience.** 4\\+ years of experience in high\\-performance environments (e.g., top\\-tier consulting, fast\\-scaling startups, or similar).
+* **Track Record.** Proven end\\-to\\-end responsibility in mobile app development. From ideation to release.
+* **Background.** Strong background in relevant fields, e.g., Computer Science, Software Engineering, or similar.
+* **Technical Skills.** Strong coding skills with proficiency in Flutter/Dart, or similar mobile frameworks.
+* **Mindset.** Self\\-driven problem\\-solving mindset – no need for micromanagement or specific tickets.
+* **Technical Aptitude.** Technical mindset with a passion for understanding systems, data flows, and integrations, coupled with enthusiasm for continuous learning and problem solving.
+* **Language.** Fluent in English; German is a plus.
+
+**What we offer**
+-----------------
+
+* **Real\\-World Impact.** Your work drives decarbonization – measurable in CO₂ savings, energy efficiency (kWh), and cost reductions (€).
+* **Perks.** Prime office location in Berlin Charlottenburg, high\\-quality subsidized lunch, regular company events and all\\-hands.
+* **Compensation.** Attractive package with VSOP opportunity.
+* **Strong Growth \\& High Impact.** A unique opportunity to join during a hypergrowth phase and actively contribute to company success.
+* **Open Culture.** Flat hierarchies, short decision\\-making paths, and a collaborative, dynamic environment.","","https://de.indeed.com/cmp/Galvany","","","","","","","","","","","","","software engineer"
+"in-84e0eb3595c91c8c","indeed","https://de.indeed.com/viewjob?jk=84e0eb3595c91c8c","https://jobs.ashbyhq.com/galvany/c212c296-73af-4e8c-8be7-274d6f297544?utm_source=ng1ypxZpjY","(Senior) Frontend Engineer","Galvany","Berlin, BE, DE","2025-11-05","fulltime","","","","","",False,"","","","","**Who we are**
+--------------
+
+
+At GALVANY, we drive the energy transition through software. We’re building an AI\\-based Operating System for sales, planning, installation and operation of heat pumps and integrated energy systems – from single\\-family homes to multi\\-unit buildings, and across our Energy Community as a Virtual Power Plant. GALVANY is a profitable, fast\\-growing company backed by leading investors.
+
+**The role**
+------------
+
+
+As a Frontend Engineer at GALVANY, you'll develop responsive interfaces for our AI\\-based Operating System, visualizing energy data and workflows with a strong emphasis on design and user experience to bring the product vision to users in sales, planning, installation, and operations in homes, buildings, and our Virtual Power Plant.
+
+* Build user\\-friendly components and ensure seamless integration with backend services.
+* Collaborate on design and functionality to create impactful user experiences.
+* Leverage AI and LLMs to innovate frontend features and stay current with Gen AI trends.
+
+**Tech Stack**: Backend with GoLang; ML with Python, PyTorch, and LLMs; Frontend with React, Tailwind, and Shadcn; Mobile with Flutter; General tools including Azure, GitHub, Linear, Notion, Kafka, Benthos (data pipeline), n8n / Kestra (workflow engine), and low\\-code process automation platforms.
+
+**What we value**
+-----------------
+
+* **Ownership.** Take end\\-to\\-end responsibility. Fix systemic issues, not just symptoms; champion long\\-term health over short\\-term wins.
+* **Product Thinking.** Outcome over output. Build with user empathy, business context, and data – not just code. Validate assumptions early and measure whether features create real value.
+* **Curiosity.** Ask “why?” relentlessly. Seek new perspectives, challenge assumptions, and share learnings openly – both inside and outside the team.
+* **Pragmatism.** Choose the simplest effective path. Make smart trade\\-offs, consider low\\-code and AI tools, and prioritize reuse of libraries, services, and patterns over reinventing the wheel.
+* **Team First.** Team over ego: win and learn together. Elevate collective goals, communicate transparently and share successes and failures openly.
+
+**What we require**
+-------------------
+
+* **Experience.** 4\\+ years of experience in high\\-performance environments (e.g., top\\-tier consulting, fast\\-scaling startups, or similar).
+* **Track Record.** Proven end\\-to\\-end responsibility in frontend development. From ideation to release.
+* **Background.** Strong background in relevant fields, e.g., Computer Science, Software Engineering, or similar.
+* **Technical Skills.** Strong coding skills with proficiency in TypeScript/JavaScript, React, or similar.
+* **Mindset.** Self\\-driven problem\\-solving mindset – no need for micromanagement or specific tickets.
+* **Technical Aptitude.** Technical mindset with a passion for understanding systems, data flows, and integrations, coupled with enthusiasm for continuous learning and problem solving.
+* **Language.** Fluent in English; German is a plus.
+
+**What we offer**
+-----------------
+
+* **Real\\-World Impact.** Your work drives decarbonization – measurable in CO₂ savings, energy efficiency (kWh), and cost reductions (€).
+* **Perks.** Prime office location in Berlin Charlottenburg, high\\-quality subsidized lunch, regular company events and all\\-hands.
+* **Compensation.** Attractive package with VSOP opportunity.
+* **Strong Growth \\& High Impact.** A unique opportunity to join during a hypergrowth phase and actively contribute to company success.
+* **Open Culture.** Flat hierarchies, short decision\\-making paths, and a collaborative, dynamic environment.","","https://de.indeed.com/cmp/Galvany","","","","","","","","","","","","","software engineer"
+"in-ca8f2e997db2dcb2","indeed","https://de.indeed.com/viewjob?jk=ca8f2e997db2dcb2","https://jobs.ashbyhq.com/galvany/5308417c-aea7-42c8-8c5c-6ef00b9dcd2a?utm_source=ng1ypxZpjY","(Senior) Data Engineer","Galvany","Berlin, BE, DE","2025-11-05","fulltime","","","","","",False,"","","","","**Who we are**
+--------------
+
+
+At GALVANY, we drive the energy transition through software. We’re building an AI\\-based Operating System for sales, planning, installation and operation of heat pumps and integrated energy systems – from single\\-family homes to multi\\-unit buildings, and across our Energy Community as a Virtual Power Plant. GALVANY is a profitable, fast\\-growing company backed by leading investors.
+
+**The role**
+------------
+
+
+As a Data Engineer at GALVANY, you'll architect and maintain data pipelines to fuel AI models and analytics within our Operating System, processing real\\-time energy data from heat pumps and integrated systems for sales, planning, installation, and our Virtual Power Plant.
+
+* Build scalable data infrastructure and pipelines to support insights and decision\\-making.
+* Ensure data quality, security, and efficiency across the energy ecosystem and internal business processes, delivering the right data in the right place at the right time.
+* Use AI and LLMs to innovate data solutions and explore the Gen AI landscape.
+
+**Tech Stack**: Backend with GoLang; ML with Python, PyTorch, and LLMs; Frontend with React, Tailwind, and Shadcn; Mobile with Flutter; General tools including Azure, GitHub, Linear, Notion, Kafka, Benthos (data pipeline), n8n/Kestra (workflow engine), and low\\-code process automation platforms.
+
+**What we value**
+-----------------
+
+* **Ownership.** Take end\\-to\\-end responsibility. Fix systemic issues, not just symptoms; champion long\\-term health over short\\-term wins.
+* **Product Thinking.** Outcome over output. Build with user empathy, business context, and data – not just code. Validate assumptions early and measure whether features create real value.
+* **Curiosity.** Ask “why?” relentlessly. Seek new perspectives, challenge assumptions, and share learnings openly – both inside and outside the team.
+* **Pragmatism.** Choose the simplest effective path. Make smart trade\\-offs, consider low\\-code and AI tools, and prioritize reuse of libraries, services, and patterns over reinventing the wheel.
+* **Team First.** Team over ego: win and learn together. Elevate collective goals, communicate transparently and share successes and failures openly.
+
+**What we require**
+-------------------
+
+* **Experience.** 4\\+ years of experience in high\\-performance environments (e.g., top\\-tier consulting, fast\\-scaling startups, or similar)
+* **Track Record.** Proven end\\-to\\-end responsibility in data engineering. From ideation to release.
+* **Background.** Strong background in relevant fields, e.g., Computer Science, Mathematics, Machine Learning, or similar.
+* **Technical Skills.** Strong coding skills with proficiency in relevant languages such as Python, SQL, or similar.
+* **Mindset.** Self\\-driven problem\\-solving mindset – no need for micromanagement or specific tickets.
+* **Technical Aptitude.** Technical mindset with a passion for understanding systems, data flows, and integrations, coupled with enthusiasm for continuous learning and problem solving.
+* **Language.** Fluent in English; German is a plus.
+
+**What we offer**
+-----------------
+
+* **Real\\-World Impact.** Your work drives decarbonization – measurable in CO₂ savings, energy efficiency (kWh), and cost reductions (€).
+* **Perks.** Prime office location in Berlin Charlottenburg, high\\-quality subsidized lunch, regular company events and all\\-hands.
+* **Compensation.** Attractive package with VSOP opportunity.
+* **Strong Growth \\& High Impact.** A unique opportunity to join during a hypergrowth phase and actively contribute to company success.
+* **Open Culture.** Flat hierarchies, short decision\\-making paths, and a collaborative, dynamic environment.","","https://de.indeed.com/cmp/Galvany","","","","","","","","","","","","","software engineer"
+"in-f6c6cbf9d8818488","indeed","https://de.indeed.com/viewjob?jk=f6c6cbf9d8818488","https://jobs.ashbyhq.com/galvany/37b8e5de-7f2b-4421-9d8c-2393ec849b4a?utm_source=ng1ypxZpjY","(Senior) DevOps Engineer","Galvany","Berlin, BE, DE","2025-11-05","fulltime","","","","","",False,"","","","","**Who we are**
+--------------
+
+
+At GALVANY, we drive the energy transition through software. We’re building an AI\\-based Operating System for sales, planning, installation and operation of heat pumps and integrated energy systems – from single\\-family homes to multi\\-unit buildings, and across our Energy Community as a Virtual Power Plant. GALVANY is a profitable, fast\\-growing company backed by leading investors.
+
+**The role**
+------------
+
+
+As a DevOps Engineer at GALVANY, you'll manage infrastructure and deployment pipelines for our AI\\-based Operating System, ensuring reliability and scalability for heat pump and energy system management from homes to our Virtual Power Plant.
+
+* Automate CI/CD processes and monitor cloud environments for optimal performance.
+* Support engineering teams in deploying features that advance the energy transition.
+* Utilize AI and LLMs to optimize DevOps practices and navigate the Gen AI ecosystem.
+
+**Tech Stack**: Backend with GoLang; ML with Python, PyTorch, and LLMs; Frontend with React, Tailwind, and Shadcn; Mobile with Flutter; General tools including Azure, GitHub, Linear, Notion, Kafka, Benthos (data pipeline), n8n / Kestra (workflow engine), and low\\-code process automation platforms.
+
+**What we value**
+-----------------
+
+* **Ownership.** Take end\\-to\\-end responsibility. Fix systemic issues, not just symptoms; champion long\\-term health over short\\-term wins.
+* **Product Thinking.** Outcome over output. Build with user empathy, business context, and data – not just code. Validate assumptions early and measure whether features create real value.
+* **Curiosity.** Ask “why?” relentlessly. Seek new perspectives, challenge assumptions, and share learnings openly – both inside and outside the team.
+* **Pragmatism.** Choose the simplest effective path. Make smart trade\\-offs, consider low\\-code and AI tools, and prioritize reuse of libraries, services, and patterns over reinventing the wheel.
+* **Team First.** Team over ego: win and learn together. Elevate collective goals, communicate transparently and share successes and failures openly.
+
+**What we require**
+-------------------
+
+* **Experience.** 5\\+ years of experience in high\\-performance environments (e.g., top\\-tier consulting, fast\\-scaling startups, or similar).
+* **Track Record.** Proven end\\-to\\-end responsibility in infrastructure/DevOps. From ideation to release.
+* **Background.** Strong background in relevant fields, e.g., Computer Science, Software Engineering, or similar.
+* **Technical Skills.** Coding skills with proficiency in scripting languages like Python, JavaScript, Bash, or similar. Strong Terraform IaC experience.
+* **Mindset.** Self\\-driven problem\\-solving mindset – no need for micromanagement or specific tickets.
+* **Technical Aptitude.** Technical mindset with a passion for understanding systems, data flows, and integrations, coupled with enthusiasm for continuous learning and problem solving.
+* **Language.** Fluent in English; German is a plus.
+
+**What we offer**
+-----------------
+
+* **Real\\-World Impact.** Your work drives decarbonization – measurable in CO₂ savings, energy efficiency (kWh), and cost reductions (€).
+* **Perks.** Prime office location in Berlin Charlottenburg, high\\-quality subsidized lunch, regular company events and all\\-hands.
+* **Compensation.** Attractive package with VSOP opportunity.
+* **Strong Growth \\& High Impact.** A unique opportunity to join during a hypergrowth phase and actively contribute to company success.
+* **Open Culture.** Flat hierarchies, short decision\\-making paths, and a collaborative, dynamic environment.","","https://de.indeed.com/cmp/Galvany","","","","","","","","","","","","","software engineer"
+"in-5655d493223bbb1c","indeed","https://de.indeed.com/viewjob?jk=5655d493223bbb1c","https://t.gohiring.com/h/2a4aca84d19cdbff20f076c03a2f5b81fcb0a29361b3301e0625ddc4500094a7?source=Indeed","Senior Full-Stack Software Engineer (m/f/d)","1KOMMA5˚","Berlin, BE, DE","2025-11-05","fulltime","","","","","",True,"","","","","#### **1KOMMA5°**
+
+
+We are looking for you to join our tech team in Berlin, Munich, or Hamburg. 1KOMMA5° is creating Germany's largest one\\-stop\\-shop for the sale, installation, and servicing of solar panels, heat pumps, electricity solutions, and charging infrastructure. And the best part? They are all interconnected!  
+
+  
+
+Become a part of our mission and learn more about our Product \\& Tech team!
+
+#### **Your mission**
+
+
+You will help **transform the business of selling renewable technologies** at scale. With our core marketing automation and CRM platforms. We redefine growth processes to accelerate the global energy transition empowering private homes and small businesses to adopt sustainable energy solutions.  
+
+  
+
+As a **Senior Software Engineer** at **1KOMMA5°**, you will take technical ownership of key systems and features, driving architectural decisions and ensuring scalability, reliability, and performance. You’ll collaborate closely with other engineers, product managers, and stakeholders to shape our technical direction and deliver high\\-impact solutions. Beyond writing great code, you’ll mentor teammates, champion engineering excellence, and help evolve our development and deployment practices to the next level.  
+
+  
+
+**Our Stack:**
+
+  
+
+* Next.js/TypeScript for frontend applications \\& NestJS/TypeScript for backend applications
+* TypeScript for CRM customizations \\& workflow automation with Windmill
+* Ruby on Rails for one API\\-only application
+* Infrastructure as code, deployment to Google Cloud, observability with Datadog
+* Google Cloud Tasks and Delayed Job for background jobs
+
+#### **Your profile**
+
+**Key responsibilities include but are not limited to:**
+
+  
+
+* Contribute as a **senior full\\-stack engineer** within a team of self\\-driven software developers
+* Design, build, and maintain **business\\-critical systems** across the stack. From scalable backend services to performant, user\\-friendly frontends
+* Translate complex and loosely defined business problems into **clear, actionable technical solutions**
+* Champion **clean architecture**, component reusability, and maintainable UI patterns using modern frameworks (e.g. React, Next.js, or similar)
+* Drive **experiment\\-driven innovation** and uphold strong engineering practices in testing, CI/CD, observability, and code quality
+* Continuously improve **developer experience** by reducing technical debt, automating workflows, and documenting key decisions and operational processes
+* Operate effectively in an **asynchronous, outcome\\-oriented environment**, managing your work autonomously and maintaining clear communication through documentation and structured updates
+* Contribute to **lightweight project management** by defining milestones, ensuring technical feasibility, and aligning engineering work with product goals
+
+**You have:**  
+
+* Extensive experience writing **maintainable, reusable, and testable code** in **TypeScript**, with strong skills in both **frontend frameworks** (e.g. React, Next.js) and **backend technologies** (e.g. Node.js, NestJS, or similar)
+* Strong understanding of **API design**, data modeling, and system integration (RESTful or GraphQL)
+* Proven ability to **own features end\\-to\\-end**, from UX and architecture to deployment and monitoring
+* A pragmatic, product\\-focused mindset that balances technical excellence with delivering customer value
+* Curiosity and initiative to explore new tools and methods that improve product quality and engineering efficiency
+* Excellent written and spoken **English**; **German** is a plus
+* **Residency in Germany**
+
+#### **Benefits**
+
+* You are part of an international, dynamic, and highly motivated team of people who have proven to make things happen
+* With your work, you accelerate the ""energy transition"" and hence have a direct impact on our climate
+* Work with and learn from other super\\-smart colleagues
+* You will enjoy direct contact with core decision\\-makers
+* You will enjoy the best chances of entering full\\-time in one of Europe’s most thriving scaleups
+* You work remotely (Germany\\-wide), with offices in Hamburg, Berlin or Munich
+* Create a healthy balance alongside your work and enjoy all the benefits of the EGYM Wellpass
+* Benefits and discounts are yours with Futurebens
+* Whether city bike or e\\-bike \\- be flexible with our job bike leasing and do something good for the environment at the same time
+
+#### **About us**
+
+
+""At 1KOMMA5°, our vision is to accelerate CO2 neutral life for all! We created an easy one\\-stop\\-shop to buy and install solar, charging stations and heat pumps, with the purpose of liberating all European homes from the shackles of fossil fuels. With Heartbeat, we make clean energy smarter. Connecting our customers into one powerful clean energy operating system to enable flexible tariffs and to ultimately follow the rhythm of wind and sun!"" \\- Philipp Schröder (CEO 1KOMMA5°)","","https://de.indeed.com/cmp/1komma5","https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/e337662c91a5a86c7ce660c170469d0a","https://www.1komma5grad.com/de","","","","","","","","","","","software engineer"
+"in-12fdc88bbc88da47","indeed","https://de.indeed.com/viewjob?jk=12fdc88bbc88da47","https://t.gohiring.com/h/758f9c9facd2560aff09506d2e655daccb3ebbff55904515829cc77233827476?source=Indeed","Backend Engineer (m/f/d)","Mercanis","Berlin, BE, DE","2025-11-05","fulltime","","","","","",True,"","","","","#### **Your mission at Mercanis**
+
+
+At Mercanis, we are building the Agentic AI Procurement Suite that powers the procurement of tomorrow, digital, transparent, and intelligent.  
+
+  
+
+We are looking for a Backend Engineer who is excited to build modern, reliable backend services and grow their technical expertise over time. You will work closely with senior engineers, product managers, and designers to deliver features that bring real value to our customers.  
+
+  
+
+This role is perfect for someone who already has hands\\-on backend experience and is ready to level up in a supportive engineering culture. You will gain exposure to production\\-scale systems, cloud services, and event\\-driven architecture, while learning best practices from experienced teammates.  
+
+  
+
+ This role can be fully remote globally with preference for EU time zones, or hybrid from our Berlin office.
+
+#### **Your Responsibilities on this role**
+
+* You will build and maintain backend services using Node.js and TypeScript, contributing to a modern, event\\-driven platform.
+* You will write clean, well\\-tested, and maintainable code, collaborating with peers during code reviews and pairing sessions.
+* You will work closely with product and design to understand user needs and turn requirements into practical, scalable backend solutions.
+* You will participate in technical discussions, bringing ideas, asking questions, and helping your team move from concept to implementation.
+* You will support the delivery lifecycle, contributing to testing, debugging, and monitoring to ensure smooth releases.
+* You will learn from senior engineers, gaining experience in cloud infrastructure, system design, and performance considerations.
+* You will stay curious and experiment, exploring new tools and contributing to continuous improvement in engineering practices.
+
+#### **Role requirements**
+
+  
+
+* 2–4 years of professional experience as a backend or full\\-stack engineer, working with c and TypeScript
+* Solid understanding of backend fundamentals, including asynchronous programming, API development, and data handling
+* Experience working with databases (PostgreSQL or similar)
+* Working knowledge of unit testing and code quality practices
+* A collaborative mindset, curiosity, and willingness to ask questions and grow
+* Clear communication skills and a team\\-oriented attitude
+* Fluency in English, spoken and written
+
+
+Nice to have:  
+
+* Basic experience with AWS or other cloud environments
+* Exposure to event\\-driven systems or microservices
+* Some familiarity with frontend frameworks such as Svelte or React
+* Experience with CI/CD pipelines, Docker, or monitoring tools
+
+
+Tech you will work with:  
+
+* Backend: Node.js, NestJS, TypeScript
+* Infrastructure: AWS, serverless components
+* Data: PostgreSQL, event streaming, messaging systems
+* Tooling: GitHub, CI/CD, automated testing frameworks
+
+#### **Why to join us here at Mercanis?**
+
+* You will grow quickly with support from experienced engineers who enjoy mentoring
+* You will work in a product\\-focused environment where your contributions matter and reach users
+* You will collaborate in a culture built on learning, ownership, and teamwork
+* You will enjoy flexible remote work, with the option to join our Berlin office
+* You will have opportunities to expand your responsibilities over time and influence how we build software
+
+#### **About us**
+
+
+We are an **Agentic AI Procurement Suite** – Leading the Procurement of Tomorrow  
+
+  
+
+At **Mercanis**, we have a clear mission: to shape the procurement of tomorrow – digital, transparent, and intelligent.  
+
+  
+
+Our **Agentic AI Procurement Suite** digitalises the entire procurement process – from demand to supplier management and contract signing. Through the use of AI, operational tasks are fully automated, allowing procurement departments to focus on strategic matters. In this way, we create efficient structures, reduce manual efforts, and promote seamless collaboration along the entire supply chain.
+  
+
+  
+
+Our vision: transparent processes, time\\-optimised automations, and sustainable supplier relationships that deliver real value.  
+
+  
+
+With over $30 million in Series A funding, supported by leading investors such as Partech, Atlantic Vantage Point (AVP), and Speedinvest, we are well\\-positioned to continue expanding our vision. Since our founding, we’ve been working with a passionate team to shape the future of procurement. We are convinced: this is just the beginning.  
+
+  
+
+That’s why we are looking for ambitious new team members and creative minds who are ready to take bold new steps with us and shape the future of procurement.  
+
+  
+
+We welcome applications from individuals of all backgrounds, experiences, and identities—regardless of gender, age, ethnicity or ability—as part of our commitment to a fair, transparent, and merit\\-based recruitment process.  
+
+  
+
+We know impostor the syndrome can sometimes hold back incredible talent, so if you're doubting yourself—don’t. We genuinely want to hear from you, and encourage you to apply.","","https://de.indeed.com/cmp/Mercanis","","","","","","","","","","","","","software engineer"
+"in-a06f3d41a06b8dd9","indeed","https://de.indeed.com/viewjob?jk=a06f3d41a06b8dd9","https://t.gohiring.com/h/5f66a625c5b3fde8b6ba6cb879976f66cc172ff4f8be7ae4d16c3cfb6354797b?source=Indeed","Lead IT Engineering (m/f/d)","Finoa GmbH","Berlin, BE, DE","2025-11-05","fulltime","","","","","",False,"","","","","#### **Your mission**
+
+
+The Lead IT Engineering will oversee the IT Engineering team, ensuring that all technical operations, including device configuration, software system management, and access controls, are running efficiently. This role combines leadership responsibilities with hands\\-on technical work, providing a unique opportunity for someone who enjoys problem\\-solving and team management.
+
+#### **In this role, you will:**
+
+* Lead a team of IT Engineers, providing guidance, training, and support to ensure high performance and development.
+* Remain hands\\-on with the configuration and support of Mac, Windows, and Linux employee devices using mobile device management (MDM), as well as the management of software systems such as Google Workspace and Atlassian (Jira, Confluence).
+* Oversee identity and access management, ensuring security protocols and permissions are maintained to the highest standard.
+* Manage the technical aspects of employee onboarding and offboarding processes.
+* Maintain an accurate inventory of company devices and manage their allocation, repair, and lifecycle.
+* Serve as an escalation point for complex technical issues and provide advanced troubleshooting support.
+* Manage, write, and maintain IT\\-related documentation.
+* Collaborate with IT leadership to develop strategies and implement new processes or technologies that enhance company operations.
+* Monitor team performance, providing feedback and implementing improvements to ensure effective and efficient service delivery.
+
+#### **What you need to be successful:**
+
+* Bachelor’s degree in Information Technology, Computer Science, or related field, or proven equivalent experience.
+* At least 5 years of experience in technical support, including supervisory or team lead roles.
+* Demonstrated ability to manage and configure software systems like Google Workspace, Atlassian (Jira, Confluence), and mobile device management (MDM) services.
+* Strong knowledge of identity and access management, network security, and device management.
+* Knowledge of 1 or more shell scripting languages (Bash, Powershell, Python, etc).
+* Exceptional problem\\-solving skills with a hands\\-on approach to troubleshooting.
+* Excellent leadership skills with the ability to mentor and motivate a technical team.
+* Superb communication and interpersonal skills in English (German is a plus), capable of working well with various department heads and external stakeholders.
+
+#### **What’s in it for you:**
+
+* Competitive salary
+* Flexible hours, hybrid work setup
+* 25 days annual paid leave
+* Urban Sports Club membership
+* Internal Crypto Academy
+
+#### **About us**
+
+
+Finoa is a regulated crypto asset platform for institutional investors co\\-founded in 2018 by Christopher May and Henrik Gebbing. The company came to life through the shared aspiration to make institutional interactions with crypto assets simple and secure, and is backed by prominent investors, including Balderton Capital, Coparion, Maven11, Signature Ventures, and Venture Stars.  
+
+  
+
+Finoa has since then grown into a truly international company, powered by a diverse team and serving high\\-profile clients from around the world. Reference clients include renowned venture capital firms, crypto hedge funds, corporates, Web3 companies, and high\\-net\\-worth individuals.  
+
+  
+
+If you want to join one of Europe’s most exciting crypto start\\-ups, be part of the next wave of innovation disrupting finance, and grow together with us, then this is your chance to apply.  
+
+  
+
+Finoa is an equal opportunity employer devoted to diversity and inclusion in the workplace. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, or disability status.","","https://de.indeed.com/cmp/Finoa-Gmbh-1","https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/68223fdc0b947fd33404f4039ab3c9b3","https://www.finoa.io/","","","","","","","","","","","software engineer"
+"in-7ef3ecad930c5a4e","indeed","https://de.indeed.com/viewjob?jk=7ef3ecad930c5a4e","https://www.amazon.jobs/jobs/3071238/senior-applied-scientist-proserve-generative-ai-innovation-center?cmpid=DA_INAD200785B","Senior Applied Scientist, ProServe Generative AI Innovation Center","Amazon Web Services","Berlin, BE, DE","2025-08-04","fulltime","","","","","",False,"","","","","**DESCRIPTION**
+---------------
+
+
+The Generative AI Innovation Center at AWS helps AWS customers accelerate the use of Generative AI and realize transformational business opportunities. This is a cross\\-functional team of ML scientists, engineers, architects, and strategists working step\\-by\\-step with customers to build bespoke solutions that harness the power of generative AI.  
+
+  
+
+As an applied scientist, you are proficient in designing and developing advanced ML models to solve diverse challenges and opportunities. You will work directly with customers and innovate in a fast\\-paced organization that contributes to game\\-changing projects and technologies. You will design and run experiments, research new algorithms, and find new ways of optimizing risk, profitability, and customer experience.  
+
+  
+
+We’re looking for ML Applied Scientists capable of using GenAI and other techniques to design, evangelize, and implement state\\-of\\-the\\-art solutions for never\\-before\\-solved problems.  
+
+  
+
+AWS Sales, Marketing, and Global Services (SMGS) is responsible for driving revenue, adoption, and growth from the largest and fastest growing small\\- and mid\\-market accounts to enterprise\\-level customers including public sector. The AWS Global Support team interacts with leading companies and believes that world\\-class support is critical to customer success.  
+
+  
+
+Key job responsibilities  
+
+As a Senior ML Applied Scientist, you will  
+
+  
+
+* Collaborate with ML scientists and architects to research, design, develop, and evaluate state\\-of\\-the\\-art generative AI algorithms to address real\\-world challenges across industries
+
+  
+
+* Lead customer interactions to deeply understand the business problem, and help them in defining and implementing generative AI solutions and guide customers on adoption patterns and paths to production
+
+  
+
+* Work closely with account teams, research scientist teams, and product engineering teams to drive model implementations and develop new solutions
+
+  
+
+* Create and deliver best practice recommendations, scientific artifacts, tutorials, blog posts, sample code, and presentations adapted to technical, business, and executive stakeholders
+
+  
+
+* Effectively communicate complex ML results and insights to diverse audiences, translating technical concepts for non\\-technical stakeholders while providing appropriate depth for technical audiences in both public\\-facing publications and internal knowledge sharing sessions
+
+  
+
+About the team  
+
+The Generative AI Innovation Center helps customers imagine and scope the use cases that will create the greatest value for their businesses, select and fine\\-tune the right models, define paths to navigate technical or business challenges, develop proof\\-of\\-concepts, and make plans for launching solutions at scale. The team guidance on best practices for applying generative AI responsibly and cost efficiently.  
+
+  
+
+Diverse Experiences: AWS values diverse experiences. Even if you do not meet all of the preferred qualifications and skills listed in the job below, we encourage candidates to apply. If your career is just starting, hasn’t followed a traditional path, or includes alternative experiences, don’t let it stop you from applying.  
+
+  
+
+Why AWS? Amazon Web Services (AWS) is the world’s most comprehensive and broadly adopted cloud platform. We pioneered cloud computing and never stopped innovating — that’s why customers from the most successful startups to Global 500 companies trust our robust suite of products and services to power their businesses.  
+
+  
+
+Inclusive Team Culture \\- Here at AWS, it’s in our nature to learn and be curious. Our employee\\-led affinity groups foster a culture of inclusion that empower us to be proud of our differences. Ongoing events and learning experiences, including our Conversations on Race and Ethnicity (CORE) and AmazeCon (diversity) conferences, inspire us to never stop embracing our uniqueness.  
+
+  
+
+Mentorship \\& Career Growth \\- We’re continuously raising our performance bar as we strive to become Earth’s Best Employer. That’s why you’ll find endless knowledge\\-sharing, mentorship and other career\\-advancing resources here to help you develop into a better\\-rounded professional.  
+
+  
+
+Work/Life Balance \\- We value work\\-life harmony. Achieving success at work should never come at the expense of sacrifices at home, which is why we strive for flexibility as part of our working culture. When we feel supported in the workplace and at home, there’s nothing we can’t achieve in the cloud.**BASIC QUALIFICATIONS**
+------------------------
+
+* PhD degree in CS, CE and several years (or MSc and 7\\+ years) of experience in building machine learning models for business applications
+* Experience with neural deep learning methods and machine learning
+* Hands on experience building models with deep learning frameworks like PyTorch, Tensorflow, or MxNet
+* Strong communication skills, with attention to detail and ability to convey rigorous technical concepts and considerations to technical and non\\-technical audiences
+* Fluency in written and spoken English
+
+**PREFERRED QUALIFICATIONS**
+----------------------------
+
+* Proven knowledge of Generative AI and hands\\-on experience of building applications with large foundation models
+* Proven knowledge of AWS platform and tools
+* Hands\\-on experience of building ML solutions on AWS
+* Experience in professional software development
+* Scientific thinking and the ability to invent, a track record of thought leadership and contributions that have advanced the field
+
+  
+
+Amazon is an equal opportunities employer. We believe passionately that employing a diverse workforce is central to our success. We make recruiting decisions based on your experience and skills. We value your passion to discover, invent, simplify and build. Protecting your privacy and the security of your data is a longstanding top priority for Amazon. Please consult our Privacy Notice (https://www.amazon.jobs/en/privacy\\_page) to know more about how we collect, use and transfer the personal data of our candidates.  
+
+  
+
+m/w/d  
+
+  
+
+Our inclusive culture empowers Amazonians to deliver the best results for our customers. If you have a disability and need a workplace accommodation or adjustment during the application and hiring process, including support for the interview or onboarding process, please visit https://amazon.jobs/content/en/how\\-we\\-hire/accommodations for more information. If the country/region you’re applying in isn’t listed, please contact your Recruiting Partner.","","https://de.indeed.com/cmp/Amazon-Web-Services-05cb4ad1","https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/744e8603d216350c9c1d21837f2ed7a6","https://aws.amazon.com/careers/why-aws/","Seattle, WA","Decline to state","more than $10B (USD)","Amazon Web Services (AWS) offers the world’s most comprehensive and broadly adopted cloud platform, with over 200 powerful services that enable our customers and our people to make more of an impact. ","","","","","","","software engineer"
+"in-4fbc41b6b68a47c0","indeed","https://de.indeed.com/viewjob?jk=4fbc41b6b68a47c0","https://www.amazon.jobs/jobs/2871170/principal-engineer?cmpid=DA_INAD200785B","Principal Engineer","Amazon.com","Berlin, BE, DE","2025-01-09","fulltime","","","","","",False,"","","","","**DESCRIPTION**
+---------------
+
+
+Principal Engineers provide technical leadership at Amazon.com. They help establish technical standards and drive Amazon’s overall technical architecture, engineering practices, and engineering methodologies. They work on our hardest problems, building high quality, architecturally sound systems that are aligned with our business needs. They think globally when building systems, ensuring Amazon.com builds high performing, scalable systems that fit well together.  
+
+  
+
+Principal Engineers are pragmatic visionaries who can translate business needs into workable technology solutions. Their expertise is deep and broad. They are hands on, producing both detailed technical work and high\\-level architectural designs.
+
+**BASIC QUALIFICATIONS**
+------------------------
+
+* Knowledge of object\\-oriented design, data structures, and algorithms
+* Experience (non\\-internship) in professional software development
+
+**PREFERRED QUALIFICATIONS**
+----------------------------
+
+* Experience designing and building large\\-scale systems in a multi\\-tiered, distributed environment (Service Oriented Architecture)
+
+  
+
+Amazon is an equal opportunities employer. We believe passionately that employing a diverse workforce is central to our success. We make recruiting decisions based on your experience and skills. We value your passion to discover, invent, simplify and build. Protecting your privacy and the security of your data is a longstanding top priority for Amazon. Please consult our Privacy Notice (https://www.amazon.jobs/en/privacy\\_page) to know more about how we collect, use and transfer the personal data of our candidates.  
+
+  
+
+m/w/d  
+
+  
+
+Our inclusive culture empowers Amazonians to deliver the best results for our customers. If you have a disability and need a workplace accommodation or adjustment during the application and hiring process, including support for the interview or onboarding process, please visit https://amazon.jobs/content/en/how\\-we\\-hire/accommodations for more information. If the country/region you’re applying in isn’t listed, please contact your Recruiting Partner.","Internet And Software","https://de.indeed.com/cmp/Amazon.com","https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/3e9d43f5c277de169808abdcaf49ba2c","https://www.amazon.jobs","440 Terry Ave N, Seattle, WA, United States, Washington","10,000+","more than $10B (USD)","Our mission is to be Earth's most customer-centric company.","","","","","","","software engineer"
+"li-4320610284","linkedin","https://www.linkedin.com/jobs/view/4320610284","","Junior Frontend Developer (m/w/d)","CKM Group","Berlin, Berlin, Germany","2025-11-04","fulltime","","","","","",True,"entry level","Information Technology and Design","","career@ckmgroup.de","**Intro**
+ Die
+ **C** 
+**KM Group** 
+ bündelt Expertise aus verschiedenen Bereichen, um Fortschirtt und Innovation in der Gesundheitsversorgung voranzutreiben. Unser Zusammenschluss aus Klinik, Labor, telemedizinischem Service und IT\\-Unternehmen steht für die Entwicklung moderner und effektiver Lösungen im Gesundheitswesen.
+   
+
+  
+
+ Unser Ziel ist es, durch präventive Dienstleistungsmedizin, eHealth und Public Health eine führende und wegweisende Rolle im Gesundheitssystem von morgen einzunehmen. Dabei setzen wir auf smarte Logistik, Digitalisierung, Diagnostik und individuelle Prävention. Wir denkenGesundheitsversorgung und Diagnostik neu und hinterfragen dazu stets den Status Quo.
+   
+
+  
+
+ Die
+ **Berlin Coding Company (BCC)** 
+ entwickelt maßgeschneiderte digitale Lösungen im Gesundheitswesen \\- von intuitiven E\\-Health\\-Anwendungen bis zur vollständigen Automatisierung vom Laborprozessen.
+   
+
+  
+
+ Zur Verstärkung unseres Entwicklerteams suchen wir einen
+ **Junior Frontend Developer (m/w/d)** 
+ , der sich in den klassischen Webtechnologien zu Hause fühlt und Lust hat, Webinterfaces weiterzudenken \\- funktional, wartbar und mit Blick auf Nutzerfreundlichkeit.
+   
+
+  
+
+**Deine Mission bei uns**
+* Du arbeitest mit unserem Backend\\- und UX\\-Team an der Umsetzung und Weiterentwicklung unserer Webplattformen.
+* Du entwickelst strukturierte und responsive Oberflächen auf Basis von HTML, CSS, SASS, JavaScript, jQuery und Bootstrap.
+* Du setzt bestehende Design\\-Vorgaben sauber um und entwickelst eigene Komponenten und UI\\-Bausteine weiter.
+* Du arbeitest mit Templating\\-Engines (z. B. Twig, Smarty oder eigene View\\-Logiken in PHP) und sorgst dafür, dass Funktionalität und Layout Hand in Hand gehen.
+* Du bekommst Einblick in komplexere Anwendungen und baust sukzessive dein Know\\-how in Richtung API\\-Anbindung und strukturiertem Frontend\\-Code aus.
+
+
+**Was du mitbringen solltest**
+* Erfahrung mit klassischen Webtechnologien: HTML, CSS, JavaScript, jQuery
+* Kenntnisse in SASS/SCSS, Bootstrap (oder ähnlichen CSS\\-Frameworks)
+* Idealerweise Erfahrung mit Templating\\-Engines oder serverseitigem Rendering (PHP\\-basiert von Vorteil)
+* Saubere und strukturierte Arbeitsweise, Gespür für UI/UX, ein Auge für Details
+* Motivation, dich in bestehende Projekte und Codebasen einzuarbeiten
+* Fließende Deutschkenntnisse (mind. C1\\)
+* Bonus: Erfahrungen mit Versionierung (Git), Package\\-Managern (NPM), Build\\-Tools (Webpack), Barrierefreiheit oder E\\-Mail\\-Templates
+
+
+**Was wir dir bieten**
+* Mitarbeit an sinnvollen, gesellschaftsrelevanten Produkten im Gesundheitsbereich
+* Technisch stabiles und modernes Arbeitumfeld \\- mit Raum zur persönlichen und fachlichen Weiterentwicklung
+* Flexible Arbeitszeiten und eine offene, ehrliche Kommunikation.
+* Möglichkeit, auch remote zu arbeiten, wenn es passt (Standort: Berlin, Herborn, Rhein\\-Main)
+
+
+**Du hast Fragen? Wir sind für dich da.**
+ Unser People \\& Culture Team begleitet dich während des gesamten Recruiting\\-Prozesses und steht dir jederzeit zur Seite. Wenn du Fragen hast oder etwas unklar ist, melde dich einfach bei unserem Recruiting\\-Team unter career@ckmgroup.de – wir freuen uns, von dir zu hören!
+   
+
+  
+
+**Über uns**
+ Zur
+ **CKM Group** 
+ gehören eine Vielzahl von Unternehmen sowie eine Klinik, die alle dazu beitragen, unsere Vision von einer gesünderen Welt näher zu kommen. Unser Ziel ist es, durch präventive Dienstleistungsmedizin, eHealth und Public Health eine führende und wegweisende Rolle im Gesundheitssystem von morgen einzunehmen. Dabei setzen wir auf smarte Logistik, Digitalisierung, Diagnostik und individuelle Prävention. Wir denken Gesundheitsversorgung und Diagnostik neu und hinterfragen dazu stets den Status Quo.
+   
+
+  
+
+**Unsere Firmenwerte**
+ entschlossen ambitioniert: Wir fördern eine Kultur der Leistung und schätzen außergewöhnliches Engagement. Um aus Herausfordernungen Chancen zu machen, gehen wir die Extra\\-Meile.
+   
+
+  
+
+ divers authentisch: Wir setzten auf Vielfalt ohne Masken. Herausragende Ergebnisse werden von einzigartigen Menschne geschaffen, die mit Echtheit überzeugen.
+   
+
+  
+
+ kreativ dynamisch: Wir haben Drive. Unkonventionelle Ansätze, Hands\\-On\\-Spirit und agile Strukturen sind unsere Motoren für die schnelle Umsetzung von disruptiven und innovativen Ideen.
+   
+
+  
+
+ progressiv revolutionär: Wir stellen den Status Quo auf den Kopf. Um das alltägliche Leben für jeden Menschen zu verbessern, schöpfen wir wissenschaftliche und technologische Fortschritte voll aus.
+   
+
+  
+
+ nachhaltig fair: Wir tragen Verantwortung für unsere Mitmenschen sowie für den Schutz unserer Umwelt. Ethische Standards sind dabei Grundlage unsere Handelns.
+   
+
+  
+
+ Wir als CKM Group sind anders, aufregender, mutiger. Bei uns zählen keine konventionellen Normen, sondern Innovationsgeist, Ambition und Leidenschaft für die Sache. Unabhängig von gewählter Gendersprache oder generischem Maskulinum: Wir suchen DICH \\- egal, ob männlich, weiblich oder divers. ❤","Hospitals and Health Care","https://de.linkedin.com/company/ckmgroup","https://media.licdn.com/dms/image/v2/D4E0BAQF8zaPDsqErVA/company-logo_100_100/company-logo_100_100/0/1683531577394/ckmgroup_logo?e=2147483647&v=beta&t=r0oraWeqIT92hvsBqHh8qeqSCchyqFLNVPn1c0SaAKA","","","","","","","","","","","","software engineer"
+"li-4320469916","linkedin","https://www.linkedin.com/jobs/view/4320469916","","Junior Developer (m/w/d)","CKM Group","Berlin, Berlin, Germany","2025-11-04","fulltime","","","","","",True,"entry level","Information Technology","","career@ckmgroup.de","**Intro**
+ Die
+ **C** 
+**KM Group** 
+ bündelt Expertise aus verschiedenen Bereichen, um Fortschirtt und Innovation in der Gesundheitsversorgung voranzutreiben. Unser Zusammenschluss aus Klinik, Labor, telemedizinischem Service und IT\\-Unternehmen steht für die Entwicklung moderner und effektiver Lösungen im Gesundheitswesen.
+   
+
+  
+
+ Unser Ziel ist es, durch präventive Dienstleistungsmedizin, eHealth und Public Health eine führende und wegweisende Rolle im Gesundheitssystem von morgen einzunehmen. Dabei setzen wir auf smarte Logistik, Digitalisierung, Diagnostik und individuelle Prävention. Wir denkenGesundheitsversorgung und Diagnostik neu und hinterfragen dazu stets den Status Quo.
+   
+
+  
+
+ Die
+ **Berlin Coding Company (BCC)** 
+ entwickelt maßgeschneiderte digitale Lösungen im Gesundheitswesen \\- von intuitiven E\\-Health\\-Anwendungen bis zur vollständigen Automatisierung vom Laborprozessen. Wir sind ein kleines, agiles Team mit großem Impact \\- und suchen Dich als Verstärkung! Klingt spannend?
+   
+
+  
+
+**Deine Mission bei uns**
+* Du arbeitest mit erfahrenen Entwickler an spannenden Projekten, z.B. im Bereich medizinische Plattformen, Labor\\-IT oder E\\-Health.
+* Du bekommst einen tiefen Einblick im moderne Softwarearchitektur und hast die Chance, schnell Verantwortung zu übernehmen.
+* Wir entwickeln pragmatisch, effizient und mit Fokus auf Qualität \\- ohne unnötige Bürokratie.
+* Du bist Teil eines Unternehmens, das Digitalisierung im Gesundheitswesen wirklich versteht \\- und umsetzt.
+
+
+**Was du mitbringen solltest**
+* Erste Erfahrung mit Webentwicklung (z.B. JavaScript, React, Node.js, Python, o.ä. \\- Schwerpunkt: PHP).
+* Grundverständnis von Softwarearchitektur, APIs und Datenbanken.
+* Lernbereitschaft, Eigeninitiative und Teamgeist.
+* Lust auf komplexe Themen, sauberen Code \\- und auf ein großartiges Team.
+* Fließende Deutschkenntnisse (mind. C1\\)
+* Nice to have: Git\\-Kenntnisse, Erfahrungen mit agiler Entwicklung oder Interesse an Healthcare/MedTech.
+
+
+**Was wir dir bieten**
+* Einen Platz in einem kleinen, feinen Entwicklerteam, das Wert auf sauberen Code und gute Zusammenarbeit legt.
+* Viel Raum zur persönlichen und fachlichen Weiterentwicklung.
+* Flexible Arbeitszeiten und eine offene, ehrliche Kommunikation.
+* Büro in Berlin \\- mit der Möglichkeit, auch remote zu arbeiten, wenn es passt.
+* Impact: Deine Arbeit wird direkt sichtbar \\- bei Kunden, Patient: innen und Parter: innen.
+
+
+**Du hast Fragen? Wir sind für dich da.**
+ Unser People \\& Culture Team begleitet dich während des gesamten Recruiting\\-Prozesses und steht dir jederzeit zur Seite. Wenn du Fragen hast oder etwas unklar ist, melde dich einfach bei unserem Recruiting\\-Team unter career@ckmgroup.de – wir freuen uns, von dir zu hören!
+   
+
+  
+
+**Über uns**
+ Zur
+ **CKM Group** 
+ gehören eine Vielzahl von Unternehmen sowie eine Klinik, die alle dazu beitragen, unsere Vision von einer gesünderen Welt näher zu kommen. Unser Ziel ist es, durch präventive Dienstleistungsmedizin, eHealth und Public Health eine führende und wegweisende Rolle im Gesundheitssystem von morgen einzunehmen. Dabei setzen wir auf smarte Logistik, Digitalisierung, Diagnostik und individuelle Prävention. Wir denken Gesundheitsversorgung und Diagnostik neu und hinterfragen dazu stets den Status Quo.
+   
+
+  
+
+**Unsere Firmenwerte**
+ entschlossen ambitioniert: Wir fördern eine Kultur der Leistung und schätzen außergewöhnliches Engagement. Um aus Herausfordernungen Chancen zu machen, gehen wir die Extra\\-Meile.
+   
+
+  
+
+ divers authentisch: Wir setzten auf Vielfalt ohne Masken. Herausragende Ergebnisse werden von einzigartigen Menschne geschaffen, die mit Echtheit überzeugen.
+   
+
+  
+
+ kreativ dynamisch: Wir haben Drive. Unkonventionelle Ansätze, Hands\\-On\\-Spirit und agile Strukturen sind unsere Motoren für die schnelle Umsetzung von disruptiven und innovativen Ideen.
+   
+
+  
+
+ progressiv revolutionär: Wir stellen den Status Quo auf den Kopf. Um das alltägliche Leben für jeden Menschen zu verbessern, schöpfen wir wissenschaftliche und technologische Fortschritte voll aus.
+   
+
+  
+
+ nachhaltig fair: Wir tragen Verantwortung für unsere Mitmenschen sowie für den Schutz unserer Umwelt. Ethische Standards sind dabei Grundlage unsere Handelns.
+   
+
+  
+
+ Wir als CKM Group sind anders, aufregender, mutiger. Bei uns zählen keine konventionellen Normen, sondern Innovationsgeist, Ambition und Leidenschaft für die Sache. Unabhängig von gewählter Gendersprache oder generischem Maskulinum: Wir suchen DICH \\- egal, ob männlich, weiblich oder divers. ❤","Hospitals and Health Care","https://de.linkedin.com/company/ckmgroup","https://media.licdn.com/dms/image/v2/D4E0BAQF8zaPDsqErVA/company-logo_100_100/company-logo_100_100/0/1683531577394/ckmgroup_logo?e=2147483647&v=beta&t=r0oraWeqIT92hvsBqHh8qeqSCchyqFLNVPn1c0SaAKA","","","","","","","","","","","","software engineer"
+"li-4334270273","linkedin","https://www.linkedin.com/jobs/view/4334270273","","Software Engineer Internship for HPI Students","Taktile","Berlin, Berlin, Germany","2025-11-04","other","","","","","",True,"internship","Engineering and Information Technology","","","**About The Role**
+ Taktile is a high\\-growth series B start\\-up, on a fast track to become the market leader in the field of automated decisioning. We have partnered with
+ **Hasso Plattner Institute (HPI),** 
+ a leading computer science institute in Europe, to offer a dedicated opportunity designed only for HPI students. This program is tailored for Computer Science students eager to gain hands\\-on industry experience while building the foundations for a world\\-class engineering career.
+   
+
+  
+
+ If you’re ambitious, have strong engineering fundamentals, and want to grow as a software engineer while learning from experienced mentors in a high\\-impact startup environment, this role is for you. Join us and become part of the next generation of IT experts shaping the future of distributed systems, cloud computing, and scalable digital products.
+   
+
+  
+
+**What You'll Do**
+* Work on backend components written in Python / FastAPI, hosted on an AWS serverless architecture, or contribute to React/Typescript front\\-end components \\- or both!
+* Engage actively in team rituals such as daily syncs, planning sessions, demos, and technical deep\\-dive discussions.
+* Grow as an individual and accelerate your career by learning from our experienced team, contributing to a foundational layer of the product, and joining cross\\-team learning groups.
+* Build role\\-relevant experience early in your career, and experience the rewarding feeling of shipping value fast.
+
+
+**Requirements:**
+* Taktile is a hybrid company that requires working 3 days/week from our Berlin HQ in Germany.
+* Fluency in English, both written and spoken, is essential as we operate in a remote environment requiring clear and effective communication.
+* Strong engineering fundamentals with a passion for simplicity and precision
+
+
+**Required Experience**
+* Currently pursuing a bachelor's or master's degree at Hasso Plattner Institut (HPI).
+* Solid Computer Science fundamentals: data structures, algorithms, networking, distributed systems, databases, and everything in between.
+
+
+**Ideal, But Not Required**
+* Exposure to AWS, especially Lambda.
+* Experience with frontend development \\- React or similar frameworks.
+
+
+**Our Offer**
+* Receive a top\\-of\\-market cash compensation package and benefits.
+* Work with colleagues who lift you, challenge you, celebrate you, and help you grow. We come from many different backgrounds, but what we have in common is the desire to operate at the very top of our fields. If you are similarly capable, caring, and driven, you'll find yourself at home here.
+* Experience a truly flat hierarchy and communicate directly with founding team members. Having an opinion and voicing your ideas is not only welcome but encouraged, especially when they challenge the status quo.
+* Learn from experienced mentors and achieve tremendous personal and professional growth. Get to know and leverage our network of leading tech investors and advisors around the globe.
+* Cutting\\-edge tech stack to support your flow time with no interruptions.
+
+
+**Our Stance**
+* We're eager to meet talented and driven candidates regardless of whether they tick all the boxes. We're looking for someone who will add to our culture, not just fit within it. We strongly encourage individuals from groups traditionally underestimated and underrepresented in tech to apply.
+* We seek to actively recognize and combat racism, sexism, ableism, and ageism. We embrace and support all gender identities and expressions, and celebrate love in its many forms. We won't inquire about how you identify or if you've experienced discrimination, but if you want to tell your story, we are all ears.
+
+
+**About Us**
+ Taktile is building the world's leading software platform for running critical and highly automated decisions. Our customers use our product to catch fraudsters, prevent money laundering, and expand access to credit for small businesses, among many other use cases. Taktile is already making millions of such decisions across the globe every day.
+   
+
+  
+
+ Taktile is based in Berlin, London, and New York City. It was founded by machine learning and data science veterans with extensive experience building and running production ML in financial services. Our team consists of engineers, entrepreneurs, and researchers with a diverse set of backgrounds. Some of us attended top universities such as Harvard, Oxford, and Stanford, and some of us have no degree at all. We have accumulated extensive work experience at leading tech companies, startups, and in the enterprise software sphere.
+   
+
+  
+
+ Our backers include Y Combinator, Index Ventures, and stellar angels such as the founders of Looker, GitHub, Mulesoft, Datadog, and UiPath.
+   
+
+  
+
+**Through this exclusive partnership with Taktile, HPI students have the unique opportunity to gain industry experience in a high\\-growth startup environment while continuing their education among some of Europe’s brightest technical minds.**","Software Development","https://www.linkedin.com/company/taktile1","https://media.licdn.com/dms/image/v2/D4E0BAQEvyrVb2GT99g/company-logo_100_100/company-logo_100_100/0/1664966640392/taktile1_logo?e=2147483647&v=beta&t=VAe9Oo4ViX5Lj1ZHbqZAvDu9tETV9OV1tfzdkyh9MkA","","","","","","","","","","","","software engineer"
+"li-4337357440","linkedin","https://www.linkedin.com/jobs/view/4337357440","","React Native Engineer","Troi","Berlin, Berlin, Germany","2025-11-04","fulltime","","","","","",True,"mid-senior level","Information Technology","","oran.campbell@troi.io","**Job Title:** 
+ React Native Engineer
+ 
+
+
+
+**Location:** 
+ Berlin \\- Hybrid, 2 days per week on\\-site (up to 8 weeks per year of remote working outside of Germany is available)
+ 
+
+
+
+**Salary:** 
+ €68k p/a plus benefits
+ 
+
+
+
+  
+
+
+
+
+
+ Troi Search have partnered with a leading TV\\-as\\-a\\-Service provider in Berlin to hire a React Native Engineer. This role will involve building a world\\-class playback experience using React Native for your customers.
+ 
+
+
+
+  
+
+
+
+
+
+**Your Role:** 
+
+
+
+* Collaborate with the playback team to optimize video performance across all content types.
+* Develop a seamless, responsive Playback Experience using React Native.
+* Prioritize performance, stability, and smooth transitions across various video formats.
+* Partner with video engineers, designers, and product managers to innovate the watch experience.
+* Push the boundaries of cross\\-platform playback UI capabilities.
+* Implement automated testing to ensure reliability and maintain high\\-quality code.
+* Maintain clear and thorough technical documentation.
+
+
+
+  
+
+
+
+
+
+**What You Bring:** 
+
+
+
+* 3\\+ years of experience with JavaScript and TypeScript.
+* Strong expertise in React Native and related frameworks: React, Redux and React Navigation.
+* Experience with UI testing frameworks such as Jest, Cypress/Playwright, or Appium.
+* A sharp eye for user experience, motion, and performance optimization.
+* Familiarity with video playback principles; bonus points for experience with video players or streaming SDKs.
+* Excellent collaboration and problem\\-solving skills.
+
+
+
+  
+
+
+
+
+
+**Nice\\-to\\-Haves:** 
+
+
+
+* Experience with native app development (Swift, Objective\\-C, Java/Kotlin) or web technologies (HTML, CSS, Web APIs, Node.js).
+* Background in building applications for native frameworks or Web TV platforms.
+
+
+
+  
+
+
+
+
+
+ If you're interested, apply through the link provided or reach out to oran.campbell@troi.io","Staffing and Recruiting","https://uk.linkedin.com/company/troi-io","https://media.licdn.com/dms/image/v2/C4E0BAQG4JKSWOXh_Dg/company-logo_100_100/company-logo_100_100/0/1656924799846/troi_io_logo?e=2147483647&v=beta&t=Fpc9vpFwF7BpJB-E-R-Bcvz6JsFpQg_UlHiLdmCCTyI","","","","","","","","","","","","software engineer"
+"li-4320783378","linkedin","https://www.linkedin.com/jobs/view/4320783378","","Graduate software engineer","Bending Spoons","Berlin, Berlin, Germany","2025-11-04","fulltime","","","","","",True,"entry level","Engineering and Information Technology","","","At Bending Spoons, we’re striving to build one of the all\\-time great companies. A company that serves a huge number of customers. A company where team members grow to their full potential. A company that functions at unparalleled levels of effectiveness and efficiency. A company that creates value for shareowners at an extraordinary rate. And a company that does so while adhering to high ethical standards.
+   
+
+  
+
+ To achieve this objective, we execute the following strategy: We acquire a digital business with untapped potential and make it as successful as we can by leveraging our platform—which comprises our expertise, technologies, data, brand, talents, and company culture. Then, we invest the proceeds into making our platform more powerful, and into acquiring new businesses. Thus, our strategy sees us combine an investor’s attention to capital allocation with the hands\\-on approach of an operator.
+   
+
+  
+
+ For a talented, driven, and collaborative individual, working at Bending Spoons is an opportunity to learn, make an impact, and progress their career at an exceptionally high rate. That’s our promise to such a candidate.
+   
+
+  
+
+**A few examples of your responsibilities** 
+* **Master your toolkit.** 
+ By working across diverse tech stacks, you’ll refine your ability to choose the right tools for every challenge. From monolithic to microservices architectures, gRPC to REST APIs, Kubernetes to Docker, Python to Rust—you’ll show that true expertise isn’t about using the trendiest technologies, but about understanding their purpose to unleash their full potential.
+* **Build stuff that matters.** 
+ Regardless of your seniority, you’ll enjoy plenty of autonomy and take full ownership of your work, from ideation to execution. You’ll have the unique opportunity to build software from the ground up and witness firsthand how your code evolves into a product used at scale.
+* **Simplify relentlessly.** 
+ Is every component essential? Do we need this process? As a Bending Spoons engineer, your mission is to turn complexity into simplicity. Whether optimizing CI/CD pipelines, writing maintainable code, or crafting minimalist architectures, your drive to simplify will power scalable, future\\-proof solutions.
+
+
+**What we look for** 
+* **Reasoning ability.** 
+ Given the necessary knowledge, you can solve complex problems. You think from first principles, and structure your ideas sharply. You resist the influence of biases. You identify and take care of the details that matter.
+* **Drive.** 
+ You’re extremely ambitious in everything you do—and your initiative, effort, and tenacity match the intensity of your ambition. You feel deeply responsible for your work. You hold yourself to a high—and rising—bar.
+* **Team spirit.** 
+ You give generously and without the expectation of receiving in return. You support the best idea, not your idea. You're always happy to get your hands dirty to help your team. You’re reliable, honest, and transparent.
+* **Proficiency in English.** 
+ You read, write, and speak proficiently in English.
+
+
+**What we offer** 
+* **Incredibly talented, entrepreneurial teams.** 
+ You’ll work in small, result\\-oriented, autonomous teams alongside some of the brightest people in your field.
+* **An exceptional opportunity for growth.** 
+ We go to great lengths to hire individuals of outstanding potential—then, our priority is to put them in the ideal position to thrive. Spooners in their 20s lead products worth hundreds of millions of dollars. And if you’ve got what it takes, you’ll soon be playing an essential role in major projects, too.
+* **Competitive pay and access to equity in the company.** 
+ Typically, we offer individuals at the start of their career a salary of £83,997 in London and €63,965 elsewhere in Europe. For a candidate that we assess as possessing considerable relevant experience, the salary on offer tends to be between £110,389 and £194,964 in London, and €105,737 and €186,748 elsewhere in Europe. Compensation varies by location and expected impact, and grows rapidly as you gain experience and translate it into greater contributions. You can also receive some of your pay in company equity at a discounted price, thus participating in the value creation we achieve together. If relocating to Italy, you may enjoy a 50% tax cut.
+* **All. These. Benefits.** 
+ Flexible hours, remote working, unlimited backing for learning and training, top\\-of\\-the\\-market health insurance, a rich relocation package, generous parental support, and a yearly retreat to a stunning location. We help each Spooner set up the conditions to do their best work.
+
+
+**Commitment \\& contract**
+ Permanent or fixed\\-term. Full\\-time.
+   
+
+  
+
+**Location**
+ Milan (Italy), London (UK), Madrid (Spain), Warsaw (Poland) or remote.
+   
+
+  
+
+**The selection process**
+ If you pass our screening, we’ll ask you to take on a few tests designed to assess how you approach unfamiliar problems. They’re challenging and may take several hours to complete. If you’re successful with those, we’ll invite you to a series of interviews.
+   
+
+  
+
+ We set the bar high and won't extend an offer until we're convinced we've found the right candidate. This is why a job may stay open for months or be reposted several times.
+   
+
+  
+
+ Studies suggest that women tend not to apply for a job if their CV isn’t a perfect fit. Here, talent takes precedence over experience. So if you like the role and think you could be awesome at it in time, go ahead and apply.
+   
+
+  
+
+ Bending Spoons is an equal opportunity and affirmative action employer. We consider for employment any applicant and provide reasonable accommodations for an individual with disabilities—just let us know through this form.
+   
+
+  
+
+**Before you apply**
+ If you’ve applied before but didn't receive an offer, we recommend waiting at least one year before applying again.
+   
+
+  
+
+ Bending Spoons is a demanding environment. We’re extremely ambitious and we hold ourselves—and one another—to a high standard. While this tends to lead to extraordinary learning, achievement, and career growth, it also requires significant commitment.
+   
+
+  
+
+ To help you ramp up quickly and set yourself up for success, we recommend spending your first few months working from our Milan office, regardless of your long\\-term work location. It’s the best way to rapidly absorb our company culture and build trust with your new teammates. We’ll support you with generous travel and accommodation assistance. After that, you’re welcome to work from our offices in Milan or London, or remotely from approved countries—depending on what we agree at the offer stage.
+   
+
+  
+
+ If the role speaks to you and you’re excited to give your best, we’d love to hear from you. Apply now—we can’t wait to meet you.","Software Development","https://it.linkedin.com/company/bendingspoons","https://media.licdn.com/dms/image/v2/D4D0BAQGftUJaAnPIxg/company-logo_100_100/company-logo_100_100/0/1688654635337/bendingspoons_logo?e=2147483647&v=beta&t=Gabm76nmJkOQoKsqx_GPsqOVSFVhGDVVx--Pk6Y7LVk","","","","","","","","","","","","software engineer"
+"li-4320493690","linkedin","https://www.linkedin.com/jobs/view/4320493690","https://careers.ageras.com/jobs/6702305-staff-frontend-developer&urlHash=R8qw","Staff Frontend Developer","Ageras Danmark","Berlin, Berlin, Germany","2025-11-03","other","","","","","",True,"not applicable","Engineering and Information Technology","","","At Shine, we are redefining how entrepreneurs—freelancers, self\\-employed professionals, and SMEs—manage their banking, and administrative tasks. Through seamless tools and innovative accounting \\& banking solutions, we help them focus on what matters most: growing their businesses.
+ 
+
+
+
+ Our vision is to become the best friend of every small entrepreneur across Europe. 💚
+   
+
+
+
+
+
+ Over the years, Shine has grown through the merging of top European FinTechs like Shine (🇫🇷), Kontist (🇩🇪), Tellow (🇳🇱), and more. Today, we’re a team of nearly 500 people, including 150 talented engineers, working together from Paris, Amsterdam, Copenhagen, and Berlin.
+   
+
+
+
+
+ 👀 Your role as a Staff Frontend Developer at Shine
+ 
+ We’re looking for a
+ **Staff Frontend Developer** 
+ to provide strategic direction and technical leadership for our Frontend Platform team. In this role, you’ll own the architecture, shared tooling, and design system that power our web and mobile applications. You’ll help formalize ownership, guide product engineers, and align frontend efforts across multiple brands and teams.
+ 
+
+
+
+ This position is crucial to reducing duplication, improving consistency, and accelerating delivery across Shine as we consolidate several products into a unified platform.
+ 
+
+
+
+ You’ll join a
+ **small, focused team** 
+ at the center of a large\\-scale transformation. Following several acquisitions, Shine is now unifying its frontend architecture across diverse products — each with unique stacks and priorities. You’ll work alongside engineers with deep expertise in both web and mobile, collaborating closely with product teams, designers, and engineering leaders to standardize best practices and shape the shared foundation for all Shine products.
+   
+
+
+
+
+ 📋 Your Role as an Staff Frontend Developer
+ * Design and own the technical architecture for consolidating multiple products into unified web and mobile platforms using React and React Native (Expo).
+* Define migration strategies and establish standards for state management, testing, routing, and deployment.
+* Build and refine shared infrastructure — component libraries, build pipelines, and tooling — to support cross\\-product alignment.
+* Develop proofs of concept, reference implementations, and shared tooling to accelerate team adoption.
+* Drive adoption of shared component libraries and architectural patterns across product teams.
+* Collaborate with design teams on the technical foundation and tooling integration for the design system.
+* Partner with engineering managers and tech leads to align frontend initiatives with product roadmaps.
+* Champion developer experience by improving tooling, automation, and documentation.
+* Support teams during platform adoption through pairing sessions and technical consultations.
+* Lead knowledge\\-sharing efforts through code reviews, workshops, tech talks, and architecture discussions.
+
+
+ 🔎 About you
+ * Deep expertise in
+ **React** 
+ for both web and native environments.
+* Strong knowledge of
+ **React Native** 
+ ,
+ **Expo** 
+ , and
+ **EAS tooling** 
+ .
+* Proven experience in
+ **frontend architecture** 
+ and
+ **shared component libraries** 
+ .
+* Familiarity with
+ **mobile CI/CD pipelines** 
+ and
+ **native abstraction** 
+ .
+* Proficiency in
+ **TypeScript\\-first environments** 
+ .
+* Strong English communication skills (written and spoken).
+
+
+
+ Nice to have:
+ 
+
+
+* Experience managing multi\\-brand frontend architectures.
+* Knowledge of monorepo tools (e.g., Turborepo, Nx)
+* Previous exposure to merger or post\\-acquisition technical consolidation.
+
+
+
+ 📍 Job located in Berlin, Copenhagen, Paris, Gdansk, Amsterdam with possibility of two remote working days per week.
+   
+
+  
+
+
+
+
+
+**Equal Opportunity Employer** 
+
+
+
+
+ We follow the principle of equal treatment to consider all job applicants and do not discriminate based on their gender, sexual orientation, color, racial or ethnic origin, religion, disability, etc. as per applicable law.
+   
+
+
+
+
+ 💚 Our recruitment process
+ 
+ 1️⃣ A 30’ call with our Talent Acquisition Specialist to get to know you better and share more about Ageras' culture and mission.
+ 
+
+
+
+ 2️⃣ A 60’ call with Manager to dive into your technical experience, career aspirations, and vision for this role.
+ 
+
+
+
+ 3️⃣ A 60’ tech exercise with members of the team to evaluate your practical skills.
+ 
+
+
+
+ 4️⃣ A 60' soft skills interview based on the personality assessment to see how we can best support your growth at Ageras.","IT Services and IT Consulting","https://dk.linkedin.com/company/ageras-dk","https://media.licdn.com/dms/image/v2/D4D0BAQFkpAJThe14Zw/company-logo_100_100/B4DZc_VBd2GgAQ-/0/1749114165628/ageras_dk_logo?e=2147483647&v=beta&t=7oNhboYzipXCIrQHobI73rs3rUrXP8umu08JQfhjY3A","","","","","","","","","","","","software engineer"
+"li-4337353738","linkedin","https://www.linkedin.com/jobs/view/4337353738","https://join.com/companies/smart-host/15112382-senior-back-end-java-engineer-f-m-d?pid=e65242534431eadcb0c9&urlHash=hOB5","Senior Back-End Java Engineer (f/m/d)","Smart Host","Berlin, Berlin, Germany","2025-11-03","fulltime","","","","","",False,"mid-senior level","Information Technology","","","Smart Host is a B2B SaaS platform in the hospitality industry. We empower hotels to put their own data to work. We collect, clean and enrich guest data from both internal and external data sources. All of this combined with data analysis takes guest communication and marketing efforts to a new level. Our typical clients are not necessarily tech savvy, so it’s on us to skyrocket them into the digital marketing age, by simplifying the experience to the maximum through great usability.
+ 
+
+
+  
+
+
+ We are an early stage company run by experienced entrepreneurs – this is your chance to shape our product. We believe in user research, data driven product development and simple UIs allowing complex interactions. If you do too, we are a match. As senior Back\\-end engineer you’ll be part of an amazing team responsible for our hospitality software solution.
+ 
+
+
+  
+
+ Tasks
+   
+
+  
+* Developing a webapp back\\-end with non\\-trivial business logic
+  
+* Being responsible for your code and the cloud infrastructure it runs on
+  
+* Making sure that the software scales together with the growing user base
+  
+* Working together with Front\\-end Engineers and provide required APIs
+  
+* Fighting emerging complexity in the code by rethinking things from the beginning
+  
+
+
+  
+
+ Requirements
+   
+
+  
+* You are proficient in Java and keep track of its development up to Java 16
+  
+* You have experience with Kubernetes
+  
+* You are familiar with some of the following technologies: Gradle, Spring, JPA, Skaffold, Helm, Terraform, Apache Kafka, Go, Scripting (Shell, Python)
+  
+* You understand the fundamentals of networking, operating systems and distributed computing.
+  
+* DevOps experience in cloud environments is a plus
+  
+* You care about code quality and refactor where it is required
+  
+* You dig deep to find the root cause of any problem before shifting responsibility
+  
+* You constantly extend and share your professional knowledge
+  
+
+
+  
+
+ Benefits
+   
+
+  
+* A small, very skilled and highly passionate team of extraordinary co\\-workers
+  
+* A competitive salary
+  
+* An ability to make significant impact on the company’s future
+  
+* High levels of transparency, trust and freedom
+  
+* A casual working environment with flexible working hours
+  
+* An office in the centre of Berlin between Alexanderplatz and Friedrichstraße
+  
+
+
+  
+
+
+ Your complete application should include your CV, a few words about you and your soonest availability. Please it send it using the subject line “Application – Senior Java Back\\-end Engineer”. In order to be hired you will need to pass a coding challenge as well as a technical interview which will be conducted by your future colleagues.","IT Services and IT Consulting","https://de.linkedin.com/company/smart-host-gmbh","https://media.licdn.com/dms/image/v2/D4E0BAQFSnCck8zrbuw/company-logo_100_100/B4EZiciAveGUAU-/0/1754972818767/smart_host_gmbh_logo?e=2147483647&v=beta&t=eFionp7Y17VjqVIdbQ4WnbjAj0fA_G_RP1QY2Er-YMo","","","","","","","","","","","","software engineer"
+"li-4337353252","linkedin","https://www.linkedin.com/jobs/view/4337353252","","Founding AI Engineer (Stealth AI Venture)","Merantix Capital","Berlin, Berlin, Germany","2025-11-03","fulltime","","","","","",False,"mid-senior level","Information Technology","","","**What We Do**
+ We’re building the first AI\\-native energy company: A system that thinks, decides, and runs energy operations autonomously. The mission: rebuild Europe’s $1T\\+ energy industry from scratch using AI as the operating system. No dashboards. No SaaS. Agentic AI trained on live market and operational data.
+   
+
+  
+
+ You’ll design the AI core: From data pipelines to model inference and help build the agents that make complex energy decisions simple. If you’ve shipped production AI, hacked your own stack, or just move faster than teams of ten, this is your arena.
+   
+
+  
+
+ We offer: competitive compensation, early\\-stage equity participation, pure greenfield tech, full ownership, and zero bureaucracy. Workspace at the Merantix AI Campus in Berlin.
+   
+
+  
+
+ If you’re wired for velocity, clarity, and building in chaos, we need you in our team!
+   
+
+  
+
+**About Us**
+ We are an equal\\-opportunity employer and value diversity. We consider all applications equally regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, or gender identity. We strongly encourage individuals from groups traditionally underrepresented in tech to apply.","Software Development","https://de.linkedin.com/company/merantix-capital","https://media.licdn.com/dms/image/v2/D4E0BAQETtwNvpyAptg/company-logo_100_100/company-logo_100_100/0/1728376830172/merantix_capital_logo?e=2147483647&v=beta&t=hdlr3jSvjUL4T_6HltePhgiiFnGQVBr1JXJ8X_H7rB4","","","","","","","","","","","","software engineer"
+"li-4320395451","linkedin","https://www.linkedin.com/jobs/view/4320395451","","Staff Frontend Developer","Shine","Berlin, Berlin, Germany","2025-11-03","fulltime","","","","","",True,"mid-senior level","Engineering and Information Technology","","","At Shine, we are redefining how entrepreneurs—freelancers, self\\-employed professionals, and SMEs—manage their banking, and administrative tasks. Through seamless tools and innovative accounting \\& banking solutions, we help them focus on what matters most: growing their businesses.
+   
+
+  
+
+ Our vision is to become the best friend of every small entrepreneur across Europe. 💚
+   
+
+  
+
+ Over the years, Shine has grown through the merging of top European FinTechs like Shine (🇫🇷), Kontist (🇩🇪), Tellow (🇳🇱), and more. Today, we’re a team of nearly 500 people, including 150 talented engineers, working together from Paris, Amsterdam, Copenhagen, and Berlin.
+   
+
+  
+
+ 👀 Your role as a Staff Frontend Developer at Shine
+   
+
+  
+
+ We’re looking for a
+ **Staff Frontend Developer** 
+ to provide strategic direction and technical leadership for our Frontend Platform team. In this role, you’ll own the architecture, shared tooling, and design system that power our web and mobile applications. You’ll help formalize ownership, guide product engineers, and align frontend efforts across multiple brands and teams.
+   
+
+  
+
+ This position is crucial to reducing duplication, improving consistency, and accelerating delivery across Shine as we consolidate several products into a unified platform.
+   
+
+  
+
+ You’ll join a
+ **small, focused team** 
+ at the center of a large\\-scale transformation. Following several acquisitions, Shine is now unifying its frontend architecture across diverse products — each with unique stacks and priorities. You’ll work alongside engineers with deep expertise in both web and mobile, collaborating closely with product teams, designers, and engineering leaders to standardize best practices and shape the shared foundation for all Shine products.
+   
+
+  
+
+ 📋 Your Role as an Staff Frontend Developer
+   
+
+  
+
+* Design and own the technical architecture for consolidating multiple products into unified web and mobile platforms using React and React Native (Expo).
+* Define migration strategies and establish standards for state management, testing, routing, and deployment.
+* Build and refine shared infrastructure — component libraries, build pipelines, and tooling — to support cross\\-product alignment.
+* Develop proofs of concept, reference implementations, and shared tooling to accelerate team adoption.
+* Drive adoption of shared component libraries and architectural patterns across product teams.
+* Collaborate with design teams on the technical foundation and tooling integration for the design system.
+* Partner with engineering managers and tech leads to align frontend initiatives with product roadmaps.
+* Champion developer experience by improving tooling, automation, and documentation.
+* Support teams during platform adoption through pairing sessions and technical consultations.
+* Lead knowledge\\-sharing efforts through code reviews, workshops, tech talks, and architecture discussions.
+
+
+ 🔎 About you
+   
+
+  
+
+* Deep expertise in React for both web and native environments.
+* Strong knowledge of React Native, Expo, and EAS tooling.
+* Proven experience in frontend architecture and shared component libraries.
+* Familiarity with mobile CI/CD pipelines and native abstraction.
+* Proficiency in TypeScript\\-first environments.
+* Strong English communication skills (written and spoken).
+
+
+ Nice to have:
+   
+
+  
+
+* Experience managing multi\\-brand frontend architectures.
+* Knowledge of monorepo tools (e.g., Turborepo, Nx)
+* Previous exposure to merger or post\\-acquisition technical consolidation.
+
+
+ 📍 Job located in Berlin, Copenhagen, Paris, Gdansk, Amsterdam with possibility of two remote working days per week.
+   
+
+  
+
+**Equal Opportunity Employer**
+ We follow the principle of equal treatment to consider all job applicants and do not discriminate based on their gender, sexual orientation, color, racial or ethnic origin, religion, disability, etc. as per applicable law.
+   
+
+  
+
+ 💚 Our recruitment process
+   
+
+  
+
+ 1️⃣ A 30’ call with our Talent Acquisition Specialist to get to know you better and share more about Ageras' culture and mission.
+   
+
+  
+
+ 2️⃣ A 60’ call with Manager to dive into your technical experience, career aspirations, and vision for this role.
+   
+
+  
+
+ 3️⃣ A 60’ tech exercise with members of the team to evaluate your practical skills.
+   
+
+  
+
+ 4️⃣ A 60' soft skills interview based on the personality assessment to see how we can best support your growth at Ageras.","Information Technology & Services","https://dk.linkedin.com/company/shine-global-tools","https://media.licdn.com/dms/image/v2/D4D0BAQFZoMJ6gwlnag/company-logo_100_100/B4DZmjz0gTJAAQ-/0/1759389895034/ageras_global_logo?e=2147483647&v=beta&t=Tzi50Icj-5pAgHr3KDokGVh_aYYrzScnjXvlbIv5o6s","","","","","","","","","","","","software engineer"
+"li-4320403525","linkedin","https://www.linkedin.com/jobs/view/4320403525","","Data Engineer II - (Fintech)","Delivery Hero","Berlin, Berlin, Germany","2025-11-03","fulltime","","","","","",False,"mid-senior level","Information Technology","","","As the world’s pioneering local delivery platform, our mission is to deliver an amazing experience, fast, easy, and to your door. We operate in over 70\\+ countries worldwide, powered by tech, designed by people. As one of Europe’s largest tech platforms, headquartered in Berlin, Germany. Delivery Hero has been listed on the Frankfurt Stock Exchange since 2017 and is part of the MDAX stock market index. We enable creative minds to deliver solutions that create impact within our ecosystem. We move fast, take action and adapt. No matter where you're from or what you believe in, we build, we deliver, we lead. We are Delivery Hero.
+   
+
+  
+
+**Job Description**
+ We are on the lookout for a
+ **Data Engineer** 
+**II** 
+ to join the Fintech team on our journey to always deliver amazing experiences.
+   
+
+  
+
+ Be part of building the financial backbone of Delivery Hero. You’ll develop products that empower millions of customers and merchants, from seamless payments to innovative financial solutions like wallets and credit. Your work will support our path to profitability by creating financial flexibility for users and enabling smooth transactions across our markets.
+   
+
+  
+
+ In this role you will:
+   
+
+  
+
+* Work together with data analysts, product managers, backend engineers and data scientists in cross functional projects to develop the data solution.
+* Advocate data engineering best practices and design principles in our engineering teams.
+* Ensure that we have a performant and efficient data access layer in our applications.
+* Perform on\\-going reviews of our application code and database queries to improve software performance.
+* Review database queries and storage strategies.
+
+
+**Qualifications**
+* Strong knowledge of relational databases, data modeling and solid experience in doing data analysis and transformations with SQL
+* Experience with big data infrastructure on GCP or AWS
+* Experience with our tech stack or similar tools: Git, Airflow, Python, SQL, BigQuery
+* Experience with pipeline and workflow management tools.
+* Love to learn and constantly improve your own skills and are not afraid to jump into new things
+* Good verbal and written communication skills in English and able to present the thoughts in a clear and structured manner.
+
+
+**Nice to have:**
+* Familiar with data privacy regulations such as GDPR or ISO 27001
+* Payment, banking or financial exposure
+* Familiar with fast moving tech business.
+* Knowledge of dbt and realtime solutions (PubSub/Dataflow)
+
+
+**Additional Information**
+ Ensuring you and all our Heroes are looked after, happy, and healthy is always on the menu. Because if you’re in good shape, then we’re in good shape.
+   
+
+  
+
+* Make the most of our hybrid working model and join the team for face\\-to\\-face connection and collaboration in our beautiful Berlin campus 2 days a week
+* We offer 27 days holiday with an extra day on 2nd and 3rd year of service
+* We will support you in developing yourself and your career growth opportunities: 1\\.000 € Educational Budget, Language Courses, Parental Support and access to the Udemy Business platform to explore a variety of online courses.
+* Get moving and release those wonderful, mind\\-boosting endorphins: Health Checkups, Meditation, Yoga, Gym \\& Bicycle Subsidy
+* Cash. Dough. Cheddar. Whatever you call it, we’ll help you with it: Employee Share Purchase Plan, Sabbatical Bank, Public Transportation Ticket Discount, Life \\& Accident Insurance, Corporate Pension Plan
+* The power of getting together over some food is unrivaled. Here are a few ways to help you do that. All the yum: Digital Meal Vouchers, Food Vouchers, Corporate Discounts. Courses.
+
+
+**Ready to join our team?** 
+ If you’re excited to grow, collaborate and be part of the world’s leading delivery platform, we’d love to hear from you. Apply today!
+   
+
+  
+
+ We believe diversity and inclusion are key to creating not only an exciting product, but also an amazing customer and employee experience. Fostering this starts with hiring \\- therefore we do not discriminate on the basis of racial identities, religious beliefs, color, national origin, gender identities or expressions, sexual orientations, age, marital or disability statuses, or any other aspect that makes you, you. We encourage you to let us know if you need any accommodations or specific accessibility support to ensure a smooth interview experience—just include it in your application. You're welcome to share your pronouns (he/she/they) right from the start so we can address you respectfully from our first contact.","Software Development and IT Services and IT Consulting","https://de.linkedin.com/company/delivery-hero-se","https://media.licdn.com/dms/image/v2/D4E0BAQFOZbu6XEJUAw/company-logo_100_100/company-logo_100_100/0/1688740737160/delivery_hero_se_logo?e=2147483647&v=beta&t=jzixay9Wvsb0wQ7XPJDP1NDW_wPdZvs-PYut-TqyEOc","","","","","","","","","","","","software engineer"
+"li-4334297102","linkedin","https://www.linkedin.com/jobs/view/4334297102","","Junior Full Stack Developer","Instaffo","Berlin, Berlin, Germany","","parttime","","","","","",False,"not applicable","Information Technology and Engineering","","","Junior Full Stack Developer bei Finment GmbH
+   
+
+  
+
+**Anforderungen**
+ Wohnsitz:
+ **Nur für Bewerber aus Deutschland**
+ Sprache:
+ **Deutsch \\- Fließend**
+* Erfahrung. Du hast mind. 1 Jahr praktische Erfahrung als Frontend und Backend Entwickler gesammelt, idealerweise durch Praktika oder ähnliche Tätigkeiten
+* Leidenschaft. Du hast Bock auf genau diesen Job! Du hast eine starke Eigenmotivation und Leidenschaft für sauberes, agiles Prozess\\- und Projektmanagement.
+* Startup Verantwortung. Du hast nachweislich gerne Verantwortung für deinen Themenbereich übernommen, auch wenn das außerhalb deiner Komfortzone war. Du hast Dinge ohne zu zögern angepackt, warst ergebnisorientiert und zügig in der Umsetzung.
+* Persönliches Wachstum. Du lernst und entwickelst dich eifrig, ob in deinem Job, dem Sektor in dem du arbeitest, aber auch privat! Du suchst proaktiv nach Feedback. Dabei behälst du den Erfolg des Teams im Auge.
+* Smart. Du hast sehr gute analytische und strukturelle Fähigkeiten, um Szenarien im Vorfeld klar durchzudenken. Das was du durchgedacht hast, setzt du strukturiert um.
+* Sprache. Dein Deutsch ist idealerweise auf C1 Level. Dein Englisch ist gut für Konversationen.
+
+
+**Tätigkeiten**
+****Was Dich erwartet****
+ Als Mitglied in unserem Produktentwicklungsteam übernimmst du eine Schlüsselrolle als Programmierer im Frontend und Backend.
+   
+
+  
+
+* Du bist in den ganzheitlichen Entwicklungsprozess von unseren Finanzplattform eingebunden. Du identifizierst und entwickelst neue Features alles rund um Börsenhandel und Finanzielle Unabhängigkeit.
+* Du kennst die grundlegenden Technologien wie JavaScript, React.js, PHP, HTML5, CSS. Dabei hast du eine präzise und detailverliebte Arbeitsweise.
+* Du entwickelst in einer dynamischen Startup Umgebung die neue Generation von Investmentsystemen für Privatanleger.
+* Du unterstützt und entwickelst unserer Finanzplattform im Front und Backend.
+* Du optimierst alle unternehmensinternen Prozesse und Algorithmen.
+* Du gestaltest als Mitglied eines agilen Teams den Scrum\\-Prozess aktiv mit und begleitest alle Phasen von der Planung bis zur Retro mit.
+
+
+**Team**
+ Wir bieten dir nicht nur einen Job an, sondern Du wirst ein Mitglied unseres High\\-Performance\\-Teams, bestehend aus Digital\\- und Investment\\-Experten und nimmst eine bedeutende Rolle bei der Demokratisierung der Geldanlage ein. Daneben bieten wir Dir:
+   
+
+  
+
+* Ein positives Arbeitsumfeld: Wohlfühlatmosphäre und ein kollegialer und familiärer Umgang mit gemeinsamen Freizeitaktivitäten und Teamevents .
+* Eigener Verantwortungsbereich: Verantwortung für den Erfolg deines Bereichs mit direkter Auswirkung auf die Unternehmensentwicklung.
+* Echte Start\\-Up Atmosphäre: Kurze Entscheidungswege und direkter Kontakt zu der strategischen Geschäftsführung.
+* Steile Karrierechancen: Nimm langfristig eine Rolle als Experte und /oder Führungskraft ein.
+
+
+**Über das Unternehmen**
+ Als ein dynamisches Fin\\- und EdTech Start\\-Up transformieren wir den Bereich der privaten Geldanlage. Mit einer staatlichen Anerkennung und Zulassung sind wir eines der führenden Bildungsinstitute für Investments. Dies erreichen wir, indem wir wissenschaftlich fundierte Strategien mit einer algorithmisch basierten Finanzplattform und einem langjährigen Expertenwissen verknüpfen. Damit bieten wir Privatpersonen eine komplett neue Art digital, unabhängig und effektiv Vermögen aufzubauen.
+   
+
+  
+
+ Klicke auf ""Bewerben"" für Details zu den Benefits, dem Team und dem Bewerbungsprozess.","IT Services and IT Consulting","https://de.linkedin.com/company/instaffo-gmbh","https://media.licdn.com/dms/image/v2/C4D0BAQHavKSx4m9UQg/company-logo_100_100/company-logo_100_100/0/1630565302253/instaffo_gmbh_logo?e=2147483647&v=beta&t=hajWxmogZTM9iX-EUafV4ExWeuRjZoytk4Pg8De9Odg","","","","","","","","","","","","software engineer"
+"li-4337786062","linkedin","https://www.linkedin.com/jobs/view/4337786062","","Full Stack Software Engineer (m/f/d)","Machine Learning Reply GmbH","Berlin, Berlin, Germany","","fulltime","","","","","",True,"entry level","Consulting","","","Job Description
+   
+
+
+ At
+ 
+
+
+  
+
+ Machine Learning Reply Germany we work with our clients on
+ **leading\\-edge projects** 
+ for which we are seeking
+ **Full Stack** 
+**Software** 
+**Engineers** 
+ to serve our cloud based client projects in multiple industries.
+   
+
+
+ Machine Learning Reply, with its sister company in Italy and over 10\\.000 employees at Reply globally, is a fast\\-growing consultancy focused on solving problems with data intelligence and the right organizational frameworks as their backbone. We offer tailor\\-made end\\-to\\-end solutions in the software development domain that cover the entire project lifecycle \\- from the initial strategy consultation and planning to implementation and final hand\\-over to the client.
+ 
+
+
+  
+
+
+ Whether you are an experienced
+ **full stack** 
+**engineer** 
+ or just graduated having gained first experience in software engineering \\- if you never lose focus, love coding, and are passionate for bringing your ideas to life,
+ **then we want to hear from you!** 
+
+
+
+  
+
+ Responsibilities
+   
+
+  
+* Develop state\\-of\\-the\\-art
+ **Backend Components** 
+ ,
+ **Microservices** 
+ and
+ **Cloud Infrastructures** 
+ in a diverse and modern project environment
+  
+* Engineering and implementation of
+ **production\\-ready cloud** 
+ (native)
+ **infrastructures** 
+ from
+ **Databases** 
+ to
+ **S** 
+**erverless**
+  
+* Establish
+ **best practices in software engineering** 
+ and actively contribute to optimize our customers’ development standards, tools and processes
+  
+* Closely interact with
+ **customers and stakeholders** 
+ to translate concrete and complex business requirements into production\\-ready applications
+  
+* Investigate new and
+ **emerging technologies** 
+ in order to provide our customers with the optimal solution to their business requirements
+  
+
+
+  
+
+ What We Offer You
+   
+
+  
+* **Flexible working hours** 
+ , an attractive salary and a
+ **competitive overall package** 
+ (e.g.,
+ **30 days of vacation** 
+ )
+  
+* **Flexible work environment** 
+ between client, Reply office and
+ **home office**
+  
+* Very active group social program, including trainings, knowledge\\-sharing sessions, conferences, team buildings, group events, Reply Exchange, communities of practices and hackathons
+  
+* **Trainings and certifications** 
+ are encouraged and paid to foster your personal development
+  
+* You choose your state\\-of\\-the\\-art work equipment
+  
+* Access to our mobility scheme with
+ **Job Rad** 
+ and
+ **public transport tickets**
+  
+* **Gym\\-membership subsidy** 
+ for a gym of your choice
+  
+* Work in an open, flat environment, within a broad Reply knowledge sharing network
+  
+* Working in a modern company, with the
+ **dynamics of a start\\-up** 
+ and the
+ **security of a corporation** 
+ . We are driving digital change in small, innovative, international teams.
+  
+* Award winning office spaces for an excellent work experience and access to ""Stammstrecke""
+  
+
+
+  
+
+ Requirements
+   
+
+
+ Bachelor´s /
+ **Master’s degree** 
+ in Computer Science or related fields (e.g., engineering, statistics, informatics)
+ 
+
+
+  
+
+  
+* Advanced and fluent usage of one of the following
+ **Programming Languages** 
+ : .NET Core, C\\#, Java, JavaScript, Python, Rust (proven through project track record)
+  
+* Practical experience in
+ **Backend Technologies** 
+ such as NodeJS, Spring/SpringBoot, Flask/Django, REST APIs, GraphQL etc.
+  
+* Practical experience in
+ **F** 
+**rontend Technologies** 
+ such as Angular, React, Typescript, etc.
+  
+* Knowledge of
+ **CI/CD frameworks** 
+ (e.g., Jenkins, GitLab CI) and the
+ **DevOps** 
+ and
+ **GitOps** 
+ concept (
+ **GitSecOps** 
+ concept an advantage)
+  
+* Hands\\-on experience with
+ **cloud technologies** 
+ such as Azure and AWS as well as
+ **knowledge of Kubernetes is an advantage** 
+ .
+  
+* You are familiar with database concepts and possess understanding of APIs (types, protocols, etc.)
+  
+* Ability to convincingly
+ **communicate project and development** 
+ results within project structure
+  
+* **Fluent in English** 
+ and able to speak
+ **German at least at a B1 level**
+  
+
+
+  
+
+
+ What are you waiting for?
+ 
+
+
+  
+
+
+ Join our team at
+ **Machine Learning Reply** 
+ in
+ **Munich, Berlin, Hamburg** 
+ or
+ **remote from** 
+**all across Germany!**","IT Services and IT Consulting","https://de.linkedin.com/company/machine-learning-reply-de","https://media.licdn.com/dms/image/v2/C4D0BAQHM8LHIlT8bPg/company-logo_100_100/company-logo_100_100/0/1630571974573?e=2147483647&v=beta&t=BQEmgkXZ2a6Xco9EDbPIIph_neYQa660vvo_WPpDm94","","","","","","","","","","","","software engineer"
+"li-4334544559","linkedin","https://www.linkedin.com/jobs/view/4334544559","https://www.stepstone.de/job/12616976/application/redirection?locale=de_DE&cid=partner_linkedin___Y&adjust_t=1b62r1yb_1buei3s9&adjust_campaign=partner_linkedin___Y&urlHash=-vh0","Junior Web Entwickler - JavaScript / React / HTML5 / Finanzplattform (m/w/d)","FinMent","Berlin, Berlin, Germany","","fulltime","","","","","",False,"internship","Engineering and Information Technology","","","Als ein dynamisches Fin\\- und EdTech Start\\-Up transformieren wir den Bereich der privaten Geldanlage. Mit einer staatlichen Anerkennung und Zulassung sind wir eines der führenden Bildungsinstitute für Investments. Dies erreichen wir, indem wir wissenschaftlich fundierte Strategien mit einer algorithmisch basierten Finanzplattform und einem langjährigen Expertenwissen verknüpfen. Damit bieten wir Privatpersonen eine komplett neue Art digital, unabhängig und effektiv Vermögen aufzubauen.
+   
+
+  
+
+**Aufgaben**
+* Du übernimmst als Mitglied in unserem Produktentwicklungsteam eine Schlüsselrolle als Programmierer:in im Frontend und Backend
+* Du bist in den ganzheitlichen Entwicklungsprozess unserer Finanzplattform eingebunden und identifizierst sowie entwickelst neue Features rund um Börsenhandel und finanzielle Unabhängigkeit
+* Du entwickelst in einer dynamischen Startup\\-Umgebung die neue Generation von Investmentsystemen für Privatanleger:innen
+* Du unterstützt und entwickelst unsere Finanzplattform im Frontend und Backend
+* Du optimierst alle unternehmensinternen Prozesse und Algorithmen
+* Du gestaltest als Mitglied eines agilen Teams den Scrum\\-Prozess aktiv mit und begleitest alle Phasen von der Planung bis zur Retrospektive
+
+
+**Profil**
+* Du hast eine Leidenschaft für Programmieren und bist ein:e Clean Coder:in
+* Du kennst die grundlegenden Frontend\\-Technologien wie JavaScript, React.js, HTML5, CSS und hast eine präzise und detailverliebte Arbeitsweise
+* Du bist ein:e Programmier\\-Allrounder:in, der:die sich durch eine Hands\\-on\\-Mentalität stetig weiterentwickeln möchte und Dinge gerne anpackt
+* Du möchtest und kannst Verantwortung für deinen Themenbereich übernehmen, um daraus schnell persönlich zu wachsen
+* Du bist diszipliniert, eigenständig und ergebnisorientiert
+* Du hast Deutschkenntnisse auf C1\\-Niveau und gute Englischkenntnisse für Konversationen
+
+
+**Wir bieten**
+* Ein positives Arbeitsumfeld: Wohlfühlatmosphäre und ein kollegialer und familiärer Umgang mit gemeinsamen Freizeitaktivitäten und Teamevents
+* Eigener Verantwortungsbereich: Verantwortung für den Erfolg deines Bereichs mit direkter Auswirkung auf die Unternehmensentwicklung
+* Echte Start\\-Up Atmosphäre: Kurze Entscheidungswege und direkter Kontakt zu der strategischen Geschäftsführung
+* Moderne Arbeitsumgebung: Modernes Office mit einer sehr guten Verkehrsanbindung und arbeite mit State\\-of\\-the\\-Art Technologie
+* Persönliche Weiterbildung: Jährliches Weiterbildungsbudget bis zu 5\\.000Euro und Fachwissen von Unternehmensexperten
+* Zugang zu unternehmensinternen Produkten: Baue dein Vermögen mit regelmäßigem Börseneinkommen auf
+* Steile Karrierechancen: Nimm langfristig eine Rolle als Experte und /oder Führungskraft ein
+
+
+**Important note**
+ Please be advised that a valid work permit for Germany is required for non\\-EU citizens. Unfortunately, applications without a valid work permit and sufficient German language skills may not be considered.
+   
+
+  
+
+ LNKD1\\_DE","Technology, Information and Media","https://de.linkedin.com/company/finment","https://media.licdn.com/dms/image/v2/C4D0BAQEJRe_8Zcdq8g/company-logo_100_100/company-logo_100_100/0/1630510395194/finment_logo?e=2147483647&v=beta&t=aFnr9cIJk0KJfW8k-tORuAGLcJUxNY4IX22ZiCFpqGg","","","","","","","","","","","","software engineer"
+"li-4337767128","linkedin","https://www.linkedin.com/jobs/view/4337767128","","Software Engineer (React) -  Quick Commerce","Delivery Hero","Berlin, Berlin, Germany","","fulltime","","","","","",False,"mid-senior level","Information Technology","","","As the world’s pioneering local delivery platform, our mission is to deliver an amazing experience, fast, easy, and to your door. We operate in over 70\\+ countries worldwide, powered by tech, designed by people. As one of Europe’s largest tech platforms, headquartered in Berlin, Germany. Delivery Hero has been listed on the Frankfurt Stock Exchange since 2017 and is part of the MDAX stock market index. We enable creative minds to deliver solutions that create impact within our ecosystem. We move fast, take action and adapt. No matter where you're from or what you believe in, we build, we deliver, we lead. We are Delivery Hero.
+   
+
+  
+
+**Job Description**
+ Be part of redefining how customers experience quick commerce. You’ll help build technology that scales our non\\-food offerings, reaching new market segments and driving revenue growth. By innovating within our Quick Commerce Team, you’ll make Delivery Hero the go\\-to platform for a broad range of products, helping us grow faster and deliver more value to customers around the world.
+   
+
+  
+
+ We are looking for a Software Engineer with React to join our ""Quick Commerce"" team. Contribute to the creation of our next\\-generation platform, which works on expanding our amazing delivery to new products such as groceries, pharmaceuticals, flowers, and more. If you're a creative problem solver who is eager to deliver solutions and hungry for a new adventure, an international workplace is waiting for you in the heart of Berlin!
+   
+
+  
+
+* Building our Global service platform for our global internal/external customers with bleeding edge technical stack (ES6, React \\+ Redux, Webpack).
+* Implement new features and improve the user experience of existing solutions.
+* Be data\\-driven, assess the impact of features, make hypotheses and implement new solutions.
+
+
+**Qualifications**
+* Working experience with JavaScript (ES6\\+), Typescript and/or React
+* 4\\+ years of professional web application development knowledge
+* Write lean, semantic markup and CSS based on modern standards
+* You write unit, behavior and integration tests for current and new scenarios with clean and well\\-documented code
+* A rock\\-solid foundation in Computer Science (data structures, algorithms, software design)
+* Full professional English proficiency
+
+
+**Nice to have:**
+* Mentorship: Capability to successfully transfer knowledge.
+* Experience with different API protocols JSON API, GraphQL, etc.
+* Experience implementing Design Systems.
+
+
+**Additional Information**
+ Ensuring you and all our Heroes are looked after, happy, and healthy is always on the menu. Because if you’re in good shape, then we’re in good shape.
+   
+
+  
+
+* Make the most of our hybrid working model and join the team for face\\-to\\-face connection and collaboration in our beautiful Berlin campus 2 days a week
+* We offer 27 days holiday with an extra day on 2nd and 3rd year of service
+* Ensuring you and all our Heroes are looked after, happy, and healthy is always on the menu. Because if you’re in good shape, then we’re in good shape
+* Get moving and release those wonderful, mind\\-boosting endorphins: Health Checkups, Meditation, Yoga, Gym \\& Bicycle Subsidy
+* Cash. Dough. Cheddar. Whatever you call it, we’ll help you with it: Employee Share Purchase Plan, Sabbatical Bank, Public Transportation Ticket Discount, Life \\& Accident Insurance, Corporate Pension Plan
+* Look up and go for it. We will support you in developing yourself and your career: 1\\.000 € Educational Budget, Language Courses, Parental Support
+* The power of getting together over some food is unrivaled. Here are a few ways to help you do that. All the yum: Digital Meal Vouchers, Food Vouchers, Online Canteen, Corporate Discounts
+
+
+ We believe diversity and inclusion are key to creating not only an exciting product, but also an amazing customer and employee experience. Fostering this starts with hiring \\- therefore we do not discriminate on the basis of racial identities, religious beliefs, color, national origin, gender identities or expressions, sexual orientations, age, marital or disability statuses, or any other aspect that makes you, you. We encourage you to let us know if you need any accommodations or specific accessibility support to ensure a smooth interview experience—just include it in your application. You're welcome to share your pronouns (he/she/they) right from the start so we can address you respectfully from our first contact.
+   
+
+  
+
+ We believe diversity and inclusion are key to creating not only an exciting product, but also an amazing customer and employee experience. Fostering this starts with hiring \\- therefore we do not discriminate on the basis of racial identities, religious beliefs, color, national origin, gender identities or expressions, sexual orientations, age, marital or disability statuses, or any other aspect that makes you, you. We encourage you to let us know if you need any accommodations or specific accessibility support to ensure a smooth interview experience—just include it in your application. You're welcome to share your pronouns (he/she/they) right from the start so we can address you respectfully from our first contact.","Software Development and IT Services and IT Consulting","https://de.linkedin.com/company/delivery-hero-se","https://media.licdn.com/dms/image/v2/D4E0BAQFOZbu6XEJUAw/company-logo_100_100/company-logo_100_100/0/1688740737160/delivery_hero_se_logo?e=2147483647&v=beta&t=jzixay9Wvsb0wQ7XPJDP1NDW_wPdZvs-PYut-TqyEOc","","","","","","","","","","","","software engineer"
+"li-4334257823","linkedin","https://www.linkedin.com/jobs/view/4334257823","https://careers.snowflake.com/us/en/job/SNCOUS2C6015313CEA43468ED2903C4F8CF5F5EXTERNALENUS9FEBC7B9DEAF49C384FE9229830FAD7E/Software-Engineer-XP?utm_source=Q2P9NP2NNP&utm_medium=phenom-feeds&gh_src=ed5543a62&urlHash=KU0L","Software Engineer XP","Snowflake","Berlin, Berlin, Germany","","fulltime","","","","","",False,"entry level","Engineering and Information Technology","","","Snowflake is about empowering enterprises to achieve their full potential — and people too. With a culture that’s all in on impact, innovation, and collaboration, Snowflake is the sweet spot for building big, moving fast, and taking technology — and careers — to the next level.
+   
+
+  
+
+ We’re hiring talented Software Engineers to join the Snowflake Query Processing team! This position is part of our engineering team to evolve our elastic, large scale, high\\-performance query processing engine. We need smart engineers who can pick up and understand complex technical areas quickly – and who are enthusiastic about building new technologies! The official language for this office will be English.
+   
+
+  
+
+**AS A SOFTWARE ENGINEER AT SNOWFLAKE, YOU WILL:**
+* Design, develop, and support a petabyte\\-scale cloud database that is high performant, highly parallel, and fault\\-tolerant.
+* Build high\\-quality and highly reliable software to meet the needs of some of the largest companies on the planet.
+* Analyze and understand performance and scalability bottlenecks in the system and solve them.
+* Pinpoint problems, instrument relevant components as needed, and ultimately implement solutions.
+* Design and implement novel query optimization or distributed data processing algorithms which allow Snowflake to provide industry leading data warehousing capabilities.
+* Design and implement the new service architecture required to enable the Snowflake Data Cloud.
+* Develop tools for improving our customers' insights into their workloads.
+
+
+**OUR IDEAL SOFTWARE ENGINEER WILL HAVE:**
+* 2\\+ years industry experience working on commercial or open\\-source software.
+* Fluency in C\\+\\+.
+* Familiarity with development in a Linux environment.
+* Excellent problem solving skills, and strong CS fundamentals including data structures, algorithms, and distributed systems.
+* Systems programming skills including multi\\-threading, concurrency, etc.
+* Experience with implementation testing, debugging and documentation.
+* Bachelor’s degree or foreign equivalent in Computer Science, Software Engineering or related field; Masters or PhD preferred.
+* Ability to work on\\-site in our Berlin office.
+
+
+**BONUS POINTS FOR EXPERIENCE WITH THE FOLLOWING:**
+* SQL or other database technologies including internal design and implementation of database engines.
+* Query optimization, query execution, compiler design and implementation.
+* Large scale distributed systems, transactions and consistency models.
+* Data warehouse design, database systems, and large\\-scale data processing solutions like Hadoop and Spark.
+* Big data storage technologies and their applications, e.g., HDFS, Cassandra, Columnar Databases, etc.
+
+
+ Snowflake is growing fast, and we’re scaling our team to help enable and accelerate our growth. We are looking for people who share our values, challenge ordinary thinking, and push the pace of innovation while building a future for themselves and Snowflake.
+   
+
+  
+
+ How do you want to make your impact?
+   
+
+  
+
+ For jobs located in the United States, please visit the job posting on the Snowflake Careers Site for salary and benefits information: careers.snowflake.com","Software Development","https://www.linkedin.com/company/snowflake-computing","https://media.licdn.com/dms/image/v2/D560BAQF3mYS3WqCB3g/company-logo_100_100/company-logo_100_100/0/1688575708630/snowflake_computing_logo?e=2147483647&v=beta&t=R_pYaCE7YEAGMVV51a5YGr9L60KM56sxCoIGCUqAlmg","","","","","","","","","","","","software engineer"
+"li-4334524106","linkedin","https://www.linkedin.com/jobs/view/4334524106","","Backend Engineer – (Nest.js / Node.js)","Holocene","Berlin, Berlin, Germany","","fulltime","","","","","",True,"mid-senior level","Information Technology","","","**Your mission** 
+ \\*\\*Tech Stack You'll Work With\\*\\*\\*
+   
+
+  
+
+* What You'll Do\\*\\*\\*
+* Build and maintain robust backend features and APIs using \\*\\*Nest.js\\*\\* and \\*\\*TypeScript\\*\\*
+* Collaborate with product and engineering leads to implement scalable backend services
+* Write unit and integration tests, improve test coverage, and support automation best practices
+* Contribute to API documentation, schema design, and cross\\-service contracts
+* Own features end\\-to\\-end—from design and implementation to deployment and monitoring
+* Participate in code reviews, pair programming, and team knowledge sharing
+* Backend: Nest.js, Node.js, TypeScript, PostgreSQL, Prisma, Redis\\*
+* Frontend: Next.js \\*
+* Infrastructure: AWS (EBS, ElastiCache, S3\\), Docker\\*
+* Tools:\\*\\* GitHub, Postman, LLM APIs
+
+
+**Your profile**
+**What We're Looking For**
+* 4–6 years of backend development experience, including strong experience in \\*\\*Node.js/Nest.js\\*\\*
+* Proven ability to \\*\\*build and scale real\\-world APIs\\*\\* in production environments
+* Experience working at startups or in fast\\-paced, iterative teams\\* Strong understanding of SQL (PostgreSQL), REST API standards, and backend architecture
+* Passion for coding complex features and solving product or data\\-related challenges
+* Ability to write clean, modular, and well\\-tested code
+* Comfortable working independently and collaboratively across teams
+* A builder mindset: you enjoy seeing your code run in production and impact customers
+
+
+**Nice to Have**
+* Familiarity with message queues (e.g., Kafka, SNS/SQS)
+* Prior work on logistics, SaaS, or real\\-time tracking systems
+* Exposure to Prisma ORM, WebSockets, or event\\-driven patterns
+* Experience working with LLM\\-powered services or backend integrations
+
+
+**Why us?**
+* Impact:\\*\\* You'll work on high\\-ownership backend features that directly impact our customers\\* \\*
+
+
+ \\*Growth:\\*\\* Learn from a deeply technical and experienced teammates\\*
+   
+
+  
+
+* Culture:\\*\\* Flat, collaborative team where your voice is heard and experimentation is encouraged\\*
+* Flexibility:\\*\\* Remote\\-friendly role with a high\\-trust, async work style
+
+
+**About Us**
+ Founded in 2022, Holocene came out of a simple but frustrating pattern: enterprise systems were either too rigid to adapt or too light to scale. Planners, buyers, and supply chain leads were stuck between workarounds and chaos — with no platform designed to handle the way real decisions happen.
+   
+
+  
+
+ We believed there had to be a better way: one that could connect strategy to execution, planning to action, and people to outcomes — without ripping out what teams already use.
+   
+
+  
+
+ Today, Holocene helps businesses around the world reduce friction, fix misalignment, and make smarter supply chain decisions with less effort. Our product evolves with the market — because it was designed to.
+   
+
+  
+
+ We’re here to make complex problems easier to manage, not more complicated to understand. That’s our philosophy. That’s the product.","Software Development","https://de.linkedin.com/company/holocene-scop","https://media.licdn.com/dms/image/v2/D4D0BAQEWGHIewtprBQ/company-logo_100_100/B4DZkPyrgMIYAg-/0/1756906568733/holocene_scop_logo?e=2147483647&v=beta&t=zkXpHhL8abVdljvgl0pz_XZQtzu0liqI43IDZ-VqhzM","","","","","","","","","","","","software engineer"
+"li-4320985127","linkedin","https://www.linkedin.com/jobs/view/4320985127","https://datagroup.softgarden.io/job/57811968/Developer-Backend-Frontend-Fullstack-all-genders-?jobDbPVId=252865271&l=de&urlHash=wEtS","Developer (Backend/Frontend/Fullstack) (all genders)","DATAGROUP Enterprise","Berlin, Berlin, Germany","","fulltime","","","","","",True,"mid-senior level","Engineering and Information Technology","","","DATAGROUP in Berlin
+   
+
+  
+
+ DATAGROUP ist einer der führenden deutschen IT\\-Dienstleister – dank unseres engagierten Teams. Unsere Leidenschaft für Technologie und Innovation ermöglicht es uns, unseren Kunden verlässliche IT\\-Services zu liefern. Bei uns erwartet Dich ein fesselndes und anspruchsvolles Aufgabengebiet in einem innovativen Unternehmen. Eine offene Unternehmenskultur, individuelle Weiterbildungsmöglichkeiten und vielfältige Entwicklungschancen bedeuten einen Arbeitsplatz maßgeschneidert für Dich und Dein Leben.
+   
+
+  
+
+**Ansprechpartner**
+**Franz Bittner**
+ Recruiting Specialist
+   
+
+  
+
+**T** 
+ \\+49 711 49005 13 166
+   
+
+  
+
+ » Zum Bewerbungsformular
+   
+
+  
+
+ » Stellenbeschreibung als PDF
+   
+
+  
+
+ Aufgaben
+   
+
+  
+
+* Entwicklung moderner Webanwendungen mit Java, Python/Django, React/NextJS und Vaadin
+* Gestaltung und Umsetzung benutzerfreundlicher Frontends sowie performanter Backends
+* Anwendung von Datenbankkenntnissen (SQL\\-Scripting, DB\\-Systementwicklung)
+* Nutzung von Git für Versionskontrolle und Zusammenarbeit im Team
+* Mitarbeit in agilen Projekten – mit Übernahme von Teilprojektverantwortung
+* Zusammenarbeit mit interdisziplinären Teams und Abstimmung mit Projektbeteiligten
+
+
+**Skills**
+* Mind. 4 Jahre Erfahrung in Webentwicklung
+* Sehr gute Kenntnisse in Java, Python/Django, React/NextJS, Vaadin, SQL, Git
+* Technische Ausbildung oder Studium im Bereich IT
+* Deutsch C2, Englischkenntnisse gut in Wort und Schrift
+* Teamplayer mit Kommunikationsstärke
+* Analytisches und strategisches Denken
+* Kundenorientiert \\& zuverlässig
+* Eigenverantwortlich, qualitätsbewusst \\& lernbereit
+
+
+**Was Wir Bieten**
+* Deine Sichere Zukunft – ein unbefristetes Arbeitsverhältnis in Voll\\- oder Teilzeit
+* Maximale Work\\-Life\\-Balance \\- Du arbeitest in einer großzügigen Home\\-Office Regelung mit hochmoderner IT.
+* Dein Gesundheitsbonus – Bezuschussung Deiner Arbeitsplatzbrille, wöchentliches Bewegungsprogramm, Bikeleasing, regelmäßige Vitamine und Unterstützung bei Sportangeboten
+* Arbeite wo Du willst \\- Standortunabhängige Remote\\-Arbeit ist möglich
+* Am Stau vorbei – Deutschlandticket für 35€
+* Starte erfolgreich durch – mit unserer persönlichen und fachkompetenten Einarbeitung und Feel\\-Good\\-Management
+* Wachstum \\- gemeinsam planen wir Deine berufliche Entwicklung und unterstützen Dich mit kostenlosen Weiterbildungsmöglichkeiten
+* Du bist uns wichtig \\- mit verschiedenen Benefits, Firmenfrühstück, Feiern und Teamevents für Spaß und Zusammenhalt, sorgen wir für Deine Zufriedenheit
+* Nahbar \\- Hohe Wertschätzung sowie kurze Kommunikations\\- und Entscheidungswege
+* Im Herzen der Stadt – Büro in zentraler Lage, mit Blick aufs Wasser und wirklich (!!!) gutem Kaffee
+
+
+ » Zum Bewerbungsformular","IT Services and IT Consulting","https://de.linkedin.com/company/sap-datagroup","https://media.licdn.com/dms/image/v2/D4D0BAQGJ1VKOVv-t2Q/company-logo_100_100/company-logo_100_100/0/1737749755557?e=2147483647&v=beta&t=HrJH1iuoqK8EsyheUHXultfMIitBcRqqXuQXv9Vg9ts","","","","","","","","","","","","software engineer"
+"li-4298217288","linkedin","https://www.linkedin.com/jobs/view/4298217288","","Frontend Developer (m/w/d)","A11","Berlin, Berlin, Germany","","fulltime","","","","","",True,"entry level","Engineering and Information Technology","","","**Die Position**
+ Als Wachstumstreiber verbindet A11 die ambitioniertesten europäischen Start\\-ups, Scale\\-ups und KMUs mit Top\\-Talenten, die bereit sind, echten Impact zu erzielen.
+   
+
+  
+
+ Wir suchen eine/n motivierte/n Frontend Developer (m/w/d), um die Frontend\\-Entwicklungsprozesse eines A11\\-Ecosystem\\-Unternehmens aufzubauen und voranzutreiben.
+   
+
+  
+
+ Als Frontend Developer wirst du die Hauptverantwortung für die Entwicklung und Optimierung der Angular\\-Frontend\\-Anwendung übernehmen, kreative Lösungen entwickeln und direkten Einfluss auf die User Experience haben.
+   
+
+  
+
+ Werde Teil des A11\\-Ecosystem – Werde Teil eines dynamischen Unternehmens, das die Verlagswelt in das digitale Zeitalter führt und die Agilität eines Start\\-ups mit der Stabilität eines etablierten Unternehmens vereint.
+   
+
+  
+
+**Sei Verantwortlich Für**
+* Hauptverantwortung für die Entwicklung der Angular\\-Frontend\\-Anwendung übernehmen
+* Alle Frontend\\-Bereiche kontinuierlich verbessern und optimieren
+* Kreative, unabhängige Lösungen entwickeln, ohne dich ausschließlich auf Libraries zu verlassen
+* Integration einer Symfony/API Platform backend
+* Verstehen und Navigieren bestehender Backend\\-Codes
+* Unit\\- und E2E\\-Tests für das bestehende Produkt nachrüsten
+* Neue Features entwickeln, inklusive geeigneter Testabdeckung
+* Eigene Ideen einbringen, um die User Experience zu verbessern
+
+
+**Dein Profil**
+* Mindestens ein Jahr durchgehender Erfahrung in einem mittelgroßen Projekt (PHP\\-Backend, Angular\\-Frontend); längere Erfahrung, falls Anforderungen nicht exakt passen
+* Frontend\\-first\\-Mentalität mit der Fähigkeit, neue UI/UX\\-Lösungen zu finden (nicht nur Libraries zusammensetzen)
+* Praktische Erfahrung mit Angular, React oder Vue (Angular bevorzugt)
+* Solide Kenntnisse in TypeScript
+* Erfahrung mit Symfony\\-Backend, Fähigkeit den Code zu lesen und zu verstehen
+* Fließende Deutschkenntnisse (mündlich und schriftlich)
+* Teamplayer – freundlich, offen, kommunikativ
+* Eigenständige Arbeitsweise und die Fähigkeit, dir Wissen selbst anzueignen
+
+
+ Bitte beachte, dass diese Position in Berlin angesiedelt ist.
+   
+
+  
+
+**Benefits Und Vorteile**
+* Hybrides Arbeitsmodell: 3 Tage remote, 2 Tage im Berliner Büro (remote ist in Ausnahmefällen möglich)
+* 30 Urlaubstage
+* Deutschland\\-Ticket und JobRad (Bike Leasing)
+* Workation\\-Möglichkeiten
+* Kostenlose Getränke und Snacks im Büro
+* Individuelles Weiterbildungsbudget
+* Entwicklungsmöglichkeiten: Hauptverantwortung für die gesamte Frontend\\-Entwicklung, Freiheit für kreative Ansätze und Ideen, direkter Einfluss auf das technische Frontend\\-Design, aktiver Beitrag zur Produktentwicklung, persönliches Wachstum durch vielfältige Aufgaben, enge Zusammenarbeit mit dem Head of IT
+* Selbstständiges Arbeiten mit einem hohen Maß an Eigenverantwortung
+* Ein freundliches Team, das auf kontinuierliche Weiterentwicklung und Prozessoptimierung ausgerichtet ist
+
+
+ Wenn du motiviert bist, dem A11\\-Ecosystem beizutreten, aktiv mitzugestalten und die Zukunft voranzutreiben, freuen wir uns darauf, von dir zu hören!
+   
+
+  
+
+**Wir engagieren uns für Diversität und Inklusion**
+ A11 engagiert sich für Vielfalt und Chancengleichheit bei der Einstellung aller \\- BewerberInnen, KandidatInnen und MitarbeiterInnen gleichermaßen. Wir schätzen Menschen \\- mit all unseren großartigen, vielfältigen Hintergründen, Perspektiven und Erfahrungen \\- und freuen uns auf deine Bewerbung.","Business Consulting and Services","https://de.linkedin.com/company/a11-global","https://media.licdn.com/dms/image/v2/D4D0BAQEDImkqUp1Nsw/company-logo_100_100/B4DZfJ_cFcGUAQ-/0/1751440540359/a11_global_logo?e=2147483647&v=beta&t=DwpkkuvlBvL2GQ8oDNVMlzPSf1510aLc5v-dY5nUwEs","","","","","","","","","","","","software engineer"
+"li-4320876962","linkedin","https://www.linkedin.com/jobs/view/4320876962","https://jobs.sap.com/job/Potsdam-%28Junior%29-Developer-%28fmd%29-for-the-BTP-AI-Engineering-Team-Potsdam-14469/1265076101/?feedId=384233&utm_campaign=SAP_Linkedin&utm_source=LinkedinJobPostings&urlHash=tcBm","(Junior) Developer (f/m/d) for the BTP AI Engineering Team Potsdam","SAP","Potsdam, Brandenburg, Germany","","fulltime","","","","","",False,"not applicable","Engineering and Information Technology","","Careers@sap.com","**We help the world run better**
+ At SAP, we keep it simple: you bring your best to us, and we'll bring out the best in you. We're builders touching over 20 industries and 80% of global commerce, and we need your unique talents to help shape what's next. The work is challenging – but it matters. You'll find a place where you can be yourself, prioritize your wellbeing, and truly belong. What's in it for you? Constant learning, skill growth, great benefits, and a team that wants you to grow and succeed.
+   
+
+  
+
+ We are seeking a (Junior) Developer with ideally some years of experience to join our team in Potsdam as part of the SAP BTP AI organization. This role is crucial in advancing the capabilities of the SAP Business Technology Platform (BTP) and facilitating a more adaptable future for enterprises. Our goal is to enhance BTP’s functionalities and support key initiatives, making significant contributions to enterprise software development.
+   
+
+  
+
+ This position provides a unique opportunity to shape and deliver future AI capabilities within SAP Business Technology Platform by designing and developing products and services in this area. Become part of a multi\\-disciplinary team, that focuses on execution and shaping the future of GenAI capabilities across our Business Technology Platform. This role requires a self\\-directed team player with deep technical knowledge and business acumen. In this role, you will be working closely with Product Managers, Engineers, Engagement Leads and many others.
+   
+
+  
+
+**What You'll Be Up To**
+* Collaborating with teams to streamline and improve processes on the SAP BTP through development of AI applications
+* Exploring software architecture and design alternatives
+* Being open to learning new technologies and software development practices as they emerge, with a focus on generative AI, Large Language Models (LLMs), AI\\-augmented development, and relevant tools
+* Evaluating SAP's solutions to identify opportunities for improving function and user experience
+
+
+**What We’re Looking For**
+* Degree in Computer Science, Software Engineering or related field with substantial experience in Software Development
+* Minimum of 2 years professional work experience in software engineering and software architecture designing, building, and distributing software in an agile environment
+* Your seniority makes you not losing the bigger picture of a to\\-be solution and you are confident to challenge and fill backlogs accordingly
+* Experience in delivering projects or products on the BTP, alternatively deep practical experience and understanding of
+* Hyperscalers cloud offerings (Azure, AWS, GCP) and technology trends
+* Proficient in JavaScript, TypeScript and/or Node.js as well as other software technology concepts, e.g. REST, SSO, Profiling, Testing etc.
+* Experience with GenAI, LLMs, RAG, MCP, K8s
+* Fluency both written and spoken in English and German
+
+
+ We value individuals who are ready to contribute to a creative and innovative environment. If you’re excited by challenges and continuous learning, you’ll fit right in
+   
+
+  
+
+**Bring out your best**
+ SAP innovations help more than four hundred thousand customers worldwide work together more efficiently and use business insight more effectively. Originally known for leadership in enterprise resource planning (ERP) software, SAP has evolved to become a market leader in end\\-to\\-end business application software and related services for database, analytics, intelligent technologies, and experience management. As a cloud company with two hundred million users and more than one hundred thousand employees worldwide, we are purpose\\-driven and future\\-focused, with a highly collaborative team ethic and commitment to personal development. Whether connecting global industries, people, or platforms, we help ensure every challenge gets the solution it deserves. At SAP, you can bring out your best.
+   
+
+  
+
+**We win with inclusion**
+ SAP’s culture of inclusion, focus on health and well\\-being, and flexible working models help ensure that everyone – regardless of background – feels included and can run at their best. At SAP, we believe we are made stronger by the unique capabilities and qualities that each person brings to our company, and we invest in our employees to inspire confidence and help everyone realize their full potential. We ultimately believe in unleashing all talent and creating a better world.
+   
+
+  
+
+ SAP is committed to the values of Equal Employment Opportunity and provides accessibility accommodations to applicants with physical and/or mental disabilities. If you are interested in applying for employment with SAP and are in need of accommodation or special assistance to navigate our website or to complete your application, please send an e\\-mail with your request to Recruiting Operations Team: Careers@sap.com.
+   
+
+  
+
+ For SAP employees: Only permanent roles are eligible for the SAP Employee Referral Program, according to the eligibility rules set in the SAP Referral Policy. Specific conditions may apply for roles in Vocational Training.
+   
+
+  
+
+**AI Usage in the Recruitment Process**
+ For information on the responsible use of AI in our recruitment process, please refer to our Guidelines for Ethical Usage of AI in the Recruiting Process.
+   
+
+  
+
+ Please note that any violation of these guidelines may result in disqualification from the hiring process.
+   
+
+  
+
+ Requisition ID: 440514 \\| Work Area: Software\\-Design and Development \\| Expected Travel: 0 \\- 10% \\| Career Status: Professional \\| Employment Type: Part\\-Time, or Regular Full Time","Software Development, IT Services and IT Consulting, and Business Consulting and Services","https://de.linkedin.com/company/sap","https://media.licdn.com/dms/image/v2/D560BAQGmwwo0aq4jVA/company-logo_100_100/company-logo_100_100/0/1723034255614/sap_logo?e=2147483647&v=beta&t=Xf0Eda3lLLNPm9ibOMwYyTyTw9Uv8_Kdf4pKR2i2ECk","","","","","","","","","","","","software engineer"
+"li-4312963649","linkedin","https://www.linkedin.com/jobs/view/4312963649","https://libra-technology-gmbh.jobs.personio.com/job/2381451&urlHash=hpl3","Full Stack Engineer","Libra","Berlin, Germany","","fulltime","","","","","",False,"mid-senior level","Engineering","","","**Your mission** 
+
+
+
+
+  
+
+
+
+
+
+ We are looking for exceptional engineers to join our fast\\-growing team automating knowledge work for legal professionals. You'll play a central role in developing our product and have a high impact and ownership on product features.
+ 
+
+
+
+  
+
+
+
+
+
+**What You’ll Do** 
+
+
+
+
+  
+
+
+
+
+
+ You will focus on implementing and maintaining product features end\\-to\\-end, and as part of a lean engineering team, we expect that you are excited about contributing across the stack.
+ 
+
+
+
+  
+
+
+
+
+
+**What You Bring** 
+
+
+
+
+  
+
+
+
+
+
+ We're looking for in\\-depth experience with:
+ 
+
+
+* Python: FastAPI and async
+* Typescript in general and Svelte is a plus
+* Software engineering best practices
+* Security best practices
+* AI coding agents like Cursor and Claude Code
+* Bonus points if you have built LLM\\-powered products
+
+
+
+  
+
+
+
+
+
+ Our team works in person at the Merantix AI Campus in Berlin. You must have excellent English verbal and written communication skills. Fluency in German is a plus.
+ 
+
+
+
+  
+
+
+
+
+
+**Who you are** 
+
+
+
+* You have an entrepreneurial mindset and a deep sense of urgency in achieving your goals
+* A self\\-starter mindset \\- you enjoy working independently while keeping the team’s goals in mind
+* A pragmatic approach to problem solving. It’s more important to you to solve the problem than to use new/hyped technology
+* Ability to balance trade\\-offs between simple 80% solutions and complex 100% solutions
+
+
+
+  
+
+
+
+
+
+**Why us?** 
+
+
+
+
+  
+
+
+
+
+
+ Because we’re reshaping the legal industry from the ground up.
+ 
+
+
+
+ Libra is an AI workspace built by lawyers, for lawyers \\- simplifying legal workflows with intuitive, secure, and powerful tools. We’re not just another SaaS company. We believe AI is the infrastructure of a new legal age, where legal professionals can focus on what really matters: justice, innovation, and impact. We're on a mission to revolutionize the way lawyers work by teaching computers to think like a lawyer.
+ 
+
+
+
+ We’re one of the fastest\\-growing legal tech companies in history: trusted by over 9,000 lawyers across Europe and now accelerating our international expansion. We’re on a trajectory to build the world’s most trusted AI legal platform. At this early stage, you’ll have significant ownership, responsibility from day one, and unlimited growth potential.
+ 
+
+
+
+  
+
+
+
+
+
+ If you're driven, curious, and our mission speaks to you \\- don’t wait. Apply now!
+ 
+
+
+
+  
+
+
+
+
+
+**At Libra, We Value Diversity** 
+
+
+
+
+  
+
+
+
+
+
+ No matter who you are or what background you come from, we want to hear from you. If you’re excited by our mission and think you can add value, reach out and apply now. We can’t wait to meet you in our Berlin office.","Software Development","https://de.linkedin.com/company/libratechnology","https://media.licdn.com/dms/image/v2/D4E0BAQHYL04vdB-Jjg/company-logo_100_100/B4EZcIMkxDH0AQ-/0/1748189204037/libratechnology_logo?e=2147483647&v=beta&t=ZDpQ9mmPgtGBngICg5C6VSQOBdVbzUJ79BQaoFTNlm4","","","","","","","","","","","","software engineer"
