@@ -6,3 +6,6 @@ tests
 .idea
 .env
 .env.example
+.dockerignore
+Dockerfile
+docker-compose-dev.yml
