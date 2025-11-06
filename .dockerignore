@@ -9,3 +9,5 @@ tests
 .dockerignore
 Dockerfile
 docker-compose-dev.yml
+.github
+docs/dockerhub-readme.md
