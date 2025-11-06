@@ -17,7 +17,6 @@ class Settings(BaseSettings):
     DB_POOL_SIZE: int = 10
     DB_POOL_MAX_OVERFLOW: int = 20
 
-    REQUEST_TIMEOUT: int = 60
 
     class Config:
         env_file = ".env"
