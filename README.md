@@ -1,6 +1,6 @@
 # JobScraper API (Poetry + FastAPI + MySQL + Alembic)
 
-A FastAPI microservice that scrapes job listings using **JobSpy**, persists them in MySQL, and exposes a REST API for querying.  
+A FastAPI microservice that scrapes job listings using [**JobSpy**](https://github.com/speedyapply/JobSpy), persists them in MySQL, and exposes a REST API for querying.  
 Now powered by **Poetry** for dependency and environment management.
 
 ---
