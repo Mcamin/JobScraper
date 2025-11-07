@@ -16,7 +16,7 @@ class Job(Base):
     site_name: Mapped[str] = mapped_column(String(64), index=True)
     search_term: Mapped[str] = mapped_column(String(255), index=True)
     job_title: Mapped[str] = mapped_column(String(512))
-    company: Mapped[str] = mapped_column(String(512), index=True)
+    company: Mapped[str | None] = mapped_column(String(512), index=True, nullable=True)
     location: Mapped[str] = mapped_column(String(255), index=True)
     job_url: Mapped[str] = mapped_column(Text, unique=True)
 

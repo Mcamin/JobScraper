@@ -41,6 +41,13 @@ def scrape_jobs_endpoint(payload: ScrapeRequest, db: Session = Depends(get_db)):
         # Run scraper
         records = run_scrape(payload.model_dump())
 
+        # Filter or log invalid records before insert
+        invalid_records = [r for r in records if not r.get("company")]
+        if invalid_records:
+            logger.warning(
+                f"Skipping {len(invalid_records)} records missing 'company' field",
+                extra={"examples": invalid_records[:3]},  # show first few
+            )
         # Persist to DB
         inserted = upsert_jobs(db, records)
 
