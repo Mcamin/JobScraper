@@ -7,13 +7,13 @@ class JobBase(BaseModel):
     site_name: str
     search_term: str
     job_title: str
-    company: str
     location: str
     job_url: str
 
     # New fields from scraper
     job_type: Optional[str] = None
     job_level: Optional[str] = None
+    company: Optional[str] = None
     emails: Optional[str] = None  # stored as string, e.g. "hr@example.com, jobs@example.com"
     company_industry: Optional[str] = None
     company_url: Optional[str] = None
