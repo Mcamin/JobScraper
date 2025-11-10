@@ -4,9 +4,10 @@ from sqlalchemy.orm import Session
 from app.config import get_settings
 from app.db import get_db
 from app.schemas import JobOut, ScrapeRequest, JobsQuery
-from app.crud import upsert_jobs, list_jobs, get_job
+from app.crud import upsert_jobs, list_jobs, get_job, mark_job_as_applied
 from app.scraper import run_scrape
 from app.logging_config import logger
+from app.models import Job
 
 settings = get_settings()
 
@@ -87,3 +88,20 @@ def get_job_by_id(job_id: int, db: Session = Depends(get_db)):
     if not job:
         raise HTTPException(status_code=404, detail="Job not found")
     return JobOut.model_validate(job)
+
+
+@app.post("/jobs/{job_id}/apply", response_model=dict)
+def mark_job_applied(job_id: int, db: Session = Depends(get_db)):
+    try:
+        job = mark_job_as_applied(db, job_id)
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+
+    # Decide message depending on state
+    if job.applied:
+        return {
+            "message": "Job marked as applied successfully",
+            "job_id": job.id,
+        }
+
+    return {"message": "Job already marked as applied", "job_id": job.id}

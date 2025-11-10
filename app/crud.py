@@ -43,7 +43,8 @@ def list_jobs(db: Session, params: JobsQuery):
                 Job.company.ilike(like),
             )
         )
-
+    if getattr(params, "applied", None) is not None:
+        stmt = stmt.where(Job.applied == params.applied)
     # --- Optional: filter by created_at if params has it ------------
     if getattr(params, "created_after", None):
         stmt = stmt.where(Job.created_at >= params.created_after)
@@ -57,7 +58,18 @@ def list_jobs(db: Session, params: JobsQuery):
 
     return total, items
 
+def mark_job_as_applied(db: Session, job_id: int) -> Job:
+    """Set a job's 'applied' attribute to True. Raises ValueError if not found."""
+    job = db.get(Job, job_id)
+    if not job:
+        raise ValueError("Job not found")
 
+    if not job.applied:
+        job.applied = True
+        db.commit()
+        db.refresh(job)
+
+    return job
 
 def get_job(db: Session, job_id: int):
     return db.get(Job, job_id)

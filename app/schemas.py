@@ -58,7 +58,11 @@ class JobsQuery(BaseModel):
     location: Optional[str] = None
     company: Optional[str] = None
     q: Optional[str] = None
-
+    applied: Optional[bool] = Field(
+        default=None,
+        description="Filter by application status (true = applied, false = not applied).",
+        example=True,
+    )
     created_after: Optional[datetime] = Field(
         default=datetime(2025, 11, 6, 0, 0, 0),
         description="Return only jobs created after this timestamp (ISO 8601). Defaults to today at midnight.",

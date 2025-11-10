@@ -1,57 +1,118 @@
-  /jobs:
-    get:
-      summary: List jobs from database
-      description: >
-        Retrieve job postings with optional filtering by platform, company, or search term.
-        You can also filter jobs created after a specific timestamp.
-      parameters:
-        - in: query
-          name: site_name
-          schema: { type: string }
-          description: Filter by source platform name (e.g. LinkedIn, Indeed)
-        - in: query
-          name: search_term
-          schema: { type: string }
-        - in: query
-          name: location
-          schema: { type: string }
-        - in: query
-          name: company
-          schema: { type: string }
-        - in: query
-          name: q
-          schema: { type: string }
-          description: Full-text search across title, description, and company
-        - in: query
-          name: created_after
-          schema:
-            type: string
-            format: date-time
-            example: "2025-11-06T00:00:00Z"
-          description: >
-            Only return jobs created after this date/time (ISO 8601 format).
-            Defaults to the current date/time if not provided.
-        - in: query
-          name: limit
-          schema: { type: integer, minimum: 1, maximum: 200, default: 20 }
-        - in: query
-          name: offset
-          schema: { type: integer, minimum: 0, default: 0 }
-      responses:
-        '200':
-          description: Paginated list of jobs
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  total:
-                    type: integer
-                    example: 245
-                  count:
-                    type: integer
-                    example: 20
+/jobs:
+  get:
+    summary: List jobs from database
+    description: >
+      Retrieve job postings with optional filtering by platform, company, or search term.
+      You can also filter jobs by creation date, or by whether they were marked as applied.
+    parameters:
+      - in: query
+        name: site_name
+        schema:
+          type: string
+        description: Filter by source platform name (e.g. LinkedIn, Indeed)
+      - in: query
+        name: search_term
+        schema:
+          type: string
+        description: Filter by the search term used during scraping
+      - in: query
+        name: location
+        schema:
+          type: string
+        description: Filter by job location (case-insensitive)
+      - in: query
+        name: company
+        schema:
+          type: string
+        description: Filter by company name
+      - in: query
+        name: q
+        schema:
+          type: string
+        description: Full-text search across title, description, and company
+      - in: query
+        name: applied
+        schema:
+          type: boolean
+        description: >
+          Filter by application status.  
+          Set to `true` to show only applied jobs, or `false` to show un-applied ones.
+      - in: query
+        name: created_after
+        schema:
+          type: string
+          format: date-time
+          example: "2025-11-06T00:00:00Z"
+        description: >
+          Only return jobs created after this date/time (ISO 8601 format).
+      - in: query
+        name: limit
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 200
+          default: 20
+        description: Maximum number of results to return
+      - in: query
+        name: offset
+        schema:
+          type: integer
+          minimum: 0
+          default: 0
+        description: Pagination offset
+    responses:
+      '200':
+        description: Paginated list of jobs
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                total:
+                  type: integer
+                  example: 245
+                count:
+                  type: integer
+                  example: 20
+                items:
+                  type: array
                   items:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Job'
+                    $ref: '#/components/schemas/Job'
+
+/jobs/{job_id}/apply:
+  post:
+    summary: Mark a job as applied
+    description: >
+      Marks the specified job as applied by setting its `applied` attribute to `true`.
+      If the job is already marked as applied, the endpoint will return a success message without modification.
+    parameters:
+      - in: path
+        name: job_id
+        required: true
+        schema:
+          type: integer
+        description: ID of the job to mark as applied
+    responses:
+      '200':
+        description: Confirmation that the job was marked as applied
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                  example: Job marked as applied successfully
+                job_id:
+                  type: integer
+                  example: 123
+      '404':
+        description: Job not found
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                detail:
+                  type: string
+                  example: Job not found
