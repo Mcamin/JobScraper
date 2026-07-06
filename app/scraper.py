@@ -41,6 +41,7 @@ def run_scrape(payload: dict) -> List[Dict]:
         hours_old=payload.get("hours_old", 72),
         country_indeed=payload.get("country_indeed"),
         linkedin_fetch_description=payload.get("linkedin_fetch_description", False),
+        is_remote=payload.get("is_remote"),
     )
 
     count = len(jobs_df)
