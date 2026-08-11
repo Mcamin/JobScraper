@@ -1,13 +1,23 @@
 import csv
+import re
+import time
+import threading
+from types import SimpleNamespace
+from typing import List, Dict, Optional
+from concurrent.futures import ThreadPoolExecutor
 
 import numpy as np
 import pandas as pd
-from typing import List, Dict
 from jobspy import scrape_jobs
 from app.logging_config import logger
 from app.config import get_settings
 
 settings = get_settings()
+
+# Guards against overlapping backfill sweeps (only one sweep at a time; the
+# per-sweep ThreadPoolExecutor bounds concurrent LinkedIn fetches).
+_BACKFILL_LOCK = threading.Lock()
+_LINKEDIN_JOB_ID_RE = re.compile(r"/jobs/view/(\d+)")
 
 
 class ScrapeError(RuntimeError):
@@ -131,3 +141,127 @@ def run_scrape(payload: dict) -> List[Dict]:
     records = jobs_df[REQUIRED_COLS].to_dict(orient="records")
 
     return records
+
+
+# ---------------------------------------------------------------------------
+# LinkedIn description backfill (async /scrape background mode)
+# ---------------------------------------------------------------------------
+
+def has_description_backfill_support() -> bool:
+    """True if jobspy still exposes the private LinkedIn detail fetch we rely on.
+
+    We call jobspy's private ``LinkedIn._get_job_details``; this guard lets a
+    jobspy upgrade that removes/renames it fail loudly (covered by a test) instead
+    of silently backfilling nothing.
+    """
+    try:
+        from jobspy.linkedin import LinkedIn
+        return callable(getattr(LinkedIn, "_get_job_details", None))
+    except Exception:
+        return False
+
+
+def _linkedin_job_id(job_url: Optional[str]) -> Optional[str]:
+    """Extract the numeric job id from a stored LinkedIn job_url (.../jobs/view/<id>)."""
+    if not job_url:
+        return None
+    m = _LINKEDIN_JOB_ID_RE.search(job_url)
+    return m.group(1) if m else None
+
+
+def _make_linkedin_scraper():
+    """A LinkedIn scraper wired just enough to call ``_get_job_details`` standalone.
+
+    ``_get_job_details`` only reads ``scraper_input.description_format``, so a light
+    shim suffices (avoids constructing a full ScraperInput).
+    """
+    from jobspy.linkedin import LinkedIn
+    from jobspy.model import DescriptionFormat
+    scraper = LinkedIn()
+    scraper.scraper_input = SimpleNamespace(description_format=DescriptionFormat.MARKDOWN)
+    return scraper
+
+
+def _fetch_description_for_job(job_id: str) -> Optional[str]:
+    """Fetch one LinkedIn description. A fresh scraper per call keeps it thread-safe.
+
+    Isolated as its own function so tests can monkeypatch it (no network).
+    """
+    scraper = _make_linkedin_scraper()
+    details = scraper._get_job_details(job_id) or {}
+    return details.get("description")
+
+
+def run_description_backfill(
+    session_factory=None,
+    *,
+    window_days: int,
+    limit: int,
+    concurrency: int = 2,
+    delay: float = 2.0,
+) -> dict:
+    """Backfill descriptions for description-less LinkedIn jobs (query-driven).
+
+    Only one sweep runs at a time (``_BACKFILL_LOCK``); within a sweep, up to
+    ``concurrency`` LinkedIn detail fetches run concurrently, each preceded by a
+    polite ``delay``. Network fetches run in worker threads; DB writes happen on a
+    single Session in the calling thread (Sessions are not thread-safe).
+    """
+    from app.crud import list_linkedin_jobs_missing_description, set_job_description
+    if session_factory is None:
+        from app.db import SessionLocal
+        session_factory = SessionLocal
+
+    if not has_description_backfill_support():
+        logger.bind(event="backfill.unsupported").error(
+            "jobspy LinkedIn._get_job_details missing — description backfill disabled"
+        )
+        return {"status": "unsupported", "candidates": 0, "updated": 0}
+
+    if not _BACKFILL_LOCK.acquire(blocking=False):
+        logger.bind(event="backfill.skip").info("backfill already running; skipping")
+        return {"status": "already_running", "candidates": 0, "updated": 0}
+
+    try:
+        db = session_factory()
+        try:
+            jobs = list_linkedin_jobs_missing_description(db, window_days, limit)
+            targets = [(j.id, _linkedin_job_id(j.job_url)) for j in jobs]
+        finally:
+            db.close()
+
+        candidates = len(targets)
+        if not candidates:
+            return {"status": "ok", "candidates": 0, "updated": 0}
+
+        def work(item):
+            job_pk, job_id = item
+            if not job_id:
+                return (job_pk, None)
+            time.sleep(max(delay, 0))  # polite spacing to avoid LinkedIn 429s
+            try:
+                return (job_pk, _fetch_description_for_job(job_id))
+            except Exception:
+                logger.bind(event="backfill.fetch_error", job_pk=job_pk).exception(
+                    "description fetch failed"
+                )
+                return (job_pk, None)
+
+        with ThreadPoolExecutor(max_workers=max(1, concurrency)) as ex:
+            results = list(ex.map(work, targets))
+
+        updated = 0
+        db = session_factory()
+        try:
+            for job_pk, desc in results:
+                if desc and set_job_description(db, job_pk, desc):
+                    updated += 1
+        finally:
+            db.close()
+
+        logger.bind(event="backfill.done", candidates=candidates, updated=updated).info(
+            f"description backfill: {updated}/{candidates} updated"
+        )
+        return {"status": "ok", "candidates": candidates, "updated": updated}
+    finally:
+        _BACKFILL_LOCK.release()

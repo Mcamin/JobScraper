@@ -1,4 +1,4 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from functools import lru_cache
 
 
@@ -17,9 +17,19 @@ class Settings(BaseSettings):
     DB_POOL_SIZE: int = 10
     DB_POOL_MAX_OVERFLOW: int = 20
 
+    # --- Description backfill (async /scrape background mode) -----------
+    # Only LinkedIn jobs created within this window are eligible for
+    # description backfill. Env-overridable; defaults to 3 days.
+    DESCRIPTION_BACKFILL_WINDOW_DAYS: int = 3
+    # Max rows fetched per backfill sweep (safety cap).
+    DESCRIPTION_BACKFILL_LIMIT: int = 50
+    # Max concurrent LinkedIn detail fetches in a sweep.
+    DESCRIPTION_BACKFILL_CONCURRENCY: int = 2
+    # Polite delay (seconds) before each LinkedIn detail fetch.
+    DESCRIPTION_BACKFILL_DELAY_SECONDS: float = 2.0
 
-    class Config:
-        env_file = ".env"
+
+    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
 
 @lru_cache

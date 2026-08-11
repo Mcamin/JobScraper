@@ -1,118 +1,414 @@
-/jobs:
-  get:
-    summary: List jobs from database
-    description: >
-      Retrieve job postings with optional filtering by platform, company, or search term.
-      You can also filter jobs by creation date, or by whether they were marked as applied.
-    parameters:
-      - in: query
-        name: site_name
-        schema:
-          type: string
-        description: Filter by source platform name (e.g. LinkedIn, Indeed)
-      - in: query
-        name: search_term
-        schema:
-          type: string
-        description: Filter by the search term used during scraping
-      - in: query
-        name: location
-        schema:
-          type: string
-        description: Filter by job location (case-insensitive)
-      - in: query
-        name: company
-        schema:
-          type: string
-        description: Filter by company name
-      - in: query
-        name: q
-        schema:
-          type: string
-        description: Full-text search across title, description, and company
-      - in: query
-        name: applied
-        schema:
-          type: boolean
-        description: >
-          Filter by application status.  
-          Set to `true` to show only applied jobs, or `false` to show un-applied ones.
-      - in: query
-        name: created_after
-        schema:
-          type: string
-          format: date-time
-          example: "2025-11-06T00:00:00Z"
-        description: >
-          Only return jobs created after this date/time (ISO 8601 format).
-      - in: query
-        name: limit
-        schema:
-          type: integer
-          minimum: 1
-          maximum: 200
-          default: 20
-        description: Maximum number of results to return
-      - in: query
-        name: offset
-        schema:
-          type: integer
-          minimum: 0
-          default: 0
-        description: Pagination offset
-    responses:
-      '200':
-        description: Paginated list of jobs
+openapi: 3.1.0
+info:
+  title: JobScraper API
+  description: API to scrape and fetch job postings using jobspy and persist them to MySQL.
+  version: 1.0.0
+paths:
+  /health:
+    get:
+      summary: Health
+      operationId: health_health_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /scrape:
+    post:
+      tags:
+      - scrape
+      summary: Scrape jobs and persist them
+      description: Sync by default (waits for the full scrape, including LinkedIn descriptions). Set `background=true`
+        to return the listing summary immediately; when `linkedin_fetch_description=true` the LinkedIn
+        descriptions are then fetched in the background and backfilled onto the stored rows.
+      operationId: scrape_jobs_endpoint_scrape_post
+      requestBody:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                total:
-                  type: integer
-                  example: 245
-                count:
-                  type: integer
-                  example: 20
-                items:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/Job'
-
-/jobs/{job_id}/apply:
-  post:
-    summary: Mark a job as applied
-    description: >
-      Marks the specified job as applied by setting its `applied` attribute to `true`.
-      If the job is already marked as applied, the endpoint will return a success message without modification.
-    parameters:
-      - in: path
-        name: job_id
+              $ref: '#/components/schemas/ScrapeRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                additionalProperties: true
+                type: object
+                title: Response Scrape Jobs Endpoint Scrape Post
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /descriptions/backfill:
+    post:
+      tags:
+      - scrape
+      summary: Backfill missing LinkedIn descriptions
+      description: Schedules a background sweep that fetches descriptions for description-less LinkedIn
+        jobs created within the window. Returns the current candidate count. `window_days`/`limit` default
+        to the configured env values when omitted.
+      operationId: backfill_descriptions_endpoint_descriptions_backfill_post
+      parameters:
+      - name: window_days
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Window Days
+      - name: limit
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Limit
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Backfill Descriptions Endpoint Descriptions Backfill Post
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /jobs:
+    get:
+      summary: Get Jobs
+      operationId: get_jobs_jobs_get
+      parameters:
+      - name: site_name
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Site Name
+      - name: search_term
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Search Term
+      - name: location
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Location
+      - name: company
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Company
+      - name: q
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Q
+      - name: applied
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Applied
+      - name: created_after
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          default: '2025-11-06T00:00:00'
+          title: Created After
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 20
+          title: Limit
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 0
+          title: Offset
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Get Jobs Jobs Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /jobs/{job_id}:
+    get:
+      summary: Get Job By Id
+      operationId: get_job_by_id_jobs__job_id__get
+      parameters:
+      - name: job_id
+        in: path
         required: true
         schema:
           type: integer
-        description: ID of the job to mark as applied
-    responses:
-      '200':
-        description: Confirmation that the job was marked as applied
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                message:
-                  type: string
-                  example: Job marked as applied successfully
-                job_id:
-                  type: integer
-                  example: 123
-      '404':
-        description: Job not found
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                detail:
-                  type: string
-                  example: Job not found
+          title: Job Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobOut'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /jobs/{job_id}/apply:
+    post:
+      summary: Mark Job Applied
+      operationId: mark_job_applied_jobs__job_id__apply_post
+      parameters:
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          title: Job Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Mark Job Applied Jobs  Job Id  Apply Post
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    JobOut:
+      properties:
+        site_name:
+          type: string
+          title: Site Name
+        search_term:
+          type: string
+          title: Search Term
+        job_title:
+          type: string
+          title: Job Title
+        location:
+          type: string
+          title: Location
+        job_url:
+          type: string
+          title: Job Url
+        job_type:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Job Type
+        job_level:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Job Level
+        company:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Company
+        emails:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Emails
+        company_industry:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Company Industry
+        company_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Company Url
+        job_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Job Id
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        date_posted:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Date Posted
+        salary:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Salary
+        is_remote:
+          type: boolean
+          title: Is Remote
+          default: false
+        applied:
+          type: boolean
+          title: Applied
+          default: false
+        id:
+          type: integer
+          title: Id
+        created_at:
+          type: string
+          format: date-time
+          title: Created At
+      type: object
+      required:
+      - site_name
+      - search_term
+      - job_title
+      - location
+      - job_url
+      - id
+      - created_at
+      title: JobOut
+    ScrapeRequest:
+      properties:
+        site_name:
+          items:
+            type: string
+          type: array
+          title: Site Name
+          example:
+          - indeed
+          - linkedin
+        search_term:
+          type: string
+          title: Search Term
+          default: software engineer
+        google_search_term:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Google Search Term
+          default: software engineer jobs near Berlin Germany since yesterday
+        location:
+          type: string
+          title: Location
+          default: Berlin
+        results_wanted:
+          type: integer
+          title: Results Wanted
+          default: 20
+        hours_old:
+          type: integer
+          title: Hours Old
+          default: 72
+        country_indeed:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Country Indeed
+          default: Germany
+        linkedin_fetch_description:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Linkedin Fetch Description
+          default: true
+        is_remote:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Is Remote
+        background:
+          type: boolean
+          title: Background
+          default: false
+      type: object
+      title: ScrapeRequest
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError

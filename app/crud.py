@@ -2,7 +2,8 @@ from sqlalchemy.orm import Session
 from sqlalchemy import select, func, or_
 from app.models import Job
 from app.schemas import JobsQuery
-from typing import Iterable
+from typing import Iterable, List
+from datetime import datetime, timedelta, timezone
 
 
 def upsert_jobs(db: Session, records: Iterable[dict]) -> int:
@@ -77,3 +78,34 @@ def mark_job_as_applied(db: Session, job_id: int) -> Job:
 
 def get_job(db: Session, job_id: int):
     return db.get(Job, job_id)
+
+
+def list_linkedin_jobs_missing_description(
+    db: Session, window_days: int, limit: int
+) -> List[Job]:
+    """LinkedIn jobs with no description, created within `window_days`, newest first.
+
+    Query-driven so a failed/partial backfill self-heals: rows stay description-less
+    and are picked up again by the next sweep (bounded by the window + limit).
+    """
+    # naive UTC to match the DB's naive DATETIME (created_at server-defaulted to now())
+    cutoff = datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(days=window_days)
+    stmt = (
+        select(Job)
+        .where(Job.site_name == "linkedin")
+        .where(or_(Job.description.is_(None), Job.description == ""))
+        .where(Job.created_at >= cutoff)
+        .order_by(Job.created_at.desc())
+        .limit(limit)
+    )
+    return list(db.scalars(stmt).all())
+
+
+def set_job_description(db: Session, job_pk: int, description: str) -> bool:
+    """Set a job's description by primary key. Returns True if a row was updated."""
+    job = db.get(Job, job_pk)
+    if not job:
+        return False
+    job.description = description
+    db.commit()
+    return True

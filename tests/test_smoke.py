@@ -144,3 +144,167 @@ def test_scrape_response_includes_metadata_and_separate_scrape_items(monkeypatch
     assert body["scrape_items"][0]["job_url"] == "https://example.test/duplicate"
     assert body["db_items"] == []
     assert body["items"] == []
+
+
+# ---------------------------------------------------------------------------
+# Description backfill (async /scrape background mode)
+# ---------------------------------------------------------------------------
+
+def test_description_backfill_support_guard():
+    """Fails loudly if a jobspy upgrade removes the private LinkedIn detail fetch
+    we depend on (LinkedIn._get_job_details)."""
+    from app.scraper import has_description_backfill_support
+
+    assert has_description_backfill_support() is True
+
+
+def _shared_sqlite_factory():
+    engine = create_engine(
+        "sqlite://",
+        connect_args={"check_same_thread": False},
+        poolclass=StaticPool,
+        future=True,
+    )
+    Base.metadata.create_all(bind=engine)
+    return sessionmaker(bind=engine, autoflush=False, autocommit=False, future=True)
+
+
+def test_list_linkedin_jobs_missing_description():
+    from datetime import timedelta, timezone
+    from app.crud import list_linkedin_jobs_missing_description
+
+    db = make_session()
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
+    db.add_all(
+        [
+            make_job(job_url="https://www.linkedin.com/jobs/view/111",
+                     site_name="linkedin", description=None, created_at=now),          # eligible
+            make_job(job_url="https://www.linkedin.com/jobs/view/222",
+                     site_name="linkedin", description="", created_at=now),            # eligible (empty)
+            make_job(job_url="https://www.linkedin.com/jobs/view/333",
+                     site_name="linkedin", description="has it", created_at=now),      # has desc -> excluded
+            make_job(job_url="https://www.indeed.com/viewjob?jk=444",
+                     site_name="indeed", description=None, created_at=now),            # not linkedin -> excluded
+            make_job(job_url="https://www.linkedin.com/jobs/view/555",
+                     site_name="linkedin", description=None,
+                     created_at=now - timedelta(days=10)),                             # too old -> excluded
+        ]
+    )
+    db.commit()
+
+    rows = list_linkedin_jobs_missing_description(db, window_days=3, limit=50)
+    assert {r.job_url for r in rows} == {
+        "https://www.linkedin.com/jobs/view/111",
+        "https://www.linkedin.com/jobs/view/222",
+    }
+
+
+def test_run_description_backfill_updates_rows(monkeypatch):
+    from app import scraper as scraper_module
+    from app.crud import list_linkedin_jobs_missing_description
+
+    Factory = _shared_sqlite_factory()
+    seed = Factory()
+    seed.add_all(
+        [
+            make_job(job_url="https://www.linkedin.com/jobs/view/111",
+                     site_name="linkedin", description=None),
+            make_job(job_url="https://www.linkedin.com/jobs/view/222",
+                     site_name="linkedin", description=None),
+        ]
+    )
+    seed.commit()
+    seed.close()
+
+    # No network: canned description per job id, and force the guard True.
+    monkeypatch.setattr(scraper_module, "has_description_backfill_support", lambda: True)
+    monkeypatch.setattr(
+        scraper_module, "_fetch_description_for_job", lambda job_id: f"desc-{job_id}"
+    )
+
+    result = scraper_module.run_description_backfill(
+        session_factory=Factory, window_days=3, limit=50, concurrency=2, delay=0
+    )
+    assert result["candidates"] == 2
+    assert result["updated"] == 2
+
+    check = Factory()
+    try:
+        assert list_linkedin_jobs_missing_description(check, 3, 50) == []
+        by_id = {j.job_url: j.description for j in check.query(Job).all()}
+    finally:
+        check.close()
+    assert by_id["https://www.linkedin.com/jobs/view/111"] == "desc-111"
+    assert by_id["https://www.linkedin.com/jobs/view/222"] == "desc-222"
+
+
+def _linkedin_listing_record(search_term="Backend Engineer Python",
+                             url="https://www.linkedin.com/jobs/view/999"):
+    return {
+        "site_name": "linkedin", "search_term": search_term,
+        "job_title": "Backend Engineer", "company": "Acme", "location": "Berlin",
+        "job_url": url, "job_type": None, "job_level": None, "emails": None,
+        "company_industry": None, "company_url": None, "job_id": None,
+        "description": None, "date_posted": None, "salary": None, "is_remote": False,
+    }
+
+
+def test_scrape_background_schedules_backfill(monkeypatch):
+    db = make_session()
+
+    def override_db():
+        yield db
+
+    monkeypatch.setattr(main_module, "run_scrape",
+                        lambda payload: [_linkedin_listing_record()])
+    calls = {}
+    monkeypatch.setattr(main_module, "run_description_backfill",
+                        lambda **kw: calls.update(kw))
+    main_module.app.dependency_overrides[get_db] = override_db
+    try:
+        response = client.post(
+            "/scrape",
+            json={"site_name": ["linkedin"], "search_term": "Backend Engineer Python",
+                  "location": "Berlin", "background": True,
+                  "linkedin_fetch_description": True},
+        )
+    finally:
+        main_module.app.dependency_overrides.clear()
+
+    body = response.json()
+    assert response.status_code == 200
+    assert body["mode"] == "background"
+    assert body["descriptions"] == "pending"
+    assert body["returned"] == 1
+    # n8n "Job Scrape Summary" reads items[0].search_term — must stay populated.
+    assert body["items"][0]["search_term"] == "Backend Engineer Python"
+    # BackgroundTasks run after the response; env default window flows through.
+    assert calls.get("window_days") == 3
+
+
+def test_scrape_background_skips_backfill_when_fetch_desc_false(monkeypatch):
+    db = make_session()
+
+    def override_db():
+        yield db
+
+    monkeypatch.setattr(main_module, "run_scrape",
+                        lambda payload: [_linkedin_listing_record()])
+    called = {"n": 0}
+    monkeypatch.setattr(main_module, "run_description_backfill",
+                        lambda **kw: called.__setitem__("n", called["n"] + 1))
+    main_module.app.dependency_overrides[get_db] = override_db
+    try:
+        response = client.post(
+            "/scrape",
+            json={"site_name": ["linkedin"], "search_term": "X", "location": "Berlin",
+                  "background": True, "linkedin_fetch_description": False},
+        )
+    finally:
+        main_module.app.dependency_overrides.clear()
+
+    body = response.json()
+    assert response.status_code == 200
+    assert body["mode"] == "background"
+    assert body["descriptions"] == "skipped"
+    assert called["n"] == 0

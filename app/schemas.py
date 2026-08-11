@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from datetime import datetime
 from typing import Optional, List
 
@@ -32,14 +32,13 @@ class JobOut(JobBase):
     id: int
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ScrapeRequest(BaseModel):
     site_name: List[str] = Field(
         default_factory=lambda: ["indeed", "linkedin", "google"],
-        example=["indeed", "linkedin"],
+        json_schema_extra={"example": ["indeed", "linkedin"]},
     )
     search_term: str = "software engineer"
     google_search_term: Optional[str] = (
@@ -55,6 +54,12 @@ class ScrapeRequest(BaseModel):
     #   None / False -> no filter (returns remote + on-site + unlabeled)
     # jobspy has no on-site-only mode, so False behaves identically to None here.
     is_remote: Optional[bool] = None
+    # Response mode (does NOT mutate linkedin_fetch_description):
+    #   False -> sync: wait for the full scrape (incl. LinkedIn descriptions) then return.
+    #   True  -> return the listing summary immediately; if linkedin_fetch_description
+    #            is also True, LinkedIn descriptions are fetched afterwards in the
+    #            background. If it is False, no descriptions are fetched (summary only).
+    background: bool = False
 
 
 class JobsQuery(BaseModel):
@@ -66,12 +71,12 @@ class JobsQuery(BaseModel):
     applied: Optional[bool] = Field(
         default=None,
         description="Filter by application status (true = applied, false = not applied).",
-        example=True,
+        json_schema_extra={"example": True},
     )
     created_after: Optional[datetime] = Field(
         default=datetime(2025, 11, 6, 0, 0, 0),
         description="Return only jobs created after this timestamp (ISO 8601). Defaults to today at midnight.",
-        example="2025-11-06T00:00:00Z"
+        json_schema_extra={"example": "2025-11-06T00:00:00Z"},
     )
 
     limit: int = 20

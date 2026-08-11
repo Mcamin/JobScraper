@@ -7,14 +7,50 @@ to automate the job application process.
 ---
 
 ## 🚀 Features
-- POST `/scrape` → Run job scraping and persist results
+- POST `/scrape` → Run job scraping and persist results (**sync** or **background** mode)
+- POST `/descriptions/backfill` → Backfill missing LinkedIn descriptions on demand
 - GET `/jobs` → Query stored job postings with filters & pagination
 - GET `/jobs/{id}` → Fetch individual job
+- Interactive API docs (Swagger `/docs`, ReDoc `/redoc`)
 - Logging (Loguru)
 - Alembic migrations
 - MySQL database
 - Poetry-based dependency management
 - Docker & Docker Compose support
+
+---
+
+## 🔀 Scrape modes & LinkedIn description backfill
+
+`POST /scrape` supports two response modes via the `background` flag. It **never mutates**
+`linkedin_fetch_description` — that flag is read only to decide whether descriptions are wanted.
+
+| `background` | `linkedin_fetch_description` | Behaviour |
+| --- | --- | --- |
+| `false` (default) | `false` | **Sync** — wait for the scrape (listings only), then return. |
+| `false` | `true` | **Sync** — wait for the full scrape *including* LinkedIn descriptions (slow → risks the caller's timeout). |
+| `true` | `false` | Return the listing summary **immediately**. No descriptions fetched. |
+| `true` | `true` | Return the listing summary **immediately**, then fetch LinkedIn descriptions **in the background** and backfill them onto the stored rows. |
+
+Why: LinkedIn descriptions are fetched one job at a time (`O(n)`) and can exceed an upstream
+client timeout (e.g. n8n's 300 s). Background mode decouples the fast listing response from
+the slow description fetch. (Indeed/Google return descriptions inline, so backfill is LinkedIn-only.)
+
+**Backfill is query-driven & self-healing.** The background sweep targets *LinkedIn jobs with
+no description created within `DESCRIPTION_BACKFILL_WINDOW_DAYS`*, so if a sweep is interrupted
+(crash / restart / 429) those rows stay description-less and are retried by the next sweep.
+Only one sweep runs at a time; within a sweep at most `DESCRIPTION_BACKFILL_CONCURRENCY`
+fetches run concurrently, each after a polite delay.
+
+On-demand mop-up:
+
+```bash
+curl -X POST "http://localhost:8000/descriptions/backfill?window_days=3&limit=50"
+# → {"scheduled": true, "candidates": 7, "window_days": 3, "limit": 50}
+```
+
+> Implementation note: backfill calls jobspy's private `LinkedIn._get_job_details`. A guard
+> test fails loudly if a jobspy upgrade removes it.
 
 ---
 
@@ -87,6 +123,12 @@ DB_PORT=3306
 DB_USER=jobs
 DB_PASSWORD=jobs_pw
 DB_NAME=jobsdb
+
+# Description backfill (async /scrape background mode) — defaults shown
+DESCRIPTION_BACKFILL_WINDOW_DAYS=3
+DESCRIPTION_BACKFILL_LIMIT=50
+DESCRIPTION_BACKFILL_CONCURRENCY=2
+DESCRIPTION_BACKFILL_DELAY_SECONDS=2.0
 ```
 
 ---
