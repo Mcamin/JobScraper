@@ -50,7 +50,11 @@ def list_jobs(db: Session, params: JobsQuery):
         stmt = stmt.where(Job.created_at >= params.created_after)
 
     # --- Order and pagination ----------------------------------------
-    stmt = stmt.order_by(Job.created_at.desc()).limit(params.limit).offset(params.offset)
+    stmt = stmt.order_by(
+        Job.date_posted.is_(None).asc(),
+        Job.date_posted.desc(),
+        Job.created_at.desc(),
+    ).limit(params.limit).offset(params.offset)
 
     # --- Count total -------------------------------------------------
     total = db.scalar(select(func.count()).select_from(stmt.subquery()))

@@ -1,4 +1,5 @@
-from fastapi import FastAPI, Depends, HTTPException, Query
+from fastapi import FastAPI, Depends, HTTPException
+from fastapi.encoders import jsonable_encoder
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from app.config import get_settings
@@ -7,7 +8,6 @@ from app.schemas import JobOut, ScrapeRequest, JobsQuery
 from app.crud import upsert_jobs, list_jobs, get_job, mark_job_as_applied
 from app.scraper import run_scrape
 from app.logging_config import logger
-from app.models import Job
 
 settings = get_settings()
 
@@ -52,17 +52,25 @@ def scrape_jobs_endpoint(payload: ScrapeRequest, db: Session = Depends(get_db)):
         # Persist to DB
         inserted = upsert_jobs(db, records)
 
-        # Query back the newly inserted jobs (optional)
-        total, items = list_jobs(db, JobsQuery(limit=inserted))
+        # Query back the current DB queue separately from the scrape result.
+        total, db_items = list_jobs(db, JobsQuery(limit=inserted))
+        db_items_payload = [JobOut.model_validate(i).model_dump() for i in db_items]
 
         logger.bind(event="scrape.done").info(
-            f"Scrape complete. Inserted: {inserted}, Returned: {len(items)}"
+            f"Scrape complete. Inserted: {inserted}, Returned: {len(records)}"
         )
 
         return {
+            "search_term": payload.search_term,
+            "site_name": payload.site_name,
+            "location": payload.location,
+            "country_indeed": payload.country_indeed,
+            "is_remote": payload.is_remote,
             "inserted": inserted,
             "returned": len(records),
-            "items": [JobOut.model_validate(i).model_dump() for i in items],
+            "scrape_items": jsonable_encoder(records),
+            "db_items": db_items_payload,
+            "items": db_items_payload,
         }
 
     except Exception as e:
