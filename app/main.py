@@ -75,6 +75,21 @@ def resolve_country_indeed(site_name, requested, fallback):
     )
 
 
+def log_kept_without_company(records):
+    """Company is optional (nullable column). We KEEP rows without one and store
+    company=NULL; the downstream selection stage (task #10) decides whether to
+    use them. Logs honestly — the old message wrongly said "Skipping" while
+    inserting them anyway. Returns the count kept.
+    """
+    missing = [r for r in records if not r.get("company")]
+    if missing:
+        logger.bind(
+            event="scrape.no_company",
+            examples=[r.get("job_url") for r in missing[:3]],
+        ).warning(f"Kept {len(missing)} job(s) with no company (stored as NULL)")
+    return len(missing)
+
+
 # --- Scrape and Save ----------------------------------------------
 @app.post(
     "/scrape",
@@ -113,12 +128,7 @@ def scrape_jobs_endpoint(
             # ---- SYNC (unchanged behaviour) ------------------------------
             records = run_scrape(payload.model_dump())
 
-            invalid_records = [r for r in records if not r.get("company")]
-            if invalid_records:
-                logger.warning(
-                    f"Skipping {len(invalid_records)} records missing 'company' field",
-                    extra={"examples": invalid_records[:3]},
-                )
+            log_kept_without_company(records)
             inserted = upsert_jobs(db, records)
 
             total, db_items = list_jobs(db, JobsQuery(limit=inserted))
@@ -149,12 +159,7 @@ def scrape_jobs_endpoint(
         fast_payload = {**payload.model_dump(), "linkedin_fetch_description": False}
         records = run_scrape(fast_payload)
 
-        invalid_records = [r for r in records if not r.get("company")]
-        if invalid_records:
-            logger.warning(
-                f"Skipping {len(invalid_records)} records missing 'company' field",
-                extra={"examples": invalid_records[:3]},
-            )
+        log_kept_without_company(records)
         inserted = upsert_jobs(db, records)
 
         wants_descriptions = bool(payload.linkedin_fetch_description)

@@ -135,6 +135,13 @@ def run_scrape(payload: dict) -> List[Dict]:
     jobs_df.replace({np.nan: None, pd.NaT: None}, inplace=True)
     jobs_df.where(pd.notnull(jobs_df), None, inplace=True)
 
+    # Company is optional (task #6, policy A): keep company-less jobs, but
+    # normalize blank/whitespace to a clean NULL so we never store "" or "   ".
+    if "company" in jobs_df.columns:
+        jobs_df["company"] = jobs_df["company"].map(
+            lambda v: (v.strip() or None) if isinstance(v, str) else v
+        )
+
     # -----------------------------
     # FIX #3: Now it's safe — no KeyError possible
     # -----------------------------

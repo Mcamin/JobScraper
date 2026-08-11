@@ -378,3 +378,53 @@ def test_scrape_indeed_without_country_returns_400(monkeypatch):
     assert response.status_code == 400
     assert "country_indeed" in response.json()["detail"]
     assert called["n"] == 0  # never reached the scraper
+
+
+# ---------------------------------------------------------------------------
+# Missing-company handling (policy A: keep + store NULL, honest log)
+# ---------------------------------------------------------------------------
+
+def test_scrape_keeps_records_without_company(monkeypatch):
+    """A company-less job is KEPT (not skipped) and stored with company=NULL."""
+    db = make_session()
+
+    def override_db():
+        yield db
+
+    records = [
+        {**_linkedin_listing_record(url="https://example.test/no-company"),
+         "company": None},
+        {**_linkedin_listing_record(url="https://example.test/with-company"),
+         "company": "Acme"},
+    ]
+    monkeypatch.setattr(main_module, "run_scrape", lambda payload: records)
+    main_module.app.dependency_overrides[get_db] = override_db
+    try:
+        response = client.post(
+            "/scrape",
+            json={"site_name": ["linkedin"], "search_term": "X",
+                  "location": "Berlin", "country_indeed": "Germany"},
+        )
+    finally:
+        main_module.app.dependency_overrides.clear()
+
+    body = response.json()
+    assert response.status_code == 200
+    assert body["inserted"] == 2   # company-less row kept, not dropped
+    assert body["returned"] == 2
+    stored = {j.job_url: j.company for j in db.query(Job).all()}
+    assert stored["https://example.test/no-company"] is None
+    assert stored["https://example.test/with-company"] == "Acme"
+
+
+def test_log_kept_without_company_counts():
+    from app.main import log_kept_without_company
+
+    n = log_kept_without_company(
+        [
+            {"company": None, "job_url": "u1"},
+            {"company": "", "job_url": "u2"},
+            {"company": "Acme", "job_url": "u3"},
+        ]
+    )
+    assert n == 2
