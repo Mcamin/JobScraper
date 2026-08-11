@@ -1,0 +1,12 @@
+# Normalize all text files to LF in the repository and on checkout.
+# Prevents CRLF/LF churn from Windows/PyCharm saves on the SMB mount.
+* text=auto eol=lf
+
+# Binary assets git must not touch
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.pdf  binary
+*.zip  binary
