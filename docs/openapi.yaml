@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   title: JobScraper API
   description: API to scrape and fetch job postings using jobspy and persist them to MySQL.
-  version: 1.0.0
+  version: 1.1.0
 paths:
   /health:
     get:
@@ -368,7 +368,11 @@ components:
           - type: string
           - type: 'null'
           title: Country Indeed
-          default: Germany
+          default: null
+          description: >-
+            Required by jobspy for Indeed/Glassdoor scrapes. Resolved as:
+            request value > COUNTRY_INDEED_FALLBACK env > HTTP 400. Ignored for
+            LinkedIn/Google-only scrapes.
         linkedin_fetch_description:
           anyOf:
           - type: boolean

@@ -1,3 +1,5 @@
+from typing import Optional
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from functools import lru_cache
 
@@ -27,6 +29,13 @@ class Settings(BaseSettings):
     DESCRIPTION_BACKFILL_CONCURRENCY: int = 2
     # Polite delay (seconds) before each LinkedIn detail fetch.
     DESCRIPTION_BACKFILL_DELAY_SECONDS: float = 2.0
+
+    # --- country_indeed fallback --------------------------------------
+    # jobspy requires country_indeed for Indeed/Glassdoor scrapes. Resolution
+    # order at /scrape: request value > this env fallback > HTTP 400.
+    # Leave unset to force callers to always pass country_indeed explicitly;
+    # set it (e.g. "Germany") to make that the deployment-wide default.
+    COUNTRY_INDEED_FALLBACK: Optional[str] = None
 
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")

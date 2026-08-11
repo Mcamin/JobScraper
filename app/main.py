@@ -39,6 +39,42 @@ def health():
     return {"status": "ok"}
 
 
+# --- country_indeed resolution ------------------------------------
+# jobspy requires a country for Indeed/Glassdoor scrapes. Resolve it explicitly
+# so a missing value fails loudly with a clean 400 instead of blowing up deep
+# inside jobspy (previously an unhandled None.strip()).
+_COUNTRY_REQUIRED_SITES = {"indeed", "glassdoor"}
+
+
+def resolve_country_indeed(site_name, requested, fallback):
+    """Resolve country_indeed for a scrape request.
+
+    Order: request value > env fallback (COUNTRY_INDEED_FALLBACK) > error.
+    Returns the resolved country string, or the (possibly None) request value
+    when no Indeed/Glassdoor site is targeted (country is irrelevant there).
+    Raises ValueError when a country is required but neither source supplies
+    one; the caller maps that to HTTP 400.
+    """
+    needs_country = any(
+        str(s).strip().lower() in _COUNTRY_REQUIRED_SITES for s in (site_name or [])
+    )
+    if not needs_country:
+        return requested or None
+
+    country = (requested or "").strip()
+    if country:
+        return country
+
+    fb = (fallback or "").strip()
+    if fb:
+        return fb
+
+    raise ValueError(
+        "country_indeed is required when scraping Indeed/Glassdoor. "
+        "Pass it in the request, or set the COUNTRY_INDEED_FALLBACK env var."
+    )
+
+
 # --- Scrape and Save ----------------------------------------------
 @app.post(
     "/scrape",
@@ -60,6 +96,17 @@ def scrape_jobs_endpoint(
     logger.bind(event="scrape.start", background=payload.background).info(
         f"Starting scrape for {payload.search_term}"
     )
+
+    # Resolve country_indeed up front (request > env fallback > 400) so an
+    # Indeed/Glassdoor scrape can't fail deep inside jobspy on a missing country.
+    try:
+        payload.country_indeed = resolve_country_indeed(
+            payload.site_name,
+            payload.country_indeed,
+            get_settings().COUNTRY_INDEED_FALLBACK,
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
     try:
         if not payload.background:

@@ -129,7 +129,26 @@ DESCRIPTION_BACKFILL_WINDOW_DAYS=3
 DESCRIPTION_BACKFILL_LIMIT=50
 DESCRIPTION_BACKFILL_CONCURRENCY=2
 DESCRIPTION_BACKFILL_DELAY_SECONDS=2.0
+
+# Fallback country for Indeed/Glassdoor scrapes (see below). Unset by default.
+COUNTRY_INDEED_FALLBACK=Germany
 ```
+
+### `country_indeed` resolution (Indeed / Glassdoor)
+
+jobspy requires a country for **Indeed** and **Glassdoor** scrapes. `/scrape`
+resolves it in this order:
+
+1. **Request value** — `country_indeed` in the POST body, if non-blank.
+2. **Env fallback** — `COUNTRY_INDEED_FALLBACK`, if set to a non-blank value.
+3. **Fail loudly** — otherwise the request is rejected with **HTTP 400**
+   (jobspy is never called).
+
+`country_indeed` is **ignored** when neither Indeed nor Glassdoor is in
+`site_name` (e.g. LinkedIn/Google-only scrapes). Set
+`COUNTRY_INDEED_FALLBACK=Germany` in the deployment `.env` to make Germany the
+default while still letting individual requests override it; leave it unset to
+force every Indeed/Glassdoor request to pass `country_indeed` explicitly.
 
 ---
 

@@ -308,3 +308,73 @@ def test_scrape_background_skips_backfill_when_fetch_desc_false(monkeypatch):
     assert body["mode"] == "background"
     assert body["descriptions"] == "skipped"
     assert called["n"] == 0
+
+
+# ---------------------------------------------------------------------------
+# country_indeed resolution (request > env fallback > 400)
+# ---------------------------------------------------------------------------
+
+def test_resolve_country_indeed_request_wins():
+    from app.main import resolve_country_indeed
+
+    assert resolve_country_indeed(["indeed"], "France", "Germany") == "France"
+    # request value is stripped
+    assert resolve_country_indeed(["indeed", "linkedin"], "  France  ", None) == "France"
+
+
+def test_resolve_country_indeed_falls_back_to_env_when_blank():
+    from app.main import resolve_country_indeed
+
+    assert resolve_country_indeed(["indeed"], None, "Germany") == "Germany"
+    assert resolve_country_indeed(["indeed"], "", "Germany") == "Germany"
+    assert resolve_country_indeed(["indeed"], "   ", "  Germany ") == "Germany"
+
+
+def test_resolve_country_indeed_raises_when_required_and_unresolved():
+    import pytest
+    from app.main import resolve_country_indeed
+
+    with pytest.raises(ValueError):
+        resolve_country_indeed(["indeed"], None, None)
+    with pytest.raises(ValueError):
+        resolve_country_indeed(["glassdoor"], "", "")
+
+
+def test_resolve_country_indeed_ignored_without_indeed_or_glassdoor():
+    from app.main import resolve_country_indeed
+
+    # No Indeed/Glassdoor -> country irrelevant, never raises.
+    assert resolve_country_indeed(["linkedin", "google"], None, None) is None
+    assert resolve_country_indeed(["linkedin"], "France", None) == "France"
+
+
+def test_scrape_indeed_without_country_returns_400(monkeypatch):
+    """Indeed requested, no country in request and no env fallback -> clean 400,
+    and jobspy is never invoked."""
+    db = make_session()
+
+    def override_db():
+        yield db
+
+    called = {"n": 0}
+    monkeypatch.setattr(
+        main_module, "run_scrape",
+        lambda payload: called.__setitem__("n", called["n"] + 1) or [],
+    )
+    # Force no env fallback so the 400 path is deterministic regardless of .env.
+    monkeypatch.setattr(
+        main_module, "get_settings",
+        lambda: type("S", (), {"COUNTRY_INDEED_FALLBACK": None})(),
+    )
+    main_module.app.dependency_overrides[get_db] = override_db
+    try:
+        response = client.post(
+            "/scrape",
+            json={"site_name": ["indeed"], "search_term": "X", "location": "Berlin"},
+        )
+    finally:
+        main_module.app.dependency_overrides.clear()
+
+    assert response.status_code == 400
+    assert "country_indeed" in response.json()["detail"]
+    assert called["n"] == 0  # never reached the scraper

@@ -47,7 +47,11 @@ class ScrapeRequest(BaseModel):
     location: str = "Berlin"
     results_wanted: int = 20
     hours_old: int = 72
-    country_indeed: Optional[str] = "Germany"
+    # Required by jobspy for Indeed/Glassdoor scrapes. Resolved at /scrape:
+    # request value > COUNTRY_INDEED_FALLBACK env > HTTP 400. Default None so
+    # an omitted/blank value falls through to the env fallback (not a silent
+    # hardcoded "Germany"). Ignored for LinkedIn/Google.
+    country_indeed: Optional[str] = None
     linkedin_fetch_description: Optional[bool] = True
     # Scrape-time filter for jobspy.scrape_jobs() ONLY (does not filter the DB):
     #   True         -> remote-only (jobspy filters at source, e.g. LinkedIn f_WT=2)
