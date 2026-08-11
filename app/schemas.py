@@ -1,6 +1,9 @@
 from pydantic import BaseModel, Field, ConfigDict
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Optional, List
+
+from app.config import get_settings
+from app.timeutils import local_now_naive
 
 
 class JobBase(BaseModel):
@@ -66,6 +69,17 @@ class ScrapeRequest(BaseModel):
     background: bool = False
 
 
+def _default_created_after() -> datetime:
+    """Rolling lower bound for /jobs: local-now minus CREATED_AFTER_WINDOW_DAYS.
+
+    Computed per request via default_factory so the window never freezes at
+    import/container-start time. Uses APP_TIMEZONE wall-clock (Berlin) to match
+    the DB's naive ``created_at`` (compared with ``>=`` in crud.list_jobs).
+    """
+    days = get_settings().CREATED_AFTER_WINDOW_DAYS
+    return local_now_naive() - timedelta(days=days)
+
+
 class JobsQuery(BaseModel):
     site_name: Optional[str] = None
     search_term: Optional[str] = None
@@ -78,9 +92,13 @@ class JobsQuery(BaseModel):
         json_schema_extra={"example": True},
     )
     created_after: Optional[datetime] = Field(
-        default=datetime(2025, 11, 6, 0, 0, 0),
-        description="Return only jobs created after this timestamp (ISO 8601). Defaults to today at midnight.",
-        json_schema_extra={"example": "2025-11-06T00:00:00Z"},
+        default_factory=_default_created_after,
+        description=(
+            "Return only jobs created at/after this timestamp (ISO 8601). "
+            "Defaults to a rolling window — now(UTC) minus "
+            "CREATED_AFTER_WINDOW_DAYS. Pass null to disable the time filter."
+        ),
+        json_schema_extra={"example": "2026-08-04T00:00:00Z"},
     )
 
     limit: int = 20

@@ -11,6 +11,12 @@ class Settings(BaseSettings):
     LOG_LEVEL: str = "INFO"
     LOG_JSON: bool = True
 
+    # IANA timezone the app reasons in for time windows. MUST match the DB
+    # server's timezone: created_at is written by MySQL func.now() in the
+    # server's local time (verified Europe/Berlin via NOW() vs UTC_TIMESTAMP()),
+    # so window cutoffs compared against created_at must use the same frame.
+    APP_TIMEZONE: str = "Europe/Berlin"
+
     DB_HOST: str = "db"
     DB_PORT: int = 3306
     DB_USER: str = "jobs"
@@ -36,6 +42,13 @@ class Settings(BaseSettings):
     # Leave unset to force callers to always pass country_indeed explicitly;
     # set it (e.g. "Germany") to make that the deployment-wide default.
     COUNTRY_INDEED_FALLBACK: Optional[str] = None
+
+    # --- /jobs listing window -----------------------------------------
+    # Default `created_after` for /jobs is now(UTC) minus this many days,
+    # computed per request (rolling window) so it never freezes. Bounds
+    # production while giving recently scraped-but-unapplied jobs a grace
+    # window. Callers can pass created_after=null to disable the filter.
+    CREATED_AFTER_WINDOW_DAYS: int = 7
 
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")

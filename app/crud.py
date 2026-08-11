@@ -3,7 +3,8 @@ from sqlalchemy import select, func, or_
 from app.models import Job
 from app.schemas import JobsQuery
 from typing import Iterable, List
-from datetime import datetime, timedelta, timezone
+from datetime import timedelta
+from app.timeutils import local_now_naive
 
 
 def upsert_jobs(db: Session, records: Iterable[dict]) -> int:
@@ -88,8 +89,9 @@ def list_linkedin_jobs_missing_description(
     Query-driven so a failed/partial backfill self-heals: rows stay description-less
     and are picked up again by the next sweep (bounded by the window + limit).
     """
-    # naive UTC to match the DB's naive DATETIME (created_at server-defaulted to now())
-    cutoff = datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(days=window_days)
+    # APP_TIMEZONE wall-clock (Berlin) to match the DB's naive created_at, which
+    # MySQL func.now() writes in the server's local timezone (NOT UTC).
+    cutoff = local_now_naive() - timedelta(days=window_days)
     stmt = (
         select(Job)
         .where(Job.site_name == "linkedin")

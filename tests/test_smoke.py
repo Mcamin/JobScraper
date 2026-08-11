@@ -428,3 +428,51 @@ def test_log_kept_without_company_counts():
         ]
     )
     assert n == 2
+
+
+# ---------------------------------------------------------------------------
+# created_after rolling-window default (task #1)
+# ---------------------------------------------------------------------------
+
+def test_created_after_default_is_rolling_window():
+    """Default is now(UTC) - CREATED_AFTER_WINDOW_DAYS, computed per request —
+    never the old frozen 2025-11-06."""
+    from datetime import datetime, timedelta
+    from app.schemas import JobsQuery
+    from app.config import get_settings
+    from app.timeutils import local_now_naive
+
+    days = get_settings().CREATED_AFTER_WINDOW_DAYS
+    now = local_now_naive()  # same frame the factory uses (Berlin wall-clock)
+
+    q = JobsQuery()
+    assert q.created_after is not None
+    assert q.created_after > datetime(2026, 1, 1)  # not the stale frozen default
+    delta = now - q.created_after
+    assert (
+        timedelta(days=days) - timedelta(minutes=1)
+        <= delta
+        <= timedelta(days=days) + timedelta(minutes=1)
+    )
+
+
+def test_created_after_null_disables_filter():
+    """Explicit null keeps the filter off (crud.list_jobs skips falsy values)."""
+    from app.schemas import JobsQuery
+
+    assert JobsQuery(created_after=None).created_after is None
+
+
+def test_local_now_naive_uses_configured_timezone():
+    """local_now_naive() is APP_TIMEZONE wall-clock (Berlin), not UTC."""
+    from datetime import datetime, timezone
+    from zoneinfo import ZoneInfo
+    from app.timeutils import local_now_naive
+    from app.config import get_settings
+
+    tz = ZoneInfo(get_settings().APP_TIMEZONE)
+    expected = datetime.now(tz).replace(tzinfo=None)
+    got = local_now_naive()
+    assert abs((expected - got).total_seconds()) < 5
+    # Europe/Berlin is ahead of UTC, so the local wall-clock is >= UTC now.
+    assert got >= datetime.now(timezone.utc).replace(tzinfo=None)
