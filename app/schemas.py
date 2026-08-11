@@ -50,8 +50,10 @@ class ScrapeRequest(BaseModel):
     hours_old: int = 72
     country_indeed: Optional[str] = "Germany"
     linkedin_fetch_description: Optional[bool] = True
-    # None = no remote filter (default); True = remote only; False = on-site only.
-    # Passed through to jobspy.scrape_jobs(); does not alter the DB schema.
+    # Scrape-time filter for jobspy.scrape_jobs() ONLY (does not filter the DB):
+    #   True         -> remote-only (jobspy filters at source, e.g. LinkedIn f_WT=2)
+    #   None / False -> no filter (returns remote + on-site + unlabeled)
+    # jobspy has no on-site-only mode, so False behaves identically to None here.
     is_remote: Optional[bool] = None
 
 
