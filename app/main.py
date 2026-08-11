@@ -19,7 +19,7 @@ settings = get_settings()
 
 app = FastAPI(
     title=settings.APP_NAME,
-    version="1.1.0",
+    version="1.1.1",
     description="API to scrape and fetch job postings using jobspy and persist them to MySQL.",
 )
 

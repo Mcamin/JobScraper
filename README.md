@@ -124,6 +124,12 @@ DB_USER=jobs
 DB_PASSWORD=jobs_pw
 DB_NAME=jobsdb
 
+# App timezone — MUST match the DB server timezone (see below).
+APP_TIMEZONE=Europe/Berlin
+
+# /jobs default created_after = now(APP_TIMEZONE) minus this many days.
+CREATED_AFTER_WINDOW_DAYS=7
+
 # Description backfill (async /scrape background mode) — defaults shown
 DESCRIPTION_BACKFILL_WINDOW_DAYS=3
 DESCRIPTION_BACKFILL_LIMIT=50
@@ -133,6 +139,18 @@ DESCRIPTION_BACKFILL_DELAY_SECONDS=2.0
 # Fallback country for Indeed/Glassdoor scrapes (see below). Unset by default.
 COUNTRY_INDEED_FALLBACK=Germany
 ```
+
+### `/jobs` time window (`created_after`) and timezone
+
+`/jobs` returns only jobs created at/after `created_after`. When the caller
+omits it, it defaults to a **rolling window** — `now(APP_TIMEZONE) −
+CREATED_AFTER_WINDOW_DAYS` (default 7 days), computed **per request** so it never
+freezes. Pass `created_after=null` to disable the time filter entirely.
+
+**Timezone matters:** `created_at` is written by the DB (`func.now()`) in the DB
+server's *local* timezone (this deployment runs **Europe/Berlin**, not UTC).
+Set **`APP_TIMEZONE`** to match the DB server so window cutoffs align with the
+stored timestamps; if the DB server ever moves to UTC, set `APP_TIMEZONE=UTC`.
 
 ### `country_indeed` resolution (Indeed / Glassdoor)
 

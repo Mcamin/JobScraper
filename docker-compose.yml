@@ -22,5 +22,20 @@ services:
       DB_NAME: "jobsdb"
       DB_POOL_SIZE: 10
       DB_POOL_MAX_OVERFLOW: 20
+
+      # --- Timezone (MUST match the DB server timezone) ---
+      APP_TIMEZONE: "Europe/Berlin"
+
+      # --- /jobs rolling window ---
+      CREATED_AFTER_WINDOW_DAYS: 7
+
+      # --- country_indeed fallback (Indeed/Glassdoor; request value wins) ---
+      COUNTRY_INDEED_FALLBACK: "Germany"
+
+      # --- Description backfill (background mode) ---
+      DESCRIPTION_BACKFILL_WINDOW_DAYS: 3
+      DESCRIPTION_BACKFILL_LIMIT: 50
+      DESCRIPTION_BACKFILL_CONCURRENCY: 2
+      DESCRIPTION_BACKFILL_DELAY_SECONDS: 2.0
     restart: unless-stopped
 

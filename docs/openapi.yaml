@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   title: JobScraper API
   description: API to scrape and fetch job postings using jobspy and persist them to MySQL.
-  version: 1.1.0
+  version: 1.1.1
 paths:
   /health:
     get:
@@ -141,12 +141,16 @@ paths:
       - name: created_after
         in: query
         required: false
+        description: >-
+          Return only jobs created at/after this timestamp (ISO 8601). Omitted ->
+          rolling default of now(APP_TIMEZONE, e.g. Europe/Berlin) minus
+          CREATED_AFTER_WINDOW_DAYS, computed per request. Pass null to disable
+          the time filter.
         schema:
           anyOf:
           - type: string
             format: date-time
           - type: 'null'
-          default: '2025-11-06T00:00:00'
           title: Created After
       - name: limit
         in: query
