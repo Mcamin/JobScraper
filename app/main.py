@@ -6,7 +6,7 @@ from app.config import get_settings
 from app.db import get_db
 from app.schemas import JobOut, ScrapeRequest, JobsQuery
 from app.crud import upsert_jobs, list_jobs, get_job, mark_job_as_applied
-from app.scraper import run_scrape
+from app.scraper import run_scrape, ScrapeError
 from app.logging_config import logger
 
 settings = get_settings()
@@ -72,6 +72,12 @@ def scrape_jobs_endpoint(payload: ScrapeRequest, db: Session = Depends(get_db)):
             "db_items": db_items_payload,
             "items": db_items_payload,
         }
+
+    except ScrapeError as e:
+        # Upstream scraper (jobspy) failed — not our bug. Already logged with
+        # full input context in run_scrape(); surface as 502 so the caller can
+        # distinguish it from an internal fault.
+        raise HTTPException(status_code=502, detail=str(e))
 
     except Exception as e:
         logger.exception("Scrape failed")

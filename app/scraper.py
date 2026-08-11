@@ -9,6 +9,16 @@ from app.config import get_settings
 
 settings = get_settings()
 
+
+class ScrapeError(RuntimeError):
+    """Raised when the underlying jobspy scrape fails.
+
+    Lets the API layer distinguish an upstream scraper failure (HTTP 502)
+    from an internal bug/DB error (HTTP 500), instead of collapsing every
+    fault into an opaque 500.
+    """
+
+
 COLMAP = {
     "id": "job_id",
     "site": "site_name",
@@ -32,19 +42,35 @@ def run_scrape(payload: dict) -> List[Dict]:
     log = logger.bind(event="scrape.start", search_term=payload.get("search_term"))
     log.info("Starting job scrape", payload=payload)
 
-    jobs_df = scrape_jobs(
-        site_name=payload.get("site_name"),
-        search_term=payload.get("search_term"),
-        google_search_term=payload.get("google_search_term"),
-        location=payload.get("location"),
-        results_wanted=payload.get("results_wanted", 20),
-        hours_old=payload.get("hours_old", 72),
-        country_indeed=payload.get("country_indeed"),
-        linkedin_fetch_description=payload.get("linkedin_fetch_description", False),
-        # jobspy's ScraperInput requires a real bool; None (caller omitted it)
-        # must collapse to False = "no remote filter" (unchanged default behavior).
-        is_remote=bool(payload.get("is_remote")),
-    )
+    try:
+        jobs_df = scrape_jobs(
+            site_name=payload.get("site_name"),
+            search_term=payload.get("search_term"),
+            google_search_term=payload.get("google_search_term"),
+            location=payload.get("location"),
+            results_wanted=payload.get("results_wanted", 20),
+            hours_old=payload.get("hours_old", 72),
+            country_indeed=payload.get("country_indeed"),
+            linkedin_fetch_description=payload.get("linkedin_fetch_description", False),
+            # jobspy's ScraperInput requires a real bool; None (caller omitted it)
+            # must collapse to False = "no remote filter" (unchanged default behavior).
+            is_remote=bool(payload.get("is_remote")),
+        )
+    except Exception as e:
+        # Log the exact inputs so a failure points at the offending site/term,
+        # then surface a typed error the API maps to a clean 502.
+        logger.bind(
+            event="scrape.error",
+            site_name=payload.get("site_name"),
+            search_term=payload.get("search_term"),
+            location=payload.get("location"),
+            results_wanted=payload.get("results_wanted", 20),
+        ).exception("jobspy scrape_jobs failed")
+        raise ScrapeError(
+            f"scrape failed for '{payload.get('search_term')}' "
+            f"@ '{payload.get('location')}' "
+            f"(sites={payload.get('site_name')}): {e}"
+        ) from e
 
     count = len(jobs_df)
     logger.bind(event="scrape.success").info(f"Scraped {count} jobs successfully.")
