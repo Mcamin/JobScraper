@@ -47,9 +47,16 @@ def list_jobs(db: Session, params: JobsQuery):
         )
     if getattr(params, "applied", None) is not None:
         stmt = stmt.where(Job.applied == params.applied)
-    # --- Optional: filter by created_at if params has it ------------
-    if getattr(params, "created_after", None):
-        stmt = stmt.where(Job.created_at >= params.created_after)
+    # --- Filter by created_at (rolling-window default resolved here) --
+    # JobsQuery.resolve_created_after() applies the rolling window when the
+    # param is omitted (FastAPI can't do it via default_factory on a
+    # Depends() query-model). Fall back to a raw attr for duck-typed params.
+    if hasattr(params, "resolve_created_after"):
+        cutoff = params.resolve_created_after()
+    else:
+        cutoff = getattr(params, "created_after", None)
+    if cutoff is not None:
+        stmt = stmt.where(Job.created_at >= cutoff)
 
     # --- Order and pagination ----------------------------------------
     stmt = stmt.order_by(

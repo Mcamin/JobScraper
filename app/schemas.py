@@ -92,14 +92,41 @@ class JobsQuery(BaseModel):
         json_schema_extra={"example": True},
     )
     created_after: Optional[datetime] = Field(
-        default_factory=_default_created_after,
+        default=None,
         description=(
             "Return only jobs created at/after this timestamp (ISO 8601). "
-            "Defaults to a rolling window — now(UTC) minus "
-            "CREATED_AFTER_WINDOW_DAYS. Pass null to disable the time filter."
+            "Omit to use a rolling window — now(APP_TIMEZONE) minus "
+            "CREATED_AFTER_WINDOW_DAYS. Set all_time=true to disable the "
+            "time filter and return the full history."
         ),
         json_schema_extra={"example": "2026-08-04T00:00:00Z"},
+    )
+    all_time: bool = Field(
+        default=False,
+        description=(
+            "If true, disable the created_after time filter and return all "
+            "history (overrides created_after)."
+        ),
     )
 
     limit: int = 20
     offset: int = 0
+
+    def resolve_created_after(self) -> Optional[datetime]:
+        """Effective created_at lower bound applied by crud.list_jobs.
+
+        NOTE: the rolling-window default is resolved here (not via a field
+        ``default_factory``) because FastAPI does NOT invoke a field's
+        default_factory for a model used as a ``Depends()`` query dependency —
+        it raises 422 instead. Resolving at query time keeps the HTTP default
+        working while still allowing an explicit value or all_time override.
+
+        - all_time=True                -> None (no time filter)
+        - created_after set explicitly -> that value
+        - created_after omitted/None   -> now(APP_TIMEZONE) - CREATED_AFTER_WINDOW_DAYS
+        """
+        if self.all_time:
+            return None
+        if self.created_after is not None:
+            return self.created_after
+        return _default_created_after()

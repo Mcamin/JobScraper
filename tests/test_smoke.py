@@ -71,7 +71,7 @@ def test_list_jobs_orders_by_posting_freshness_then_insert_time():
     )
     db.commit()
 
-    total, items = list_jobs(db, JobsQuery(limit=10, created_after=None))
+    total, items = list_jobs(db, JobsQuery(limit=10, all_time=True))
 
     assert total == 3
     assert [item.job_title for item in items] == [
@@ -435,20 +435,23 @@ def test_log_kept_without_company_counts():
 # ---------------------------------------------------------------------------
 
 def test_created_after_default_is_rolling_window():
-    """Default is now(UTC) - CREATED_AFTER_WINDOW_DAYS, computed per request —
-    never the old frozen 2025-11-06."""
+    """Omitted created_after resolves to now(APP_TIMEZONE) - CREATED_AFTER_WINDOW_DAYS,
+    computed per request — never the old frozen 2025-11-06.
+
+    Resolution lives in JobsQuery.resolve_created_after() (not a field
+    default_factory), so it works through FastAPI's Depends() query-model too."""
     from datetime import datetime, timedelta
     from app.schemas import JobsQuery
     from app.config import get_settings
     from app.timeutils import local_now_naive
 
     days = get_settings().CREATED_AFTER_WINDOW_DAYS
-    now = local_now_naive()  # same frame the factory uses (Berlin wall-clock)
+    now = local_now_naive()  # same frame the resolver uses (Berlin wall-clock)
 
-    q = JobsQuery()
-    assert q.created_after is not None
-    assert q.created_after > datetime(2026, 1, 1)  # not the stale frozen default
-    delta = now - q.created_after
+    resolved = JobsQuery().resolve_created_after()
+    assert resolved is not None
+    assert resolved > datetime(2026, 1, 1)  # not the stale frozen default
+    delta = now - resolved
     assert (
         timedelta(days=days) - timedelta(minutes=1)
         <= delta
@@ -456,11 +459,60 @@ def test_created_after_default_is_rolling_window():
     )
 
 
-def test_created_after_null_disables_filter():
-    """Explicit null keeps the filter off (crud.list_jobs skips falsy values)."""
+def test_all_time_disables_filter():
+    """all_time=true disables the created_after filter (resolves to None)."""
     from app.schemas import JobsQuery
 
-    assert JobsQuery(created_after=None).created_after is None
+    assert JobsQuery(all_time=True).resolve_created_after() is None
+    # all_time overrides an explicit created_after too
+    assert JobsQuery(created_after=datetime(2026, 8, 1), all_time=True).resolve_created_after() is None
+
+
+def test_explicit_created_after_is_used():
+    """An explicit created_after wins over the rolling-window default."""
+    from app.schemas import JobsQuery
+
+    ts = datetime(2026, 8, 1, 0, 0, 0)
+    assert JobsQuery(created_after=ts).resolve_created_after() == ts
+
+
+def test_jobs_endpoint_default_window_is_not_422():
+    """Regression (1.1.2): GET /jobs with NO created_after must NOT 422.
+
+    FastAPI does not invoke a field default_factory for Depends() query-models,
+    so the 1.1.1 rolling-window default 422'd on the default path. This test
+    exercises the real HTTP query layer that the unit tests missed."""
+    from app.timeutils import local_now_naive
+    db = make_session()
+    # Two jobs: one fresh (inside the rolling window), one ancient (outside).
+    fresh_created = local_now_naive()
+    db.add_all([
+        make_job(job_url="https://example.test/fresh", created_at=fresh_created),
+        make_job(job_url="https://example.test/ancient",
+                 created_at=datetime(2020, 1, 1, 0, 0, 0)),
+    ])
+    db.commit()
+
+    def override_db():
+        yield db
+
+    main_module.app.dependency_overrides[get_db] = override_db
+    try:
+        # Default path: omitted created_after -> rolling window, NOT 422.
+        r_default = client.get("/jobs")
+        # all_time: full history.
+        r_all = client.get("/jobs", params={"all_time": "true"})
+    finally:
+        main_module.app.dependency_overrides.clear()
+
+    assert r_default.status_code == 200, r_default.text
+    urls_default = [i["job_url"] for i in r_default.json()["items"]]
+    assert "https://example.test/fresh" in urls_default
+    assert "https://example.test/ancient" not in urls_default  # window excludes it
+
+    assert r_all.status_code == 200, r_all.text
+    urls_all = [i["job_url"] for i in r_all.json()["items"]]
+    assert "https://example.test/ancient" in urls_all  # all_time includes it
 
 
 def test_local_now_naive_uses_configured_timezone():
