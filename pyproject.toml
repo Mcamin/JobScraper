@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "jobscraper-api"
-version = "1.1.2"
+version = "1.1.4"
 description = ""
 authors = ["amc <info@madev.de>"]
 readme = "README.md"
