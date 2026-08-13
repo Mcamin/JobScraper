@@ -27,4 +27,7 @@ COPY . .
 
 # --- Expose & run --------------------------------------------------------
 EXPOSE 8000
-CMD ["poetry", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# --workers 2: run two worker processes so a busy in-process LinkedIn
+# description-backfill (background task, GIL-bound) can't starve foreground
+# Indeed+Google /scrape requests. See backfill-vs-scrape contention, 2026-08-13.
+CMD ["poetry", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "2"]
