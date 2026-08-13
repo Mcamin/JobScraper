@@ -1,5 +1,6 @@
 from sqlalchemy.orm import Session
 from sqlalchemy import select, func, or_
+from sqlalchemy.exc import IntegrityError
 from app.models import Job
 from app.schemas import JobsQuery
 from typing import Iterable, List
@@ -8,17 +9,35 @@ from app.timeutils import local_now_naive
 
 
 def upsert_jobs(db: Session, records: Iterable[dict]) -> int:
-    """Insert jobs, ignore duplicates by unique job_url."""
+    """Insert jobs, ignore duplicates by unique job_url.
+
+    Race-safe: each row is inserted inside its own SAVEPOINT and a duplicate
+    (unique ``job_url``) is swallowed instead of aborting the whole batch. This
+    matters under multiple uvicorn workers, where two concurrent scrapes can
+    return the same job_url and both pass a naive check-then-insert (TOCTOU),
+    with one then hitting MySQL error 1062. Intra-batch duplicates are also
+    pre-filtered via ``seen`` so the same URL in one payload doesn't collide.
+    """
     inserted = 0
+    seen: set[str] = set()
     for r in records:
-        if not r.get("job_url"):
+        url = r.get("job_url")
+        if not url or url in seen:
             continue
-        exists = db.execute(select(Job.id).where(Job.job_url == r["job_url"])).scalar_one_or_none()
-        if exists:
+        seen.add(url)
+        # Cheap fast-path: skip rows already committed by an earlier scrape.
+        if db.execute(select(Job.id).where(Job.job_url == url)).scalar_one_or_none():
             continue
-        job = Job(**r)
-        db.add(job)
-        inserted += 1
+        try:
+            # SAVEPOINT: on a duplicate-key race the nested tx rolls back on its
+            # own, leaving the outer transaction (and prior inserts) intact.
+            with db.begin_nested():
+                db.add(Job(**r))
+                db.flush()
+            inserted += 1
+        except IntegrityError:
+            # Lost the insert race to a concurrent worker — treat as existing.
+            continue
     db.commit()
     return inserted
 
