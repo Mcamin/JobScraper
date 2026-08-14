@@ -19,7 +19,7 @@ settings = get_settings()
 
 app = FastAPI(
     title=settings.APP_NAME,
-    version="1.1.4",
+    version="1.1.5",
     description="API to scrape and fetch job postings using jobspy and persist them to MySQL.",
 )
 
@@ -175,9 +175,22 @@ def scrape_jobs_endpoint(
                 delay=s.DESCRIPTION_BACKFILL_DELAY_SECONDS,
             )
 
-        scrape_items = jsonable_encoder(records)
         logger.bind(event="scrape.done", background=True, backfill=will_backfill).info(
             f"Background scrape complete. Inserted: {inserted}, Returned: {len(records)}"
+        )
+
+        # Slim summary response. The scraped jobs are already persisted to the DB
+        # and consumed downstream by the Job Application pipeline, NOT by the n8n
+        # scrape trigger. That trigger's "Build Summary" node only needs the
+        # `returned` count plus a search_term/site for the branch label, so we
+        # return a single lightweight stub instead of the full job payload
+        # (previously emitted twice as `scrape_items` + `items`). The fat payload
+        # was overloading the n8n HTTP node on larger result sets, causing
+        # per-search failures and a long retry stall — this eliminates it.
+        summary_site = (
+            str(payload.site_name[0]).lower()
+            if isinstance(payload.site_name, list) and payload.site_name
+            else (str(payload.site_name).lower() if payload.site_name else None)
         )
 
         return {
@@ -190,10 +203,15 @@ def scrape_jobs_endpoint(
             "inserted": inserted,
             "returned": len(records),
             "descriptions": "pending" if will_backfill else "skipped",
-            "scrape_items": scrape_items,
-            # keep `items` populated so the n8n "Job Scrape Summary" node
-            # (which reads items[0].search_term) keeps working unchanged.
-            "items": scrape_items,
+            # 1-element stub (no job bodies) — keeps the n8n "Build Summary"
+            # node working: it reads `returned` + items[].search_term/site.
+            "items": [
+                {
+                    "search_term": payload.search_term,
+                    "site_name": summary_site,
+                    "site": summary_site,
+                }
+            ],
         }
 
     except ScrapeError as e:
