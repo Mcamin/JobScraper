@@ -17,10 +17,10 @@ Run directly from Docker Hub:
 docker run -d \
   --name jobscraper-api \
   -p 8000:8000 \
-  -e DB_HOST=192.168.178.3 \
+  -e DB_HOST=127.0.0.1 \
   -e DB_PORT=3306 \
   -e DB_USER=jobs \
-  -e DB_PASSWORD=jobs_Pw! \
+  -e DB_PASSWORD=jobs_pw \
   -e DB_NAME=jobsdb \
   -e LOG_LEVEL=info \
   -e LOG_JSON=true \
@@ -73,10 +73,10 @@ services:
       - "8000:8000"
     environment:
       APP_ENV: production
-      DB_HOST: 192.168.178.3
+      DB_HOST: 127.0.0.1
       DB_PORT: 3306
       DB_USER: jobs
-      DB_PASSWORD: "jobs_Pw!"
+      DB_PASSWORD: jobs_pw
       DB_NAME: jobsdb
       LOG_JSON: "true"
     restart: unless-stopped
