@@ -11,6 +11,7 @@ to automate the job application process.
 - POST `/descriptions/backfill` → Backfill missing LinkedIn descriptions on demand
 - GET `/jobs` → Query stored job postings with filters & pagination
 - GET `/jobs/{id}` → Fetch individual job
+- GET `/debug/duplicates` → List jobs that scrapes returned again (`debug_duplicates=true`)
 - Interactive API docs (Swagger `/docs`, ReDoc `/redoc`)
 - Logging (Loguru)
 - Alembic migrations
@@ -51,6 +52,44 @@ curl -X POST "http://localhost:8000/descriptions/backfill?window_days=3&limit=50
 
 > Implementation note: backfill calls jobspy's private `LinkedIn._get_job_details`. A guard
 > test fails loudly if a jobspy upgrade removes it.
+
+---
+
+## 🔍 Duplicate debugging (`debug_duplicates`)
+
+A scrape skips every job whose `job_url` is already stored. To see **which** jobs came back
+and **why** a time-limited search (e.g. `hours_old: 24`) returned them, add
+`"debug_duplicates": true` to the `/scrape` request. It is report-only: stored jobs are never
+changed, and scrapes without the flag behave exactly as before.
+
+With the flag, the response gains:
+
+| Field | Meaning |
+|---|---|
+| `duplicate_count` | jobs returned by this search that were already stored |
+| `duplicate_reasons` | count per reason (below) |
+| `duplicates` | one entry per job: link, title, company, posting date now vs. stored, first scraped at, days since, the search that first found it, `applied` |
+| `sightings_recorded` | `true` when the entries were written to `job_sightings` |
+
+Each duplicate is also stored in the `job_sightings` table (migration `0004`), so the history
+survives the request. List it with `GET /debug/duplicates`:
+
+```bash
+curl "http://localhost:8000/debug/duplicates?since=2026-11-23T00:00:00&reason=reposted"
+# filters: since (default: last 24 h), until, search_term, reason, applied, limit (≤ 2000)
+```
+
+Reasons (compared by posting **date**):
+
+| Reason | Meaning |
+|---|---|
+| `reposted` | posting date is later than the one stored on first scrape: same job id, date bumped |
+| `outside_window` | posting date is older than `hours_old`: the board's time filter let it through |
+| `seen_again_in_window` | posting date unchanged and inside the window: normal overlap with an earlier scrape |
+| `no_posting_date` | the board returned no posting date |
+
+If the API runs before migration `0004` is applied, the report is still returned with
+`sightings_recorded: false`; only the history table is missing.
 
 ---
 
@@ -219,6 +258,12 @@ poetry run alembic revision --autogenerate -m "add new columns"
 
 ```bash
 poetry run alembic upgrade head
+```
+
+In the deployed container (1.2.0 adds `0004_add_job_sightings_table`):
+
+```bash
+docker exec <jobscraper-api container> sh -c 'cd /app && PYTHONPATH=/app alembic upgrade head'
 ```
 
 ---
