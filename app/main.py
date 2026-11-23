@@ -1,4 +1,8 @@
-from fastapi import FastAPI, Depends, HTTPException, BackgroundTasks
+from collections import Counter
+from datetime import datetime, timedelta
+from typing import Optional
+
+from fastapi import FastAPI, Depends, HTTPException, BackgroundTasks, Query
 from fastapi.encoders import jsonable_encoder
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
@@ -11,7 +15,11 @@ from app.crud import (
     get_job,
     mark_job_as_applied,
     list_linkedin_jobs_missing_description,
+    record_duplicate_sightings,
+    list_duplicate_sightings,
+    DUPLICATE_REASONS,
 )
+from app.timeutils import local_now_naive
 from app.scraper import run_scrape, ScrapeError, run_description_backfill
 from app.logging_config import logger
 
@@ -19,7 +27,7 @@ settings = get_settings()
 
 app = FastAPI(
     title=settings.APP_NAME,
-    version="1.1.5",
+    version="1.2.0",
     description="API to scrape and fetch job postings using jobspy and persist them to MySQL.",
 )
 
@@ -90,6 +98,29 @@ def log_kept_without_company(records):
     return len(missing)
 
 
+def duplicate_report(db, payload, pairs) -> dict:
+    """Response fields for debug_duplicates=true (empty dict when the flag is off)."""
+    if not payload.debug_duplicates:
+        return {}
+    items, persisted = record_duplicate_sightings(
+        db,
+        pairs,
+        search_term=payload.search_term,
+        location=payload.location,
+        hours_old=payload.hours_old,
+    )
+    reasons = Counter(i["reason"] for i in items)
+    logger.bind(event="scrape.duplicates", reasons=dict(reasons), persisted=persisted).info(
+        f"{len(items)} duplicate(s) for {payload.search_term}"
+    )
+    return {
+        "duplicate_count": len(items),
+        "duplicate_reasons": dict(reasons),
+        "sightings_recorded": persisted,
+        "duplicates": items,
+    }
+
+
 # --- Scrape and Save ----------------------------------------------
 @app.post(
     "/scrape",
@@ -129,7 +160,8 @@ def scrape_jobs_endpoint(
             records = run_scrape(payload.model_dump())
 
             log_kept_without_company(records)
-            inserted = upsert_jobs(db, records)
+            dup_pairs: list = []
+            inserted = upsert_jobs(db, records, duplicates=dup_pairs)
 
             total, db_items = list_jobs(db, JobsQuery(limit=inserted))
             db_items_payload = [JobOut.model_validate(i).model_dump() for i in db_items]
@@ -150,6 +182,7 @@ def scrape_jobs_endpoint(
                 "scrape_items": jsonable_encoder(records),
                 "db_items": db_items_payload,
                 "items": db_items_payload,
+                **duplicate_report(db, payload, dup_pairs),
             }
 
         # ---- BACKGROUND -------------------------------------------------
@@ -160,7 +193,9 @@ def scrape_jobs_endpoint(
         records = run_scrape(fast_payload)
 
         log_kept_without_company(records)
-        inserted = upsert_jobs(db, records)
+        dup_pairs = []
+        inserted = upsert_jobs(db, records, duplicates=dup_pairs)
+        dup_report = duplicate_report(db, payload, dup_pairs)
 
         wants_descriptions = bool(payload.linkedin_fetch_description)
         scrapes_linkedin = any(str(s).lower() == "linkedin" for s in payload.site_name)
@@ -203,6 +238,7 @@ def scrape_jobs_endpoint(
             "inserted": inserted,
             "returned": len(records),
             "descriptions": "pending" if will_backfill else "skipped",
+            **dup_report,
             # 1-element stub (no job bodies) — keeps the n8n "Build Summary"
             # node working: it reads `returned` + items[].search_term/site.
             "items": [
@@ -260,6 +296,69 @@ def backfill_descriptions_endpoint(
         delay=s.DESCRIPTION_BACKFILL_DELAY_SECONDS,
     )
     return {"scheduled": True, "candidates": candidates, "window_days": w, "limit": lim}
+
+
+# --- Duplicate debugging ------------------------------------------
+@app.get(
+    "/debug/duplicates",
+    response_model=dict,
+    tags=["debug"],
+    summary="List jobs that scrapes returned again (debug_duplicates=true)",
+    description=(
+        "Reads the `job_sightings` table written by `/scrape` calls with "
+        "`debug_duplicates=true`. Default window: the last 24 hours. `reason` is one of "
+        "reposted, outside_window, seen_again_in_window, no_posting_date."
+    ),
+)
+def debug_duplicates_endpoint(
+    since: Optional[datetime] = None,
+    until: Optional[datetime] = None,
+    search_term: Optional[str] = None,
+    reason: Optional[str] = None,
+    applied: Optional[bool] = None,
+    limit: int = Query(200, ge=1, le=2000),
+    db: Session = Depends(get_db),
+):
+    if reason and reason not in DUPLICATE_REASONS:
+        raise HTTPException(
+            status_code=400, detail=f"reason must be one of {', '.join(DUPLICATE_REASONS)}"
+        )
+    since = since or (local_now_naive() - timedelta(days=1))
+    rows = list_duplicate_sightings(
+        db, since=since, until=until, search_term=search_term,
+        reason=reason, applied=applied, limit=limit,
+    )
+    items = [
+        {
+            "seen_at": sg.seen_at.isoformat(sep=" ") if sg.seen_at else None,
+            "reason": sg.reason,
+            "job_pk": job.id,
+            "job_url": job.job_url,
+            "job_title": job.job_title,
+            "company": job.company,
+            "site_name": sg.site_name,
+            "search_term": sg.search_term,
+            "location": sg.location,
+            "hours_old": sg.hours_old,
+            "scraped_date_posted": sg.scraped_date_posted.date().isoformat() if sg.scraped_date_posted else None,
+            "stored_date_posted": sg.stored_date_posted.date().isoformat() if sg.stored_date_posted else None,
+            "first_scraped_at": sg.first_scraped_at.isoformat(sep=" ") if sg.first_scraped_at else None,
+            "days_since_first_scraped": (
+                (sg.seen_at - sg.first_scraped_at).days if sg.seen_at and sg.first_scraped_at else None
+            ),
+            "first_search_term": job.search_term,
+            "applied_at_sighting": bool(sg.applied),
+            "applied_now": bool(job.applied),
+        }
+        for sg, job in rows
+    ]
+    return {
+        "since": since.isoformat(sep=" "),
+        "count": len(items),
+        "unique_jobs": len({i["job_pk"] for i in items}),
+        "reasons": dict(Counter(i["reason"] for i in items)),
+        "items": items,
+    }
 
 
 # --- List Jobs ----------------------------------------------------
