@@ -1,14 +1,17 @@
 from sqlalchemy.orm import Session
 from sqlalchemy import select, func, or_
 from sqlalchemy.exc import IntegrityError
-from app.models import Job
+from app.models import Job, JobSighting
 from app.schemas import JobsQuery
-from typing import Iterable, List
-from datetime import timedelta
+from typing import Iterable, List, Optional
+from datetime import date, datetime, timedelta
 from app.timeutils import local_now_naive
+from app.logging_config import logger
 
 
-def upsert_jobs(db: Session, records: Iterable[dict]) -> int:
+def upsert_jobs(
+    db: Session, records: Iterable[dict], duplicates: Optional[list] = None
+) -> int:
     """Insert jobs, ignore duplicates by unique job_url.
 
     Race-safe: each row is inserted inside its own SAVEPOINT and a duplicate
@@ -17,6 +20,11 @@ def upsert_jobs(db: Session, records: Iterable[dict]) -> int:
     return the same job_url and both pass a naive check-then-insert (TOCTOU),
     with one then hitting MySQL error 1062. Intra-batch duplicates are also
     pre-filtered via ``seen`` so the same URL in one payload doesn't collide.
+
+    ``duplicates``: optional list. When given, every record whose ``job_url`` was
+    already stored BEFORE this call is appended as ``(existing_job_pk, record)``.
+    Intra-batch repeats and lost insert races are not reported (they are not
+    "seen again" jobs). Inserting behaviour is identical either way.
     """
     inserted = 0
     seen: set[str] = set()
@@ -26,7 +34,10 @@ def upsert_jobs(db: Session, records: Iterable[dict]) -> int:
             continue
         seen.add(url)
         # Cheap fast-path: skip rows already committed by an earlier scrape.
-        if db.execute(select(Job.id).where(Job.job_url == url)).scalar_one_or_none():
+        existing_pk = db.execute(select(Job.id).where(Job.job_url == url)).scalar_one_or_none()
+        if existing_pk:
+            if duplicates is not None:
+                duplicates.append((existing_pk, r))
             continue
         try:
             # SAVEPOINT: on a duplicate-key race the nested tx rolls back on its
@@ -41,6 +52,166 @@ def upsert_jobs(db: Session, records: Iterable[dict]) -> int:
     db.commit()
     return inserted
 
+
+
+# --- Duplicate debugging (debug_duplicates=true on /scrape) -----------------
+
+DUPLICATE_REASONS = ("reposted", "outside_window", "seen_again_in_window", "no_posting_date")
+
+
+def _to_date(value) -> Optional[date]:
+    """Best-effort date from a datetime / pandas Timestamp / date / ISO string; None for NaT/NaN."""
+    if value is None or str(value) in ("NaT", "nan", "None", ""):
+        return None
+    if isinstance(value, datetime):
+        return value.date()
+    if isinstance(value, date):
+        return value
+    try:
+        return date.fromisoformat(str(value)[:10])
+    except ValueError:
+        return None
+
+
+def _to_datetime(value) -> Optional[datetime]:
+    d = _to_date(value)
+    if d is None:
+        return None
+    if isinstance(value, datetime):
+        if hasattr(value, "to_pydatetime"):  # pandas Timestamp
+            value = value.to_pydatetime()
+        return value.replace(tzinfo=None)
+    return datetime(d.year, d.month, d.day)
+
+
+def classify_duplicate(scraped_date_posted, stored_date_posted, hours_old, now: datetime) -> str:
+    """Why did a scrape limited to the last ``hours_old`` hours return a job we already have?
+
+    Compared at day precision (job boards report posting DATES):
+      - no_posting_date       the board gave no posting date now -> can't tell
+      - reposted              posting date now is LATER than the one stored on first
+                              scrape -> same job id, date bumped (repost / refresh)
+      - outside_window        posting date is older than the search window -> the
+                              board's time filter let an old posting through
+                              (e.g. promoted listings)
+      - seen_again_in_window  posting date unchanged and inside the window -> normal
+                              overlap with an earlier scrape (e.g. 09:00 vs 11:00 pass)
+    """
+    scraped = _to_date(scraped_date_posted)
+    if scraped is None:
+        return "no_posting_date"
+    stored = _to_date(stored_date_posted)
+    if stored is not None and scraped > stored:
+        return "reposted"
+    if hours_old:
+        cutoff = (now - timedelta(hours=int(hours_old))).date()
+        if scraped < cutoff:
+            return "outside_window"
+    return "seen_again_in_window"
+
+
+def record_duplicate_sightings(
+    db: Session,
+    pairs: list,
+    *,
+    search_term: Optional[str],
+    location: Optional[str],
+    hours_old: Optional[int],
+    persist: bool = True,
+) -> tuple[list[dict], bool]:
+    """Describe (and optionally store in ``job_sightings``) jobs a scrape returned again.
+
+    ``pairs`` comes from ``upsert_jobs(..., duplicates=pairs)``. Returns
+    ``(items, persisted)``. Never modifies ``jobs``. If the sightings table is
+    missing (migration 0004 not applied) the report is still returned with
+    ``persisted=False`` instead of failing the scrape.
+    """
+    if not pairs:
+        return [], False
+    now = local_now_naive()
+    jobs = {
+        j.id: j
+        for j in db.execute(select(Job).where(Job.id.in_([pk for pk, _ in pairs]))).scalars()
+    }
+    items: list[dict] = []
+    rows: list[JobSighting] = []
+    for pk, rec in pairs:
+        job = jobs.get(pk)
+        if job is None:
+            continue
+        scraped_dp = _to_datetime(rec.get("date_posted"))
+        reason = classify_duplicate(scraped_dp, job.date_posted, hours_old, now)
+        first = job.created_at
+        items.append(
+            {
+                "job_pk": job.id,
+                "job_url": job.job_url,
+                "job_title": job.job_title,
+                "company": job.company,
+                "site_name": rec.get("site_name") or job.site_name,
+                "reason": reason,
+                "scraped_date_posted": scraped_dp.date().isoformat() if scraped_dp else None,
+                "stored_date_posted": _to_date(job.date_posted).isoformat() if job.date_posted else None,
+                "first_scraped_at": first.isoformat(sep=" ") if first else None,
+                "days_since_first_scraped": (now - first).days if first else None,
+                "first_search_term": job.search_term,
+                "this_search_term": search_term,
+                "applied": bool(job.applied),
+            }
+        )
+        rows.append(
+            JobSighting(
+                job_pk=job.id,
+                seen_at=now,
+                site_name=rec.get("site_name") or job.site_name,
+                search_term=search_term,
+                location=location,
+                hours_old=hours_old,
+                scraped_date_posted=scraped_dp,
+                stored_date_posted=job.date_posted,
+                first_scraped_at=first,
+                applied=bool(job.applied),
+                reason=reason,
+            )
+        )
+
+    persisted = False
+    if persist and rows:
+        try:
+            db.add_all(rows)
+            db.commit()
+            persisted = True
+        except Exception as e:  # e.g. table missing before migration 0004
+            db.rollback()
+            logger.bind(event="duplicates.persist_failed").warning(
+                f"Could not store {len(rows)} job sighting(s): {e.__class__.__name__}: {e}"
+            )
+    return items, persisted
+
+
+def list_duplicate_sightings(
+    db: Session,
+    *,
+    since: datetime,
+    until: Optional[datetime] = None,
+    search_term: Optional[str] = None,
+    reason: Optional[str] = None,
+    applied: Optional[bool] = None,
+    limit: int = 200,
+) -> list[tuple[JobSighting, Job]]:
+    stmt = select(JobSighting, Job).join(Job, Job.id == JobSighting.job_pk).where(
+        JobSighting.seen_at >= since
+    )
+    if until is not None:
+        stmt = stmt.where(JobSighting.seen_at < until)
+    if search_term:
+        stmt = stmt.where(JobSighting.search_term == search_term)
+    if reason:
+        stmt = stmt.where(JobSighting.reason == reason)
+    if applied is not None:
+        stmt = stmt.where(JobSighting.applied == applied)
+    stmt = stmt.order_by(JobSighting.seen_at.desc(), JobSighting.id.desc()).limit(limit)
+    return list(db.execute(stmt).all())
 
 
 def list_jobs(db: Session, params: JobsQuery):

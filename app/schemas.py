@@ -67,6 +67,11 @@ class ScrapeRequest(BaseModel):
     #            is also True, LinkedIn descriptions are fetched afterwards in the
     #            background. If it is False, no descriptions are fetched (summary only).
     background: bool = False
+    # Debug: report jobs this scrape returned that are ALREADY stored (duplicates).
+    # Adds a `duplicates` list to the response and records each one in the
+    # `job_sightings` table (see GET /debug/duplicates). Report-only: stored jobs
+    # are never changed. Off by default.
+    debug_duplicates: bool = False
 
 
 def _default_created_after() -> datetime:
