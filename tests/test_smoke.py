@@ -528,3 +528,135 @@ def test_local_now_naive_uses_configured_timezone():
     assert abs((expected - got).total_seconds()) < 5
     # Europe/Berlin is ahead of UTC, so the local wall-clock is >= UTC now.
     assert got >= datetime.now(timezone.utc).replace(tzinfo=None)
+
+
+# ---------------------------------------------------------------------------
+# debug_duplicates: report + job_sightings history (1.2.0)
+# ---------------------------------------------------------------------------
+
+def test_classify_duplicate_reasons():
+    from app.crud import classify_duplicate
+
+    now = datetime(2026, 11, 23, 9, 0, 0)
+    assert classify_duplicate(None, datetime(2026, 10, 1), 24, now) == "no_posting_date"
+    # posting date bumped since first scrape -> repost
+    assert classify_duplicate(datetime(2026, 11, 23), datetime(2026, 10, 1), 24, now) == "reposted"
+    # old posting, unchanged, outside the 24h window -> filter leak
+    assert classify_duplicate(datetime(2026, 10, 1), datetime(2026, 10, 1), 24, now) == "outside_window"
+    # unchanged and inside the window -> normal overlap
+    assert classify_duplicate(datetime(2026, 11, 22), datetime(2026, 11, 22), 24, now) == "seen_again_in_window"
+    # pandas NaT counts as "no date"
+    import pandas as pd
+    assert classify_duplicate(pd.NaT, None, 24, now) == "no_posting_date"
+
+
+def test_upsert_jobs_reports_preexisting_duplicates_only():
+    db = make_session()
+    db.add(make_job(job_url="https://example.test/old"))
+    db.commit()
+    old_pk = db.query(Job).filter_by(job_url="https://example.test/old").one().id
+
+    base = {"site_name": "linkedin", "search_term": "X", "job_title": "T", "location": "Berlin"}
+    records = [
+        {**base, "job_url": "https://example.test/old"},
+        {**base, "job_url": "https://example.test/new"},
+        {**base, "job_url": "https://example.test/new"},  # intra-batch repeat: not reported
+    ]
+    pairs = []
+    from app.crud import upsert_jobs
+    assert upsert_jobs(db, records, duplicates=pairs) == 1
+    assert [pk for pk, _ in pairs] == [old_pk]
+
+
+def _debug_client(monkeypatch, db, records):
+    def override_db():
+        yield db
+
+    monkeypatch.setattr(main_module, "run_scrape", lambda payload: records)
+    monkeypatch.setattr(main_module, "run_description_backfill", lambda **kw: None)
+    main_module.app.dependency_overrides[get_db] = override_db
+
+
+def test_scrape_debug_duplicates_reports_and_records(monkeypatch):
+    from app.models import JobSighting
+
+    db = make_session()
+    db.add(make_job(job_url="https://example.test/repost", job_title="Reposted job",
+                    date_posted=datetime(2026, 10, 1), created_at=datetime(2026, 10, 1, 9, 0),
+                    applied=True))
+    db.commit()
+    base = {"site_name": "linkedin", "search_term": "Backend Engineer Python",
+            "job_title": "T", "company": "Acme", "location": "Berlin"}
+    records = [
+        {**base, "job_url": "https://example.test/repost", "date_posted": datetime.now()},
+        {**base, "job_url": "https://example.test/brand-new", "date_posted": datetime.now()},
+    ]
+    _debug_client(monkeypatch, db, records)
+    try:
+        r = client.post("/scrape", json={"site_name": ["linkedin"], "search_term": "Backend Engineer Python",
+                                         "location": "Berlin", "hours_old": 24, "background": True,
+                                         "linkedin_fetch_description": False, "debug_duplicates": True})
+        body = r.json()
+        assert r.status_code == 200
+        assert body["inserted"] == 1
+        assert body["duplicate_count"] == 1
+        assert body["duplicate_reasons"] == {"reposted": 1}
+        assert body["sightings_recorded"] is True
+        d = body["duplicates"][0]
+        assert d["job_url"] == "https://example.test/repost"
+        assert d["stored_date_posted"] == "2026-10-01"
+        assert d["applied"] is True
+        assert d["first_search_term"] == "Backend Engineer Python"
+        assert db.query(JobSighting).count() == 1
+
+        listing = client.get("/debug/duplicates", params={"since": "2026-01-01T00:00:00"}).json()
+        assert listing["count"] == 1
+        assert listing["reasons"] == {"reposted": 1}
+        assert listing["items"][0]["job_url"] == "https://example.test/repost"
+        assert listing["items"][0]["applied_at_sighting"] is True
+
+        assert client.get("/debug/duplicates", params={"reason": "bogus"}).status_code == 400
+    finally:
+        main_module.app.dependency_overrides.clear()
+
+
+def test_scrape_without_debug_flag_is_unchanged(monkeypatch):
+    from app.models import JobSighting
+
+    db = make_session()
+    db.add(make_job(job_url="https://example.test/dup"))
+    db.commit()
+    base = {"site_name": "linkedin", "search_term": "X", "job_title": "T", "location": "Berlin"}
+    _debug_client(monkeypatch, db, [{**base, "job_url": "https://example.test/dup"}])
+    try:
+        body = client.post("/scrape", json={"site_name": ["linkedin"], "search_term": "X",
+                                            "location": "Berlin", "background": True,
+                                            "linkedin_fetch_description": False}).json()
+    finally:
+        main_module.app.dependency_overrides.clear()
+    assert "duplicates" not in body and "duplicate_count" not in body
+    assert db.query(JobSighting).count() == 0
+
+
+def test_debug_report_survives_missing_sightings_table(monkeypatch):
+    """Deployed before migration 0004: the report is still returned, nothing is stored."""
+    from app.models import JobSighting
+
+    db = make_session()
+    JobSighting.__table__.drop(db.get_bind())
+    db.add(make_job(job_url="https://example.test/dup2", date_posted=None))
+    db.commit()
+    base = {"site_name": "linkedin", "search_term": "X", "job_title": "T", "location": "Berlin"}
+    _debug_client(monkeypatch, db, [{**base, "job_url": "https://example.test/dup2", "date_posted": None},
+                                    {**base, "job_url": "https://example.test/new2"}])
+    try:
+        r = client.post("/scrape", json={"site_name": ["linkedin"], "search_term": "X", "location": "Berlin",
+                                         "background": True, "linkedin_fetch_description": False,
+                                         "debug_duplicates": True})
+    finally:
+        main_module.app.dependency_overrides.clear()
+    body = r.json()
+    assert r.status_code == 200
+    assert body["inserted"] == 1
+    assert body["duplicate_reasons"] == {"no_posting_date": 1}
+    assert body["sightings_recorded"] is False
